@@ -14,30 +14,69 @@ function WidgetSm() {
     if (contractSBT && contractSBT?.methods) {
       (async function () {
 
-          let oldEvents = await contractSBT.getPastEvents('grantedOpiID', {
-              fromBlock: 0,
-              toBlock: 'latest'
-          });
+        let oldEvents = await contractSBT.getPastEvents('grantedOpiID', {
+          fromBlock: 0,
+          toBlock: 'latest'
+        });
 
-          oldEvents.forEach(event => {
-              usersDataLcl.push(
-                  event.returnValues,
-              );
+        oldEvents.forEach(event => {
+          debugger;
+          usersDataLcl.push(
+            event.returnValues._newOpiProfile,
+          );
 
-          });
-          setUsersData(usersDataLcl);
-          console.log(usersDataLcl);
+        });
+        setUsersData(usersDataLcl);
+        console.log(usersDataLcl);
+      })();
+    }
 
-      } )();
-  }
+  }, [contractSBT, accounts]);
 
-  },[contractSBT,accounts]);
+  const getRoleById = (role) => {
+    return( role === 0 ? 'Sounder' : 'Surveyed');
+  };
+
+  const getGenderById = (gender) => {
+    return( gender === 0 ? 'Male' : 'Female');
+  };
+
+  const getMembers = () => {
+    let members = [...usersData];
+
+    return members.map((m, i) => {
+      debugger;
+      return (
+        <div key={i} id="proposals_main_radiogroup">
+          {/* <FormControlLabel    control={<Checkbox color="secondary" />} label={p.proposalId} /> */}
+          <li className="widgetSmListItem">
+            <img
+              src={"https://gateway.pinata.cloud/ipfs/QmfGBsYqSpUA64SHHY8oe4fczuHZH2Anc4JsvcttSzq4NS/"+m.OpiIdCounter.toString()+".png"}
+              alt=""
+              className="widgetSmImg"
+            />
+            <div className="widgetSmUser">
+              <span className="widgetSmUsername">{getGenderById(m.gender)}/{m.age}/Paris</span>
+              <span className="widgetSmUserTitle">{getRoleById(m.role)}</span>
+            </div>
+            <button className="widgetSmButton">
+              <Visibility className="widgetSmIcon" />
+              Display
+            </button>
+          </li>
+
+        </div>
+      );
+    });
+  };
+
 
   return (
     <div className="widgetSm">
       <span className="widgetSmTitle">New Join Members</span>
       <ul className="widgetSmList">
-        <li className="widgetSmListItem">
+        {getMembers()}
+      {/*   <li className="widgetSmListItem">
           <img
             src="https://gateway.pinata.cloud/ipfs/QmfGBsYqSpUA64SHHY8oe4fczuHZH2Anc4JsvcttSzq4NS/1.png"
             alt=""
@@ -52,7 +91,7 @@ function WidgetSm() {
             Display
           </button>
         </li>
-   
+
         <li className="widgetSmListItem">
           <img
             src="https://gateway.pinata.cloud/ipfs/QmfGBsYqSpUA64SHHY8oe4fczuHZH2Anc4JsvcttSzq4NS/2.png"
@@ -83,7 +122,7 @@ function WidgetSm() {
             <Visibility className="widgetSmIcon" />
             Display
           </button>
-        </li>     
+        </li> */}
 
       </ul>
     </div>

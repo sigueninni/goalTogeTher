@@ -32,14 +32,26 @@ contract OpiChainSBT is ERC721URIStorage, Ownable {
         bool isOpiIdGranted;
     }
 
+    //mapping(address=>bool) grantedOPIIds;
     mapping(address => OpiProfile) OpiProfiles;
     Counters.Counter private _OpiIdCounter;
 
-    event grantedOpiID(address _profileAddress, uint256 _OpiIdCounter);
+    event grantedOpiID(OpiProfile _newOpiProfile);
     event revokedOpiID(address _profileAddress);
     event updatedOpiID(address _profileAddress);
 
-    constructor() ERC721("OpiChainID", "OpiId") {}
+    constructor() ERC721("OpiChainID", "OpiId") {
+        
+        address test = 0xd9cB466B10b86Da36Cb7E39d6DD86d25A500Ccd6;
+        grantOpiID( test,
+        "https://gateway.pinata.cloud/ipfs/QmQzEEbvYSV2atiDv8PdT4WuNyjTLbKpEWFVqFFVFLGAut/1.json",
+        "saad",
+        38,
+        0,
+        0);
+
+
+    }
 
     // ::::::::::::: MODIFIERS ::::::::::::: //
     modifier onlySounders(address _profileAddress) {
@@ -113,12 +125,12 @@ contract OpiChainSBT is ERC721URIStorage, Ownable {
     // ::::::::::::: MEMBERS MANAGEMENT ::::::::::::: //
     function grantOpiID(
         address _profileAddress,
-        string calldata _SBTUri,
-        string calldata _name,
+        string memory _SBTUri,
+        string memory _name,
         uint256 _age,
         uint8 _gender,
         uint8 _role
-    ) external onlyOwner returns (uint256) {
+    ) public onlyOwner returns (uint256) { //To change to external after test
         require(
             !OpiProfiles[msg.sender].isOpiIdGranted,
             "OpiID already exists"
@@ -140,7 +152,7 @@ contract OpiChainSBT is ERC721URIStorage, Ownable {
         _mint(_profileAddress, newOpiID);
         _setTokenURI(newOpiID, _SBTUri);
 
-        emit grantedOpiID(_profileAddress, newOpiProfile.OpiIdCounter);
+        emit grantedOpiID(newOpiProfile);
         return newOpiID;
     }
 

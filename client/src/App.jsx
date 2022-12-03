@@ -3,6 +3,7 @@ import "./App.css";
 import Sidebar from './components/SideBar'
 import Topbar from "./components/TopBar";
 import Home from "./pages/Home";
+import UserList from "./pages/UserList";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
@@ -14,8 +15,8 @@ function App() {
           <Sidebar />
           <Routes>
             <Route path="/" element={<Home />} />
-            {/*   <Route path="/users" element={<UserList />} />
-                <Route path="/user/:userId" element={<User />} />
+           <Route path="/users" element={<UserList />} />
+              {/*      <Route path="/user/:userId" element={<User />} />
           <Route path="/newUser" element={<NewUser />} />
           <Route path="/products" element={<ProductList />} />
           <Route path="/product/:productId" element={<Product />} />

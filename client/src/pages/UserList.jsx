@@ -1,7 +1,7 @@
 // import "./userList.css";
 import '../css/page/userList.css'
 import { DataGrid } from '@mui/x-data-grid';
-import { DeleteOutline } from "@material-ui/icons";
+import { DeleteOutline } from '@mui/icons-material';
 //import { userRows } from "../dummyData";
 import useEth from "../contexts/EthContext/useEth";
 import { useState, useEffect } from "react";
@@ -10,40 +10,42 @@ import { Link } from "react-router-dom";
 
 function UserList() {
 
-    let usersDataLcl = [];
+    
     const [usersData, setUsersData] = useState([]);
     const { state: { accounts, contractSBT } } = useEth();
 
+
     useEffect(() => {
+        let usersDataLcl = [];
+        
         if (contractSBT && contractSBT?.methods) {
-            (async function () {
-
-                let oldEvents = await contract.getPastEvents('grantedOpiID', {
-                    fromBlock: 0,
-                    toBlock: 'latest'
-                });
-
-                oldEvents.forEach(event => {
-                    usersDataLcl.push(
-                        event.returnValues,
-                    );
-
-                });
-                setUsersData(usersDataLcl);
-
-            }
+          (async function () {
+    
+            let oldEvents = await contractSBT.getPastEvents('grantedOpiID', {
+              fromBlock: 0,
+              toBlock: 'latest'
+            });
+    
+            oldEvents.forEach(event => {
+              usersDataLcl.push(
+                event.returnValues._newOpiProfile,
+              );
+    
+            });
+            setUsersData(usersDataLcl);
+          
+          })();
         }
-
-
-    }, [contract, accounts]);
+    
+      }, [contractSBT, accounts]);
 
 
     const handleDelete = (id) => {
-        setData(data.filter((item) => item.id !== id));
+        setUsersData(usersData.filter((item) => item.OpiIdCounter !== id));
     };
 
     const columns = [
-        { field: "id", headerName: "ID", width: 90 },
+        { field: "OpiIdCounter", headerName: "Opi Id", width: 90 }/* ,
         {
             field: "user",
             headerName: "User",
@@ -85,17 +87,18 @@ function UserList() {
                     </>
                 );
             },
-        },
+        }, */
     ];
 
     return (
         <div className="userList">
             <DataGrid
-                rows={data}
+                rows={usersData}
                 disableSelectionOnClick
                 columns={columns}
                 pageSize={8}
                 checkboxSelection
+                getRowId={(row) => row.OpiIdCounter}
             />
         </div>
     );
