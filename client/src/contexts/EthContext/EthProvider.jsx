@@ -14,10 +14,14 @@ function EthProvider({ children }) {
         const networkID = await web3.eth.net.getId();
 
         const { abi } = artifactSBT;
-        let addressSBT, contractSBT;
+        let addressSBT, contractSBT,owner,sounder,surveyed;
         try {
           addressSBT = artifactSBT.networks[networkID].address;
           contractSBT = new web3.eth.Contract(abi, addressSBT);
+          owner = await contractSBT.methods.owner().call();
+          console.log(owner);
+          sounder = await contractSBT.methods.isSounder(accounts[0]).call();
+          surveyed = await contractSBT.methods.isSurveyed(accounts[0]).call();
         } catch (err) {
           console.error(err);
         }
@@ -34,7 +38,7 @@ function EthProvider({ children }) {
 
         dispatch({
           type: actions.init,
-          data: { artifactSBT, artifactOPI, web3, accounts, networkID, contractSBT,contractOPI }
+          data: { artifactSBT, artifactOPI, web3, accounts, networkID, contractSBT,contractOPI ,owner}
         });
       }
 

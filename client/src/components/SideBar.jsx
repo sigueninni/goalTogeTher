@@ -1,13 +1,15 @@
 import '../css/component/sidebar.css'
 import useEth from "../contexts/EthContext/useEth";
+import MemberCard from "./MemberCard";
 import Chip from '@mui/material/Chip';
 import PersonIcon from '@mui/icons-material/Person';
 
-import Card from '@mui/material/Card';
+/* import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
+ */
 
 import {
   LineStyle,
@@ -33,32 +35,8 @@ function Sidebar() {
     <div className="sidebar">
  
  <div className="sidebarProfile">
-<Card >
-      <CardActionArea>
-        <CardMedia
-          component="img"
-          height="140"
-          image="/static/images/cards/contemplative-reptile.jpg"
-          alt="green iguana"
-        />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
-            Lizard
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-            Lizards are a widespread group of squamate reptiles, with over 6,000
-            species, ranging across all continents except Antarctica
-          </Typography>
-        </CardContent>
-      </CardActionArea>
-    </Card>
-
+    <MemberCard></MemberCard>
     </div>
-     {/*    <div className="topCenter">
-          <div id="topBarchip"> {accounts && accounts[0] && <Chip variant="outlined" label={accounts[0]} color="secondary" icon={<PersonIcon />} />}</div>
-          <div>Balance : 30 OPI</div>
-        </div> */}
-
       <div className="sidebarWrapper">
         <div className="sidebarMenu">
           <h3 className="sidebarTitle">Dashboard</h3>

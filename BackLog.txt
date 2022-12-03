@@ -1,0 +1,8 @@
+Créer le contrat SBT
+minter SBT 5 + upload IPFS
+Créer le dashboard
+Styler le dashboard
+
+
+Partie Owner
+Ajout de sondeurs/sondés dans solidity

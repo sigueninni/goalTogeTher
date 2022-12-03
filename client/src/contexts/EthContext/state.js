@@ -10,6 +10,9 @@ const initialState = {
   networkID: null,
   contractSBT: null,
   contractOPI: null, 
+  owner: null,
+  sounder: null,
+  surveyed: null
 };
 
 const reducer = (state, action) => {

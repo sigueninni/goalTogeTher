@@ -1,8 +1,38 @@
 import '../css/component/widgetSm.css'
-
+import useEth from "../contexts/EthContext/useEth";
+import { useState, useEffect } from "react";
 import { Visibility } from '@mui/icons-material';
 
 function WidgetSm() {
+
+  let usersDataLcl = [];
+  const [usersData, setUsersData] = useState([]);
+  const { state: { accounts, contractSBT } } = useEth();
+
+  useEffect(() => {
+
+    if (contractSBT && contractSBT?.methods) {
+      (async function () {
+
+          let oldEvents = await contractSBT.getPastEvents('grantedOpiID', {
+              fromBlock: 0,
+              toBlock: 'latest'
+          });
+
+          oldEvents.forEach(event => {
+              usersDataLcl.push(
+                  event.returnValues,
+              );
+
+          });
+          setUsersData(usersDataLcl);
+          console.log(usersDataLcl);
+
+      } )();
+  }
+
+  },[contractSBT,accounts]);
+
   return (
     <div className="widgetSm">
       <span className="widgetSmTitle">New Join Members</span>

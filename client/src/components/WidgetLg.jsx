@@ -9,6 +9,7 @@ function WidgetLg() {
     <div className="widgetLg">
       <h3 className="widgetLgTitle">Latest Surveys interactions</h3>
       <table className="widgetLgTable">
+        <tbody>
         <tr className="widgetLgTr">
           <th className="widgetLgTh">Title</th>
           <th className="widgetLgTh">Cost in OPI</th>
@@ -28,7 +29,7 @@ function WidgetLg() {
           <td className="widgetLgAmount">100</td>
           <td className="widgetLgAmount">20</td>
           <td className="widgetLgStatus">
-            <Button type="Draft" />
+            <Button type="Draft" size="small" />
           </td>
         </tr>
         <tr className="widgetLgTr">
@@ -44,7 +45,7 @@ function WidgetLg() {
           <td className="widgetLgAmount">1000</td>
           <td className="widgetLgAmount">200</td>
           <td className="widgetLgStatus">
-            <Button type="Ongoing" />
+            <Button type="Ongoing" size="small" />
           </td>
         </tr>
         <tr className="widgetLgTr">
@@ -60,9 +61,10 @@ function WidgetLg() {
           <td className="widgetLgAmount">400</td>
           <td className="widgetLgAmount">100</td>
           <td className="widgetLgStatus">
-            <Button type="Terminated" />
+            <Button type="Terminated" size="small"/>
           </td>
         </tr>
+        </tbody>
       </table>
     </div>
   );

@@ -6,6 +6,10 @@ import "../node_modules/@openzeppelin/contracts/utils/Counters.sol";
 import "../node_modules/@openzeppelin/contracts/access/Ownable.sol";
 import "../node_modules/@openzeppelin/contracts/utils/Strings.sol";
 
+/// @title  OpiChain SBT contract
+/// @author Saad Igueninni
+/// @notice ERC721 not transferable, bound to Soul
+/// @dev Inherits the OpenZepplin Ownable ,ERC721URIStorage,Counters & Strings contracts
 contract OpiChainSBT is ERC721URIStorage, Ownable {
     using Counters for Counters.Counter;
 
@@ -28,27 +32,8 @@ contract OpiChainSBT is ERC721URIStorage, Ownable {
         bool isOpiIdGranted;
     }
 
-    //mapping(address=>bool) grantedOPIIds;
     mapping(address => OpiProfile) OpiProfiles;
     Counters.Counter private _OpiIdCounter;
-
-    modifier onlySounders() {
-        require(
-            (OpiProfiles[msg.sender].isOpiIdGranted &&
-                OpiProfiles[msg.sender].role == Role.Sounder),
-            "You are not a sounder"
-        );
-        _;
-    }
-
-    modifier onlySurveyeds() {
-        require(
-            (OpiProfiles[msg.sender].isOpiIdGranted &&
-                OpiProfiles[msg.sender].role == Role.Surveyed),
-            "You are not a surveyed"
-        );
-        _;
-    }
 
     event grantedOpiID(address _profileAddress, uint256 _OpiIdCounter);
     event revokedOpiID(address _profileAddress);
@@ -56,6 +41,76 @@ contract OpiChainSBT is ERC721URIStorage, Ownable {
 
     constructor() ERC721("OpiChainID", "OpiId") {}
 
+    // ::::::::::::: MODIFIERS ::::::::::::: //
+    modifier onlySounders(address _profileAddress) {
+        require(
+            (OpiProfiles[_profileAddress].isOpiIdGranted &&
+                OpiProfiles[_profileAddress].role == Role.Sounder),
+            "You are not a sounder"
+        );
+        _;
+    }
+
+    modifier onlySurveyeds(address _profileAddress) {
+        require(
+            (OpiProfiles[_profileAddress].isOpiIdGranted &&
+                OpiProfiles[msg.sender].role == Role.Surveyed),
+            "You are not a surveyed"
+        );
+        _;
+    }
+
+    modifier opiIdExists(address _profileAddress) {
+        require(
+            OpiProfiles[_profileAddress].isOpiIdGranted,
+            "OpiID do not exists"
+        );
+        _;
+    }
+
+    // ::::::::::::: GETTERS ::::::::::::: //
+    function getOpiID(address _profileAddress)
+        external
+        view
+        onlyOwner
+        opiIdExists(_profileAddress)
+        returns (OpiProfile memory)
+    {
+        return OpiProfiles[_profileAddress];
+    }
+
+    function isGrantedOpiID(address _profileAddress)
+        external
+        view
+        onlyOwner
+        returns (bool)
+    {
+        return OpiProfiles[_profileAddress].isOpiIdGranted;
+    }
+
+    function isSounder(address _profileAddress)
+        external
+        view
+        onlyOwner
+        opiIdExists(_profileAddress)
+        returns (bool)
+    {
+        return (OpiProfiles[_profileAddress].isOpiIdGranted &&
+            OpiProfiles[_profileAddress].role == Role.Sounder);
+    }
+
+    function isSurveyed(address _profileAddress)
+        external
+        view
+        onlyOwner
+        opiIdExists(_profileAddress)
+        returns (bool)
+    {
+        return (OpiProfiles[_profileAddress].isOpiIdGranted &&
+            OpiProfiles[_profileAddress].role == Role.Surveyed);
+    }
+
+    // ::::::::::::: MEMBERS MANAGEMENT ::::::::::::: //
     function grantOpiID(
         address _profileAddress,
         string calldata _SBTUri,
@@ -65,14 +120,13 @@ contract OpiChainSBT is ERC721URIStorage, Ownable {
         uint8 _role
     ) external onlyOwner returns (uint256) {
         require(
-            OpiProfiles[msg.sender].OpiIdCounter == 0,
+            !OpiProfiles[msg.sender].isOpiIdGranted,
             "OpiID already exists"
         );
 
         _OpiIdCounter.increment(); //To start at 1
         uint256 newOpiID = _OpiIdCounter.current();
         OpiProfile memory newOpiProfile;
-   
 
         //Add new Profile
         newOpiProfile.OpiIdCounter = newOpiID;
@@ -123,6 +177,7 @@ contract OpiChainSBT is ERC721URIStorage, Ownable {
         emit revokedOpiID(_profileAddress);
     }
 
+    // ::::::::::::: OVVERIDES ::::::::::::: //
     function _beforeTokenTransfer(
         address from,
         address to,

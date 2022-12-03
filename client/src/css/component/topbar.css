@@ -35,15 +35,16 @@
     align-items: center;
 }
 
-.topBarchip{
+#topBarchip{
   color :#683aa4;
+  margin-right: 10px;
 }
   
   .topbarIconContainer {
     position: relative;
     cursor: pointer;
     margin-right: 10px;
-    color: #555;
+    color: #683aa4;
   }
   
   .topIconBadge{
