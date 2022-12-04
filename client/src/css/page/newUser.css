@@ -1,5 +1,6 @@
 .newUser {
     flex: 4;
+    padding: 50px;
   }
   
   .newUserForm {
@@ -47,7 +48,7 @@
   .newUserButton{
       width: 200px;
       border: none;
-      background-color: darkblue;
+      background-color: #683aa4;
       color: white;
       padding: 7px 10px;
       font-weight: 600;

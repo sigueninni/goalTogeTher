@@ -104,7 +104,6 @@ contract OpiChainSBT is ERC721URIStorage, Ownable {
         external
         view
         onlyOwner
-        opiIdExists(_profileAddress)
         returns (bool)
     {
         return (OpiProfiles[_profileAddress].isOpiIdGranted &&
@@ -115,7 +114,6 @@ contract OpiChainSBT is ERC721URIStorage, Ownable {
         external
         view
         onlyOwner
-        opiIdExists(_profileAddress)
         returns (bool)
     {
         return (OpiProfiles[_profileAddress].isOpiIdGranted &&

@@ -35025,10 +35025,16 @@
       "links": {},
       "address": "0xE773E33FCE268CA191AB0f90D9C4067fe4764C68",
       "transactionHash": "0x33a47d9249bea020f5f0324e6f3a99fe6e412aca231a5398e37f69ece88638a1"
+    },
+    "1670156425869": {
+      "events": {},
+      "links": {},
+      "address": "0x6D4fcfcfF801ccB2A706f892bb5D2f2578E5d874",
+      "transactionHash": "0xa0d8b5384bb273cc15659c19a8ebbdc0836a5bbc0c8e3b3827c28d55ac73443b"
     }
   },
   "schemaVersion": "3.4.10",
-  "updatedAt": "2022-12-03T19:19:33.635Z",
+  "updatedAt": "2022-12-04T12:23:10.191Z",
   "networkType": "ethereum",
   "devdoc": {
     "author": "Saad Igueninni",

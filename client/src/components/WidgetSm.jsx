@@ -20,7 +20,6 @@ function WidgetSm() {
         });
 
         oldEvents.forEach(event => {
-          debugger;
           usersDataLcl.push(
             event.returnValues._newOpiProfile,
           );
@@ -45,7 +44,6 @@ function WidgetSm() {
     let members = [...usersData];
 
     return members.map((m, i) => {
-      debugger;
       return (
         <div key={i} id="proposals_main_radiogroup">
           {/* <FormControlLabel    control={<Checkbox color="secondary" />} label={p.proposalId} /> */}
