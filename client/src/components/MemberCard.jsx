@@ -5,23 +5,21 @@ import Card from '@mui/material/Card';
 import CardHeader from '@mui/material/CardHeader';
 import CardContent from '@mui/material/CardContent';
 import Avatar from '@mui/material/Avatar';
-import Typography from '@mui/material/Typography';
-import { purple } from '@mui/material/colors';
-import { pink } from '@mui/material/colors';
 import Stack from '@mui/material/Stack';
 import { ShowChart } from '@mui/icons-material';
 import { useState, useEffect } from "react";
 
 function CardPerson({ address }) {
 
-    const { state: { contractSBT,accounts,owner } } = useEth();
+    const { state: { contractSBT,accounts,owner ,sounder, surveyed} } = useEth();
 
     useEffect(() => {
     },[contractSBT,accounts]);
 
     return (
+        
         <div key="{address}" id="CardPerson_main">
-            {/* {accounts && <pre>{accounts[0]} - {owner}</pre>} */}
+            {accounts && <pre> {sounder}  {surveyed} </pre>} 
             <Card >
                 <CardHeader
                     avatar={
@@ -31,7 +29,8 @@ function CardPerson({ address }) {
 
 
                     title={address}
-                    subheader={ accounts && owner === accounts[0] ? "OpiChain owner" : "Opichain member"}
+                    subheader={ accounts && owner === accounts[0] ? "OpiChain owner" : ( accounts && sounder ?  "Opichain sounder" : ( accounts && surveyed ?  "Opichain surveyed" : "not a member!")) 
+                   }
                 />
 
                 <CardContent>

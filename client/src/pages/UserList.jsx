@@ -50,11 +50,12 @@ function UserList() {
     }, [contractSBT, accounts]);
 
     const getRoleById = (role) => {
-        return (role === 0 ? 'Sounder' : 'Surveyed');
+        debugger;
+        return (role === "0" ? 'Sounder' : 'Surveyed');
     };
 
     const getGenderById = (gender) => {
-        return (gender === 0 ? 'Male' : 'Female');
+        return (gender === "0" ? 'Male' : 'Female');
     };
 
 

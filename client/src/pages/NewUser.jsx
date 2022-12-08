@@ -6,7 +6,7 @@ function NewUser() {
 
     const { state: { accounts, contractSBT } } = useEth();
 
-    const grantOpiID = async (_profileAddress, _SBTUri, _name, _age, _gender, _role) => {
+    const grantOpiID = async (_profileAddress,  _name, _age, _gender, _role) => {
         /*         grantOpiID( test,
                     "https://gateway.pinata.cloud/ipfs/QmQzEEbvYSV2atiDv8PdT4WuNyjTLbKpEWFVqFFVFLGAut/1.json",
                     "saad",
@@ -20,78 +20,83 @@ function NewUser() {
                 uint8 _gender,
                 uint8 _role
                  */
+           
         try {
-            await contractSBT.methods.grantOpiID(_profileAddress, _SBTUri, _name, _age, _gender, _role).send({ from: accounts[0] });
+            await contractSBT.methods.grantOpiID(_profileAddress, _name, _age, _gender, _role).send({ from: accounts[0] });
         } catch (err) {
             console.log(err);
         }
     };
 
 
-    const onGrantOpiID = () => {
-
-        //grantOpiID(inputProposal);
-
-    }
-
-
-
+    const onGrantOpiID = (event) => {
+        event.preventDefault();
+        var data = new FormData(event.target);
+        let formObject = Object.fromEntries(data.entries());
+        debugger;
+        grantOpiID(formObject.address, formObject.name, parseInt(formObject.age), parseInt(formObject.gender), parseInt(formObject.role));
+      }
 
 
     return (
         <div className="newUser">
             <h1 className="newUserTitle">New OPI member</h1>
-            <form className="newUserForm">
+            <form className="newUserForm" onSubmit={onGrantOpiID}>
                 <div className="newUserItem">
                     <label>ETH address</label>
-                    <input type="text" placeholder="0x0000000000000000000000000000000000000000" />
+                    <input name ="address" type="text" placeholder="0x0000000000000000000000000000000000000000" />
+                </div>
+
+                <div className="newUserItem">
+                    <label>Name</label>
+                    <input name ="name" type="text" placeholder="Bob" />
                 </div>
 
                 <div className="newUserItem">
                     <label>Age</label>
-                    <input type="number" placeholder="" />
+                    <input name ="age" type="number" placeholder="" />
                 </div>
 
                 <div className="newUserItem">
                     <label>Email</label>
-                    <input type="email" placeholder="alyra@opichain.com" />
+                    <input name ="email"  type="email" placeholder="alyra@opichain.com" />
                 </div>
 
                 <div className="newUserItem">
                     <label>Phone</label>
-                    <input type="text" placeholder="+33 12345678 " />
+                    <input name ="phone" type="text" placeholder="+33 12345678 " />
                 </div>
                 <div className="newUserItem">
-                    <label>Address</label>
-                    <input type="text" placeholder="Paris | France" />
+                    <label>Location</label>
+                    <input name ="location" type="text" placeholder="Paris | France" />
                 </div>
                 <div className="newUserItem">
                     <label>Gender</label>
                     <div className="newUserGender">
-                        <input type="radio" name="gender" id="male" value="male" />
+                        <input type="radio" name="gender" id="male" value="0" />
                         <label for="male">male</label>
-                        <input type="radio" name="gender" id="female" value="female" />
+                        <input type="radio" name="gender" id="female" value="1" />
                         <label for="female">female</label>
                     </div>
                 </div>
                 <div className="newUserItem">
                     <label>Role</label>
                     <div className="newUserGender">
-                        <input type="radio" name="gender" id="male" value="male" />
-                        <label for="male">surveyed</label>
-                        <input type="radio" name="gender" id="female" value="female" />
-                        <label for="female">sounder</label>
+                    <input type="radio" name="role" id="sounder" value="0" />
+                        <label for="sounder">sounder</label>
+                        <input type="radio" name="role" id="surveyed" value="1" />
+                        <label for="surveyed">surveyed</label>
+                       
                     </div>
                 </div>
                 <div className="newUserItem">
                     <label>Issue SBT</label>
-                    <select className="newUserSelect" name="active" id="active">
-                        <option value="no">No</option>
+                    <select className="newUserSelect" name="issueBST" id="issueBST">
                         <option value="yes">Yes</option>
-
+                        <option value="no">No</option>
                     </select>
                 </div>
-                <button className="newUserButton">Grant OPI ID</button>
+                <button className="newUserButton"  type="submit"  >Grant OPI ID</button>
             </form>
         </div>
     );

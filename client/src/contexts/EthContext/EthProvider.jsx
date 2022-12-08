@@ -19,6 +19,7 @@ function EthProvider({ children }) {
           addressSBT = artifactSBT.networks[networkID].address;
           contractSBT = new web3.eth.Contract(abi, addressSBT);
           owner = await contractSBT.methods.owner().call({ from: owner});
+          debugger;
           sounder = await contractSBT.methods.isSounder(accounts[0]).call({ from: owner});
           surveyed = await contractSBT.methods.isSurveyed(accounts[0]).call({ from: owner});
         } catch (err) {
@@ -37,7 +38,7 @@ function EthProvider({ children }) {
 
         dispatch({
           type: actions.init,
-          data: { artifactSBT, artifactOPI, web3, accounts, networkID, contractSBT,contractOPI ,owner}
+          data: { artifactSBT, artifactOPI, web3, accounts, networkID, contractSBT,contractOPI ,owner,sounder,surveyed}
         });
       }
 

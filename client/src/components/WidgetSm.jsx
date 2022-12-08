@@ -33,11 +33,12 @@ function WidgetSm() {
   }, [contractSBT, accounts]);
 
   const getRoleById = (role) => {
-    return( role === 0 ? 'Sounder' : 'Surveyed');
+    debugger;
+    return (role === "0" ? 'Sounder' : 'Surveyed');
   };
 
   const getGenderById = (gender) => {
-    return( gender === 0 ? 'Male' : 'Female');
+    return (gender === "0" ? 'Male' : 'Female');
   };
 
   const getMembers = () => {
@@ -49,7 +50,7 @@ function WidgetSm() {
           {/* <FormControlLabel    control={<Checkbox color="secondary" />} label={p.proposalId} /> */}
           <li className="widgetSmListItem">
             <img
-              src={"https://gateway.pinata.cloud/ipfs/QmfGBsYqSpUA64SHHY8oe4fczuHZH2Anc4JsvcttSzq4NS/"+m.OpiIdCounter.toString()+".png"}
+              src={"https://gateway.pinata.cloud/ipfs/QmfGBsYqSpUA64SHHY8oe4fczuHZH2Anc4JsvcttSzq4NS/" + m.OpiIdCounter.toString() + ".png"}
               alt=""
               className="widgetSmImg"
             />
@@ -74,7 +75,7 @@ function WidgetSm() {
       <span className="widgetSmTitle">New Join Members</span>
       <ul className="widgetSmList">
         {getMembers()}
-      {/*   <li className="widgetSmListItem">
+        {/*   <li className="widgetSmListItem">
           <img
             src="https://gateway.pinata.cloud/ipfs/QmfGBsYqSpUA64SHHY8oe4fczuHZH2Anc4JsvcttSzq4NS/1.png"
             alt=""

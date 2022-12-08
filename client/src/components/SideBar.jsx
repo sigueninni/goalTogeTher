@@ -25,27 +25,31 @@ import {
   AddCircle,
   WorkOutline,
   Report,
-} from '@mui/icons-material'; 
+} from '@mui/icons-material';
 
 import { Link } from "react-router-dom";
 
 function Sidebar() {
-  const { state: { accounts, contractSBT } } = useEth();
+
+  const { state: { contractSBT, accounts, owner, sounder, surveyed } } = useEth();
+
   return (
     <div className="sidebar">
- 
- <div className="sidebarProfile">
-    <MemberCard></MemberCard>
-    </div>
+
+      <div className="sidebarProfile">
+        <MemberCard></MemberCard>
+      </div>
       <div className="sidebarWrapper">
+
+        {/* everybody */}
         <div className="sidebarMenu">
           <h3 className="sidebarTitle">Dashboard</h3>
           <ul className="sidebarList">
             <Link to="/" className="link">
-            <li className="sidebarListItem active">
-              <LineStyle className="sidebarIcon" />
-              Home
-            </li>
+              <li className="sidebarListItem active">
+                <LineStyle className="sidebarIcon" />
+                Home
+              </li>
             </Link>
             <li className="sidebarListItem">
               <Feed className="sidebarIcon" />
@@ -53,38 +57,68 @@ function Sidebar() {
             </li>
           </ul>
         </div>
-        <div className="sidebarMenu">
-          <h3 className="sidebarTitle">Quick Menu</h3>
-          <ul className="sidebarList">
 
-            <Link to="/products" className="link">
+        {(surveyed) &&
+          <div className="sidebarMenu">
+            <h3 className="sidebarTitle">Quick Menu Surveyed</h3>
+            <ul className="sidebarList">
+              <Link to="/products" className="link">
+                <li className="sidebarListItem">
+                  <Storefront className="sidebarIcon" />
+                  Surveys Marketplace
+                </li>
+              </Link>
               <li className="sidebarListItem">
-                <Storefront className="sidebarIcon" />
-                Surveys Marketplace
+                <AttachMoney className="sidebarIcon" />
+                Transactions
               </li>
-            </Link>
-            <li className="sidebarListItem">
-              <AttachMoney className="sidebarIcon" />
-              Transactions
-            </li>
-            <li className="sidebarListItem">
-              <Savings className="sidebarIcon" />
-              Stacking
-            </li>
-            <li className="sidebarListItem">
-              <ShoppingCart className="sidebarIcon" />
-              Buy Opi
-            </li>
-            <li className="sidebarListItem">
-              <AddCircle className="sidebarIcon" />
-              Create Survey
-            </li>
-            <li className="sidebarListItem">
-              <MoveUp className="sidebarIcon" />
-              Withdraw my Opis
-            </li>
-          </ul>
-        </div>
+              <li className="sidebarListItem">
+                <Savings className="sidebarIcon" />
+                Stacking
+              </li>
+              <li className="sidebarListItem">
+                <ShoppingCart className="sidebarIcon" />
+                Buy Opi
+              </li>
+              <li className="sidebarListItem">
+                <AddCircle className="sidebarIcon" />
+                Create Survey
+              </li>
+              <li className="sidebarListItem">
+                <MoveUp className="sidebarIcon" />
+                Withdraw my Opis
+              </li>
+            </ul>
+          </div>
+        }
+
+        {(sounder) &&
+          <div className="sidebarMenu">
+            <h3 className="sidebarTitle">Quick Menu Sounder</h3>
+            <ul className="sidebarList">
+              <Link to="/products" className="link">
+                <li className="sidebarListItem">
+                  <Storefront className="sidebarIcon" />
+                  Respond a survey
+                </li>
+              </Link>
+              <li className="sidebarListItem">
+                <AttachMoney className="sidebarIcon" />
+                Transactions
+              </li>
+              <li className="sidebarListItem">
+                <Savings className="sidebarIcon" />
+                Stacking
+              </li>
+              <li className="sidebarListItem">
+                <MoveUp className="sidebarIcon" />
+                Withdraw my Opis
+              </li>
+            </ul>
+          </div>
+        }
+
+        {/* everybody */}
         <div className="sidebarMenu">
           <h3 className="sidebarTitle">Notifications</h3>
           <ul className="sidebarList">
@@ -94,10 +128,12 @@ function Sidebar() {
             </li>
           </ul>
         </div>
+
+        {(accounts && owner === accounts[0]) &&
         <div className="sidebarMenu">
           <h3 className="sidebarTitle">Only Owner</h3>
           <ul className="sidebarList">
-          <Link to="/users" className="link">
+            <Link to="/users" className="link">
               <li className="sidebarListItem">
                 <PermIdentity className="sidebarIcon" />
                 Members
@@ -117,6 +153,28 @@ function Sidebar() {
             </li>
           </ul>
         </div>
+}
+
+        {/* surveyed and sounder */}
+        {(sounder || surveyed) &&
+          <div className="sidebarMenu">
+            <h3 className="sidebarTitle">My Data</h3>
+            <ul className="sidebarList">
+              <Link to="/users" className="link">
+              </Link>
+              <li className="sidebarListItem">
+                <Timeline className="sidebarIcon" />
+                Analytics
+              </li>
+              <li className="sidebarListItem">
+                <Report className="sidebarIcon" />
+                My Reports
+              </li>
+            </ul>
+          </div>
+        }
+
+
       </div>
     </div>
   );
