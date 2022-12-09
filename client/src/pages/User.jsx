@@ -12,6 +12,7 @@ import { Link } from "react-router-dom";
 import '../css/page/user.css';
 import { useLocation } from "react-router-dom";
 
+
 function User() {
   const location = useLocation();
   const { row } = location.state;
@@ -30,15 +31,15 @@ function User() {
     <div className="user">
       <div className="userTitleContainer">
         <h1 className="userTitle">Edit User</h1>
-        <Link to="/newUser">
+        {/* <Link to="/newUser">
           <button className="userAddButton">Create</button>
-        </Link>
+        </Link> */}
       </div>
       <div className="userContainer">
         <div className="userShow">
           <div className="userShowTop">
             <img
-              src={"https://gateway.pinata.cloud/ipfs/QmfGBsYqSpUA64SHHY8oe4fczuHZH2Anc4JsvcttSzq4NS/" + row.OpiIdCounter.toString() + ".png"}
+              src={"https://gateway.pinata.cloud/ipfs/QmdGwjCgrCAyUddv8z1XBhuS5EptRjVKUnEraHwuKvr66A/" + row.OpiIdCounter.toString() + ".png"}
               alt=""
               className="userShowImg"
             />

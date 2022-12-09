@@ -11,7 +11,7 @@ import { useState, useEffect } from "react";
 
 function CardPerson({ address }) {
 
-    const { state: { contractSBT,contractOPI ,accounts,owner ,sounder, surveyed} } = useEth();
+    const { state: { web3,contractSBT,contractOPI ,accounts,owner ,sounder, surveyed} } = useEth();
     const [balance, setBalance] = useState('0');
               
     useEffect(() => {
@@ -23,7 +23,8 @@ function CardPerson({ address }) {
 
                 try {
                    const balance = await contractOPI.methods.balanceOf(accounts[0]).call({ from: accounts[0]} );
-                   console.log("Balance",balance);
+                 //  const wei = parseInt(balance);
+                 //  const ether = web3.utils.fromWei(balance, "ether");
                    setBalance(balance);
                 } catch (err) {
                     console.log(err);

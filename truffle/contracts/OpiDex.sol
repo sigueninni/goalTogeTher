@@ -36,7 +36,7 @@ contract OpiDex is Ownable {
         require(OpiDexBalance >= amountToBuy, "Not enough OPIs in balance of OpiDex");
 
         // Transfer token to the msg.sender
-       bool sent = opi.transfer(msg.sender, amountToBuy);
+       bool sent = opi.transfer(msg.sender, amountToBuy );
         require(sent, "Failed to transfer OPIs to user");
 
         // emit the event

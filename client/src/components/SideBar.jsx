@@ -25,6 +25,7 @@ import {
   AddCircle,
   WorkOutline,
   Report,
+  ShoppingBag,
 } from '@mui/icons-material';
 
 import { Link } from "react-router-dom";
@@ -82,9 +83,15 @@ function Sidebar() {
                 Buy Opi
               </li>
               </Link>
+              <Link to="/NewSurvey" className="link">
               <li className="sidebarListItem">
                 <AddCircle className="sidebarIcon" />
                 Create Survey
+              </li>
+              </Link>
+              <li className="sidebarListItem">
+                <ShoppingBag className="sidebarIcon" />
+                My Surveys
               </li>
               <li className="sidebarListItem">
                 <MoveUp className="sidebarIcon" />

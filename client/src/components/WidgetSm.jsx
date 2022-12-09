@@ -33,7 +33,6 @@ function WidgetSm() {
   }, [contractSBT, accounts]);
 
   const getRoleById = (role) => {
-    debugger;
     return (role === "0" ? 'Sounder' : 'Surveyed');
   };
 
@@ -50,7 +49,7 @@ function WidgetSm() {
           {/* <FormControlLabel    control={<Checkbox color="secondary" />} label={p.proposalId} /> */}
           <li className="widgetSmListItem">
             <img
-              src={"https://gateway.pinata.cloud/ipfs/QmfGBsYqSpUA64SHHY8oe4fczuHZH2Anc4JsvcttSzq4NS/" + m.OpiIdCounter.toString() + ".png"}
+              src={"https://gateway.pinata.cloud/ipfs/QmdGwjCgrCAyUddv8z1XBhuS5EptRjVKUnEraHwuKvr66A/" + m.OpiIdCounter.toString() + ".png"}
               alt=""
               className="widgetSmImg"
             />

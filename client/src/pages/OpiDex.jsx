@@ -7,12 +7,13 @@ import useEth from "../contexts/EthContext/useEth";
 import { useState } from 'react';
 import Chip from '@mui/material/Chip';
 import SwapHorizIcon from '@mui/icons-material/SwapHoriz';
+import { useNavigate } from 'react-router-dom';
 
 
 function OpiDex() {
     const { state: { web3 ,accounts, owner, contractOPI ,contractOpiDex } } = useEth();
     const [amountEth, setAmountEth] = useState('');
-
+    const navigate = useNavigate();
 
     const buyTokens = async (_amount) => {
         try {
@@ -21,6 +22,9 @@ function OpiDex() {
         } catch (err) {
             console.log(err);
         }
+        navigate('/');
+        window.location.reload(true);
+        
     }
 
 

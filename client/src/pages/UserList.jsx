@@ -50,7 +50,7 @@ function UserList() {
     }, [contractSBT, accounts]);
 
     const getRoleById = (role) => {
-        debugger;
+
         return (role === "0" ? 'Sounder' : 'Surveyed');
     };
 
@@ -72,7 +72,7 @@ function UserList() {
             renderCell: (params) => {
                 return (
                     <div className="userListUser">
-                        <img className="userListImg" src={"https://gateway.pinata.cloud/ipfs/QmfGBsYqSpUA64SHHY8oe4fczuHZH2Anc4JsvcttSzq4NS/" + params.row.OpiIdCounter.toString() + ".png"} alt="" />
+                        <img className="userListImg" src={"https://gateway.pinata.cloud/ipfs/QmdGwjCgrCAyUddv8z1XBhuS5EptRjVKUnEraHwuKvr66A/" + params.row.OpiIdCounter.toString() + ".png"} alt="" />
                         {params.row.username}
                     </div>
                 );
