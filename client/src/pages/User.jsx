@@ -1,5 +1,4 @@
 import {
-  CalendarToday,
   LocationSearching,
   MailOutline,
   PermIdentity,

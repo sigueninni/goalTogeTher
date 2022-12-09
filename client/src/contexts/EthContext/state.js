@@ -5,11 +5,13 @@ const actions = {
 const initialState = {
   artifactSBT: null,
   artifactOPI: null, 
+  artifactOpiDex: null,
   web3: null,
   accounts: null,
   networkID: null,
   contractSBT: null,
   contractOPI: null, 
+  contractOpiDex: null,
   owner: null,
   sounder: null,
   surveyed: null

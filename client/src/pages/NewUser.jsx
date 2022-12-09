@@ -1,6 +1,6 @@
 import '../css/page/newUser.css'
 import useEth from "../contexts/EthContext/useEth";
-import { useState, useEffect } from "react";
+//import { useState, useEffect } from "react";
 
 function NewUser() {
 

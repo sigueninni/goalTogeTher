@@ -6,6 +6,15 @@ import "../node_modules/@openzeppelin/contracts/utils/Counters.sol";
 import "../node_modules/@openzeppelin/contracts/access/Ownable.sol";
 import "../node_modules/@openzeppelin/contracts/utils/Strings.sol";
 
+
+//Interface name is not important, however functions in it are important
+interface IOpiChainSBT{
+  function greet() external view returns (string memory);
+ 
+}
+
+
+
 /// @title  OpiChain SBT contract
 /// @author Saad Igueninni
 /// @notice ERC721 not transferable, bound to Soul

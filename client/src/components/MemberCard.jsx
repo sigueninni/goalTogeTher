@@ -11,10 +11,32 @@ import { useState, useEffect } from "react";
 
 function CardPerson({ address }) {
 
-    const { state: { contractSBT,accounts,owner ,sounder, surveyed} } = useEth();
-
+    const { state: { contractSBT,contractOPI ,accounts,owner ,sounder, surveyed} } = useEth();
+    const [balance, setBalance] = useState('0');
+              
     useEffect(() => {
-    },[contractSBT,accounts]);
+
+
+        if (contractOPI && contractOPI?.methods) {
+
+            (async function () {
+
+                try {
+                   const balance = await contractOPI.methods.balanceOf(accounts[0]).call({ from: accounts[0]} );
+                   console.log("Balance",balance);
+                   setBalance(balance);
+                } catch (err) {
+                    console.log(err);
+                }
+
+
+        })();
+
+        }
+
+
+
+    },[contractSBT,accounts,balance]);
 
     return (
         
@@ -36,7 +58,7 @@ function CardPerson({ address }) {
                 <CardContent>
                     <Stack direction="row" spacing={2}>
                         <div id="membercardWallet"><ShowChart fontSize="large" /></div>
-                        <div id="membercardBalance">10000 OPI</div>
+                        <div id="membercardBalance">{balance} OPI</div>
                     </Stack>
 
                 </CardContent>

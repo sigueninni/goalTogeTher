@@ -76,10 +76,12 @@ function Sidebar() {
                 <Savings className="sidebarIcon" />
                 Stacking
               </li>
+              <Link to="/opiDex" className="link">
               <li className="sidebarListItem">
                 <ShoppingCart className="sidebarIcon" />
                 Buy Opi
               </li>
+              </Link>
               <li className="sidebarListItem">
                 <AddCircle className="sidebarIcon" />
                 Create Survey
