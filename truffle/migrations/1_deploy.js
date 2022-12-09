@@ -1,13 +1,16 @@
 const OpiChainSBT = artifacts.require("OpiChainSBT");
 const Opi = artifacts.require("Opi");
 const OpiDex = artifacts.require("OpiDex");
+const OpiChainSurveyNFT  = artifacts.require("OpiChainSurveyNFT");
 
 module.exports = function (deployer) {
+  console.log('\n\n 📡 Deploying unit contracts...\n');
+  
   deployer.deploy(OpiChainSBT);
+  deployer.deploy(OpiChainSurveyNFT);
 
+  console.log('\n\n 📡 Deploying dependant contracts...\n');
   deployer.then(async () => {
-
-    console.log('\n\n 📡 Deploying...\n');
     const opi = await deployer.deploy(Opi);
     const opiDex = await deployer.deploy(OpiDex, opi.address);
 

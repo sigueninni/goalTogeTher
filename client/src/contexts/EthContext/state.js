@@ -12,6 +12,7 @@ const initialState = {
   contractSBT: null,
   contractOPI: null, 
   contractOpiDex: null,
+  OpiChainSurveyNFT :null,
   owner: null,
   sounder: null,
   surveyed: null

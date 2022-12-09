@@ -7,7 +7,6 @@ import UserList from "./pages/UserList";
 import User from "./pages/User";
 import NewUser from "./pages/NewUser";
 import OpiDex from "./pages/OpiDex";
-import Container from "./pages/Container";
 import NewSurvey from "./pages/NewSurvey";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import {  useEffect } from "react";
