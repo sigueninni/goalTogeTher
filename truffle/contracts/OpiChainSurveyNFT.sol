@@ -104,6 +104,15 @@ contract OpiChainSurveyNFT is ERC721URIStorage, Ownable {
         return (uint256(idToSurveys[_idSurvey].surveyStatus));
     }
 
+
+      function getSurveyById(uint256 _idSurvey)
+        public
+        view
+        returns (Survey memory)
+    {
+        return idToSurveys[_idSurvey] ;
+    }
+
     function getSurveyByAddress(address _ownerSurvey, uint256 _idSurvey)
         public
         view
@@ -147,7 +156,7 @@ contract OpiChainSurveyNFT is ERC721URIStorage, Ownable {
     }
 
     //Mint only when in status Terminated
-    function mintSurvey(uint256 _idSurvey) external onlyOwner {
+    function mintSurvey(uint256 _idSurvey) external  {
         require(
             getSurveyStatusById(_idSurvey) == uint256(SurveyStatus.Terminated),
             "Survey not terminated"
@@ -158,10 +167,10 @@ contract OpiChainSurveyNFT is ERC721URIStorage, Ownable {
         setApprovalForAll(marketplaceContract, true); //Give approval to marketplace
         _ownerSurvey = idToSurveys[_idSurvey].owner;
         _mint(_ownerSurvey, _idSurvey);
-
+        idToSurveys[_idSurvey].minted = true;
         string memory urinumber = Strings.toString(_idSurvey);
         string
-            memory tokenURI = "https://ipfs.io/ipfs/QmQzEEbvYSV2atiDv8PdT4WuNyjTLbKpEWFVqFFVFLGAut/"; //To change by CID of !!
+            memory tokenURI = "https://ipfs.io/ipfs/QmZtyRorNAx7uk6mmm47KiCBNgJBKvG5LrQs1RKHH1C3ip/"; //To change by CID of !!
         string memory _SBTUri = string.concat(tokenURI, urinumber, ".json");
 
         _setTokenURI(_idSurvey, _SBTUri);

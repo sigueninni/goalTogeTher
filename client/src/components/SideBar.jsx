@@ -78,21 +78,24 @@ function Sidebar() {
                 Stacking
               </li>
               <Link to="/opiDex" className="link">
-              <li className="sidebarListItem">
-                <ShoppingCart className="sidebarIcon" />
-                Buy Opi
-              </li>
+                <li className="sidebarListItem">
+                  <ShoppingCart className="sidebarIcon" />
+                  Buy Opi
+                </li>
               </Link>
               <Link to="/NewSurvey" className="link">
-              <li className="sidebarListItem">
-                <AddCircle className="sidebarIcon" />
-                Create Survey
-              </li>
+                <li className="sidebarListItem">
+                  <AddCircle className="sidebarIcon" />
+                  Create Survey
+                </li>
               </Link>
-              <li className="sidebarListItem">
-                <ShoppingBag className="sidebarIcon" />
-                My Surveys
-              </li>
+
+              <Link to="/SurveyList" className="link">
+                <li className="sidebarListItem">
+                  <ShoppingBag className="sidebarIcon" />
+                  My Surveys
+                </li>
+              </Link>
               <li className="sidebarListItem">
                 <MoveUp className="sidebarIcon" />
                 Withdraw my Opis
@@ -139,30 +142,30 @@ function Sidebar() {
         </div>
 
         {(accounts && owner === accounts[0]) &&
-        <div className="sidebarMenu">
-          <h3 className="sidebarTitle">Only Owner</h3>
-          <ul className="sidebarList">
-            <Link to="/users" className="link">
+          <div className="sidebarMenu">
+            <h3 className="sidebarTitle">Only Owner</h3>
+            <ul className="sidebarList">
+              <Link to="/users" className="link">
+                <li className="sidebarListItem">
+                  <PermIdentity className="sidebarIcon" />
+                  Members
+                </li>
+              </Link>
               <li className="sidebarListItem">
-                <PermIdentity className="sidebarIcon" />
-                Members
+                <WorkOutline className="sidebarIcon" />
+                Manage
               </li>
-            </Link>
-            <li className="sidebarListItem">
-              <WorkOutline className="sidebarIcon" />
-              Manage
-            </li>
-            <li className="sidebarListItem">
-              <Timeline className="sidebarIcon" />
-              Analytics
-            </li>
-            <li className="sidebarListItem">
-              <Report className="sidebarIcon" />
-              Reports
-            </li>
-          </ul>
-        </div>
-}
+              <li className="sidebarListItem">
+                <Timeline className="sidebarIcon" />
+                Analytics
+              </li>
+              <li className="sidebarListItem">
+                <Report className="sidebarIcon" />
+                Reports
+              </li>
+            </ul>
+          </div>
+        }
 
         {/* surveyed and sounder */}
         {(sounder || surveyed) &&

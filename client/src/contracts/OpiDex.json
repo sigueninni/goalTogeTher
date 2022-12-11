@@ -8381,10 +8381,61 @@
       "links": {},
       "address": "0x2d5499AAe4BAAbD619bE3C1955163B914f9B83b9",
       "transactionHash": "0x04d32c6d51adf83edb21bdd719a4dcb6f1efe33c67050a35c5ea4627e83e5661"
+    },
+    "1670682687769": {
+      "events": {
+        "0x942941e55a29218802e75bce2dab045559e45a25e7030efb9a2c5fe5f5851c43": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "address",
+              "name": "_sounderAddress",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "_amountOfETH",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "_amountOfOPIs",
+              "type": "uint256"
+            }
+          ],
+          "name": "OpiBuyed",
+          "type": "event"
+        },
+        "0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "previousOwner",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "newOwner",
+              "type": "address"
+            }
+          ],
+          "name": "OwnershipTransferred",
+          "type": "event"
+        }
+      },
+      "links": {},
+      "address": "0x967Dac070f752A8B3FAAC841df346188D7f57e9a",
+      "transactionHash": "0xb679091411d50514b1b710ef9a1ff6b297d1101f7e2f51d4b90e5e83c9dfe9e9"
     }
   },
   "schemaVersion": "3.4.10",
-  "updatedAt": "2022-12-09T17:56:57.086Z",
+  "updatedAt": "2022-12-11T02:06:11.090Z",
   "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",

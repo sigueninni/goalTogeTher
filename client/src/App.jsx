@@ -8,6 +8,7 @@ import User from "./pages/User";
 import NewUser from "./pages/NewUser";
 import OpiDex from "./pages/OpiDex";
 import NewSurvey from "./pages/NewSurvey";
+import SurveyList from "./pages/SurveyList";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import {  useEffect } from "react";
 import { useHistory } from "react-router-dom";
@@ -34,6 +35,7 @@ function App() {
             <Route path="/newUser" element={<NewUser />} />
             <Route path="/opiDex" element={<OpiDex />} />
             <Route path="/NewSurvey" element={<NewSurvey />} />
+            <Route path="/SurveyList" element={<SurveyList />} />
 
             {/*   <Route path="/products" element={<ProductList />} />
           <Route path="/product/:productId" element={<Product />} />
