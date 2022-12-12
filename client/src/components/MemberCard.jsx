@@ -11,7 +11,7 @@ import { useState, useEffect } from "react";
 
 function CardPerson({ address }) {
 
-    const { state: { web3,contractSBT,contractOPI ,accounts,owner ,sounder, surveyed} } = useEth();
+    const { state: { contractSBT,contractOPI ,accounts,owner ,sounder, surveyed} } = useEth();
     const [balance, setBalance] = useState('0');
               
     useEffect(() => {
@@ -35,9 +35,7 @@ function CardPerson({ address }) {
 
         }
 
-
-
-    },[contractSBT,accounts,balance]);
+    },[contractSBT,contractOPI,accounts,balance]);
 
     return (
         

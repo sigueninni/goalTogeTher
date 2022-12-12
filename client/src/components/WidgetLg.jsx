@@ -24,11 +24,12 @@ function WidgetLg() {
         });
 
         oldEvents.forEach(event => {
-          debugger;
-          surveysDataLcl.push({
-            '_idSurvey': event.returnValues._idSurvey,
-            '_ownerSurvey': event.returnValues._ownerSurvey,
-          });
+          
+            surveysDataLcl.push({
+              '_idSurvey': event.returnValues._idSurvey,
+              '_ownerSurvey': event.returnValues._ownerSurvey,
+            });
+         // }
 
         });
 
@@ -66,26 +67,26 @@ function WidgetLg() {
 
     return surveys.map((p, i) => {
       return (
-      
 
-          <tr key={i} className="widgetLgTr">
-            <td className="widgetLgUser">
-              <img
-                src="https://images.unsplash.com/photo-1518546305927-5a555bb7020d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8"
-                alt=""
-                className="widgetLgImg"
-              />
-              <span className="widgetLgName">{p.description}</span>
-            </td>
-            {/* <td className="widgetLgDate">14 January 2023</td> */}
-            <td className="widgetLgAmount">50</td>
-            <td className="widgetLgAmount">10</td>
-            <td className="widgetLgStatus">
-              <Button type={getStatusById(p.surveyStatus)} size="small" />
-            </td>
-          </tr>
 
-      
+        <tr key={i} className="widgetLgTr">
+          <td className="widgetLgUser">
+            <img
+              src="https://images.unsplash.com/photo-1518546305927-5a555bb7020d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8"
+              alt=""
+              className="widgetLgImg"
+            />
+            <span className="widgetLgName">{p.description}</span>
+          </td>
+          {/* <td className="widgetLgDate">14 January 2023</td> */}
+          <td className="widgetLgAmount">50</td>
+          <td className="widgetLgAmount">10</td>
+          <td className="widgetLgStatus">
+            <Button type={getStatusById(p.surveyStatus)} size="small" />
+          </td>
+        </tr>
+
+
       );
     });
   };
@@ -139,7 +140,7 @@ function WidgetLg() {
               <Button type="Ongoing" size="small" />
             </td>
           </tr>
-            
+
           <tr className="widgetLgTr">
             <td className="widgetLgUser">
               <img

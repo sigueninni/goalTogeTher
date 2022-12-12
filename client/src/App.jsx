@@ -10,16 +10,8 @@ import OpiDex from "./pages/OpiDex";
 import NewSurvey from "./pages/NewSurvey";
 import SurveyList from "./pages/SurveyList";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import {  useEffect } from "react";
-import { useHistory } from "react-router-dom";
 
 function App() {
-/*   let history = useHistory();
-
-  useEffect(() => {
-    history.push("/");
-  }, []);
- */
 
   return (
     <EthProvider>
@@ -49,8 +41,3 @@ function App() {
 }
 
 export default App;
-{/* <div id="App" >
-<div className="container">
-  <OpiChainDashBoard />
-</div>
-</div> */}

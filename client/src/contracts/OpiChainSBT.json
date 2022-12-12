@@ -31233,12 +31233,12 @@
         }
       },
       "links": {},
-      "address": "0xaEd0808fc7aFF2B3e0eD05282DC3a6F8a97E0F4A",
-      "transactionHash": "0x3563fa0696dc1b1a236c8b1fd1e66ede9c749336bd2d9e83764fb085acba3765"
+      "address": "0xD2bD9AF5f056049B452DFE62C64AebF0726A7909",
+      "transactionHash": "0x0aa3f42630303178cf58e80d3a4f3c794df0123d131300b7ffcc554380b3dfa0"
     }
   },
   "schemaVersion": "3.4.10",
-  "updatedAt": "2022-12-11T02:06:11.032Z",
+  "updatedAt": "2022-12-12T01:07:15.203Z",
   "networkType": "ethereum",
   "devdoc": {
     "author": "Saad Igueninni",

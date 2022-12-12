@@ -164,16 +164,17 @@ contract OpiChainSurveyNFT is ERC721URIStorage, Ownable {
 
         address _ownerSurvey;
 
-        setApprovalForAll(marketplaceContract, true); //Give approval to marketplace
+        //setApprovalForAll(marketplaceContract, true); //Give approval to marketplace
         _ownerSurvey = idToSurveys[_idSurvey].owner;
-        _mint(_ownerSurvey, _idSurvey);
+        _mint(address(this), _idSurvey);
+         setApprovalForAll(address(this), true);
         idToSurveys[_idSurvey].minted = true;
         string memory urinumber = Strings.toString(_idSurvey);
         string
-            memory tokenURI = "https://ipfs.io/ipfs/QmZtyRorNAx7uk6mmm47KiCBNgJBKvG5LrQs1RKHH1C3ip/"; //To change by CID of !!
-        string memory _SBTUri = string.concat(tokenURI, urinumber, ".json");
+            memory tokenURI = "https://ipfs.io/ipfs/QmUqDEuxQ4gmp99ZqEfQRdnrh4YsnEAjhiDreUxwYCGuxo/"; //To change by CID of !!
+        string memory _Uri = string.concat(tokenURI, urinumber, ".json");
 
-        _setTokenURI(_idSurvey, _SBTUri);
+        _setTokenURI(_idSurvey, _Uri);
 
         emit surveyNFTMinted(_idSurvey);
     }
