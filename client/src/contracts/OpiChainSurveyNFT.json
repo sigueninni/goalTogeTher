@@ -30337,12 +30337,12 @@
         }
       },
       "links": {},
-      "address": "0x6C7FF5AeB5Ac5Cd6345B21A89536C8F817Bc6a54",
-      "transactionHash": "0xe180938a99123e314956d0ca8da55772d3daba009940181f99c55c955f7c2643"
+      "address": "0xd06a4E8E775d058F29A85D099E996e6ba717360B",
+      "transactionHash": "0x71b61f5d21b1b601c2dff62a86436e2a67fa3406062b1cf2964d6306f22941c9"
     }
   },
   "schemaVersion": "3.4.10",
-  "updatedAt": "2022-12-12T01:07:15.251Z",
+  "updatedAt": "2022-12-12T08:49:30.473Z",
   "networkType": "ethereum",
   "devdoc": {
     "author": "Saad Igueninni",

@@ -5,16 +5,7 @@ import "../node_modules/@openzeppelin/contracts/token/ERC721/extensions/ERC721UR
 import "../node_modules/@openzeppelin/contracts/utils/Counters.sol";
 import "../node_modules/@openzeppelin/contracts/access/Ownable.sol";
 import "../node_modules/@openzeppelin/contracts/utils/Strings.sol";
-
-
-//Interface name is not important, however functions in it are important
-interface IOpiChainSBT{
-  function greet() external view returns (string memory);
- 
-}
-
-
-
+           
 /// @title  OpiChain SBT contract
 /// @author Saad Igueninni
 /// @notice ERC721 not transferable, bound to Soul
@@ -137,7 +128,7 @@ contract OpiChainSBT is ERC721URIStorage, Ownable {
     ) public onlyOwner returns (uint256) {
         //To change to external after test
         require(
-            !OpiProfiles[msg.sender].isOpiIdGranted,
+            !OpiProfiles[_profileAddress].isOpiIdGranted,
             "OpiID already exists"
         );
 
@@ -164,16 +155,16 @@ contract OpiChainSBT is ERC721URIStorage, Ownable {
         _setTokenURI(newOpiID, _SBTUri);
 
         emit grantedOpiID(newOpiProfile);
-        return newOpiID;
+        return newOpiProfile.OpiIdCounter;
     }
 
     function revokeOpiID(address _profileAddress) external onlyOwner {
         require(
-            OpiProfiles[msg.sender].OpiIdCounter != 0,
+           OpiProfiles[_profileAddress].isOpiIdGranted,
             "OpiID do not exists"
         );
-        delete OpiProfiles[_profileAddress];
         emit revokedOpiID(_profileAddress);
+        delete OpiProfiles[_profileAddress];
     }
 
     function updateOpiID(
@@ -184,7 +175,7 @@ contract OpiChainSBT is ERC721URIStorage, Ownable {
         uint8 _role
     ) external onlyOwner {
         require(
-            OpiProfiles[msg.sender].OpiIdCounter != 0,
+           OpiProfiles[_profileAddress].isOpiIdGranted,
             "OpiID do not exists"
         );
 
@@ -197,7 +188,7 @@ contract OpiChainSBT is ERC721URIStorage, Ownable {
         UpdOpiProfile.role = Role(_role);
         OpiProfiles[_profileAddress] = UpdOpiProfile;
 
-        emit revokedOpiID(_profileAddress);
+        emit updatedOpiID(_profileAddress);
     }
 
     // ::::::::::::: OVVERIDES ::::::::::::: //
@@ -209,7 +200,7 @@ contract OpiChainSBT is ERC721URIStorage, Ownable {
     ) internal virtual override {
         require(
             from == address(0),
-            "SBT : not possible de Transfer your OpiId"
+            "SBT : not possible to Transfer your OpiId"
         );
         super._beforeTokenTransfer(from, to, tokenId, batchSize);
     }
