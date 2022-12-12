@@ -132,8 +132,9 @@ contract OpiSurveysMarketPlace is ReentrancyGuard, Ownable {
             "Not enough ether for listing fee"
         );
         //require tokenid est au statut Terminated!
-
-        surveyOpiNFT.transferFrom(msg.sender, address(this), _tokenId);
+       // surveyOpiNFT.transferFrom(msg.sender, address(this), _tokenId); 
+       //We choose to  mint to Marketplace from the beginning because we have 2 NFTs, 
+       //one represnting the Survey and One for results of Survey if to be listed
 
         _nftSurveyCount.increment();
 

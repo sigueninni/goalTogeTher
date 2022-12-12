@@ -48,6 +48,7 @@ contract OpiChainSurveyNFT is ERC721URIStorage, Ownable {
         SurveyStatus surveyStatus;
         bool exists;
         bool minted;
+        bool listed;
     }
 
     mapping(uint256 => Survey) idToSurveys;
@@ -58,7 +59,7 @@ contract OpiChainSurveyNFT is ERC721URIStorage, Ownable {
     mapping(uint256 => mapping(uint256 => Answer[])) surveyToQuestionToAnswer;
 
     uint256 public constant SurveyUnitCost = 500;
-    address marketplaceContract;
+    //address marketplaceContract;
     // OpiChainSBT sbtContract;
     IERC20 opi;
 
@@ -135,6 +136,16 @@ contract OpiChainSurveyNFT is ERC721URIStorage, Ownable {
         emit surveyTerminated(_idSurvey);
     }
 
+    /// @notice change Flag listed
+    /// @param _idSurvey Id of SurveyNFT result
+    function setSurveyListed(uint256 _idSurvey) external {
+        idToSurveys[_idSurvey].listed = true;
+    }
+
+    function setSurveyOwner(uint256 _idSurvey, address _owner) external {
+        idToSurveys[_idSurvey].owner = _owner;
+    }
+
     // ::::::::::::: SURVEYS HANDLING ::::::::::::: //
 
     /// @notice Create a survey
@@ -153,6 +164,7 @@ contract OpiChainSurveyNFT is ERC721URIStorage, Ownable {
             _description,
             SurveyStatus.OnGoing,
             true,
+            false,
             false
         );
 
@@ -166,7 +178,9 @@ contract OpiChainSurveyNFT is ERC721URIStorage, Ownable {
     /// @notice Mint a survey
     /// @dev Mint only when in status Terminated
     /// @param _idSurvey id of SurveyNFT result
-    function mintSurvey(uint256 _idSurvey) external {
+    function mintSurvey(address marketplaceContract, uint256 _idSurvey)
+        external
+    {
         require(
             getSurveyStatusById(_idSurvey) == uint256(SurveyStatus.Terminated),
             "Survey not terminated"
@@ -176,8 +190,8 @@ contract OpiChainSurveyNFT is ERC721URIStorage, Ownable {
 
         //setApprovalForAll(marketplaceContract, true); //Give approval to marketplace
         _ownerSurvey = idToSurveys[_idSurvey].owner;
-        _mint(address(this), _idSurvey);
-        setApprovalForAll(address(this), true);
+        _mint(marketplaceContract, _idSurvey);
+        setApprovalForAll(marketplaceContract, true);
         idToSurveys[_idSurvey].minted = true;
         string memory urinumber = Strings.toString(_idSurvey);
         string
@@ -192,8 +206,9 @@ contract OpiChainSurveyNFT is ERC721URIStorage, Ownable {
     /// @notice Terminate a survey
     /// @dev only Terminated surveys can be minted
     /// @param _idSurvey id of SurveyNFT result
-    function terminateSurvey(uint256 _idSurvey) external //onlySurveyeds
-    {
+    function terminateSurvey(
+        uint256 _idSurvey //onlySurveyeds
+    ) external {
         require(
             getSurveyStatusById(_idSurvey) == uint256(SurveyStatus.OnGoing),
             "Survey not onGoing!"
@@ -224,7 +239,7 @@ contract OpiChainSurveyNFT is ERC721URIStorage, Ownable {
     }
 
     // ::::::::::::: ANSWERS MANAGEMENT ::::::::::::: //
-    
+
     /// @notice Give answer
     /// @dev Only Sounders can answer
     /// @param _idSurvey id of SurveyNFT result
@@ -232,9 +247,8 @@ contract OpiChainSurveyNFT is ERC721URIStorage, Ownable {
     function giveAnswer(
         uint256 _idSurvey,
         uint256 _idQuestionAnswer,
-        string memory _answer
-    ) external //onlySounders
-    {
+        string memory _answer //onlySounders
+    ) external {
         uint256 newIdAnswer = _idAnswer.current();
         surveyToQuestionToAnswer[_idSurvey][_idQuestionAnswer].push(
             Answer(msg.sender, newIdAnswer, _answer)

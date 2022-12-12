@@ -72,7 +72,7 @@ function SurveyList() {
 
     const mintSurvey = async (_idSurvey) => {
         try {
-            await contractOpiChainSurveyNFT.methods.mintSurvey(_idSurvey).send({ from: accounts[0] });
+            await contractOpiChainSurveyNFT.methods.mintSurvey(contractMarketPlace._address, _idSurvey).send({ from: accounts[0] });
         } catch (err) {
             console.log(err);
         }
@@ -86,10 +86,11 @@ function SurveyList() {
     const listSurveyNft = async (_idSurvey, _price) => {
         debugger;
         try {
-           // await contractOpiChainSurveyNFT.methods.approve(contractMarketPlace._address, _idSurvey).send({ from: accounts[0] });
-            await contractMarketPlace.methods.listSurveyNft(_idSurvey, parseInt(_price)).send({ from: contractOpiChainSurveyNFT._address,  value: web3.utils.toWei('0.0001', 'ether')})
-           // .then(result => { throw Error('Error') })
-          //  .catch(revertReason => console.log({ revertReason }));
+            // await contractOpiChainSurveyNFT.methods.approve(contractMarketPlace._address, _idSurvey).send({ from: accounts[0] });
+            await contractMarketPlace.methods.listSurveyNft(_idSurvey, parseInt(_price)).send({ from: accounts[0] , value: web3.utils.toWei('0.0001', 'ether') })
+            await contractOpiChainSurveyNFT.methods.setSurveyListed(_idSurvey).send({ from: accounts[0] });
+            // .then(result => { throw Error('Error') })
+            //  .catch(revertReason => console.log({ revertReason }));
         } catch (err) {
             console.log(err);
         }
@@ -177,21 +178,23 @@ function SurveyList() {
             renderCell: (params) => {
                 return (
                     <>
-                        <button className="userListEdit">Edit</button>
+                        {!params.row.minted &&  <button className="userListEdit">Edit</button> }
                         {params.row.surveyStatus == '0' && <button className="userListEdit"
                             onClick={() => setSurveyTerminated(params.row.idSurvey)}
                         >Terminate survey</button>}
-                        {params.row.surveyStatus == '1' && !params.row.minted && <button className="userListEdit"
+                        {params.row.surveyStatus == '1' && !params.row.minted && !params.row.listed && <button className="userListEdit"
                             onClick={() => mintSurvey(params.row.idSurvey)}>Mint NFT results</button>}
-                        {params.row.minted && <button className="userListEdit">Stack survey</button>}
-                        {params.row.minted && <button className="userListEdit"
+                        {params.row.minted && !params.row.listed && <button className="userListEdit">Stack survey</button>}
+                        {params.row.minted && !params.row.listed && <button className="userListEdit"
                             onClick={() => listSurveyNft(params.row.idSurvey, "50")}
                         >List survey on Marketplace</button>}
 
-                        <DeleteOutline
+                        {!params.row.minted && <DeleteOutline
                             className="userListDelete"
-                            onClick={() => handleDelete(params.row.idSurvey)}
-                        />
+                            onClick={() => handleDelete(params.row.idSurvey)}  />}
+
+                        {params.row.listed &&  <button className="userListNotEdit">Survey Listed on Marketplace</button> }
+
                     </>
                 );
             },

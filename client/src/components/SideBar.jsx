@@ -63,7 +63,7 @@ function Sidebar() {
           <div className="sidebarMenu">
             <h3 className="sidebarTitle">Quick Menu Surveyed</h3>
             <ul className="sidebarList">
-              <Link to="/products" className="link">
+              <Link to="/MarketPlace" className="link">
                 <li className="sidebarListItem">
                   <Storefront className="sidebarIcon" />
                   Surveys Marketplace

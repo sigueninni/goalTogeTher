@@ -1,0 +1,28 @@
+.marketPlace {
+    flex: 4;
+    padding: 100px;
+  }
+
+  .itemMarket{
+    font-size: 24px;
+    margin-bottom: 120px;
+    color: red;
+  }
+
+  #buyContainerButt{
+    display: flex;
+    justify-content : center;
+    align-items: center;
+
+  }
+
+
+  .butMarketNotEdit{
+    border: none;
+    border-radius: 10px;
+    padding: 5px 10px;
+    background-color: #fd3f83;
+    color: white;
+    cursor: pointer;
+    margin-right: 20px;
+}

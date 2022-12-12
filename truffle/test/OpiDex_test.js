@@ -36,11 +36,6 @@ contract("OpiDex", accounts => {
         );
       });
 
-
-    
-
-
-
     after(async function () {
         OpiDexinstance = null;
     });

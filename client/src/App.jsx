@@ -9,6 +9,7 @@ import NewUser from "./pages/NewUser";
 import OpiDex from "./pages/OpiDex";
 import NewSurvey from "./pages/NewSurvey";
 import SurveyList from "./pages/SurveyList";
+import MarketPlace from "./pages/MarketPlace"
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
             <Route path="/opiDex" element={<OpiDex />} />
             <Route path="/NewSurvey" element={<NewSurvey />} />
             <Route path="/SurveyList" element={<SurveyList />} />
+            <Route path="/MarketPlace" element={<MarketPlace />} />
 
             {/*   <Route path="/products" element={<ProductList />} />
           <Route path="/product/:productId" element={<Product />} />
