@@ -7,6 +7,12 @@ import "../node_modules/@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import "../node_modules/@openzeppelin/contracts/security/ReentrancyGuard.sol";
 import "../node_modules/@openzeppelin/contracts/access/Ownable.sol";
 
+
+/// @title  OpiSurveysMarketPlace
+/// @author Saad Igueninni
+/// @notice Marketplace for NFT surveys results
+/// @dev Inherits the OpenZepplin ReentrancyGuard Ownable contracts
+
 contract OpiSurveysMarketPlace is ReentrancyGuard, Ownable {
     using Counters for Counters.Counter;
 

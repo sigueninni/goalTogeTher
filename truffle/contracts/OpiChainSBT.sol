@@ -32,7 +32,7 @@ contract OpiChainSBT is ERC721URIStorage, Ownable {
         bool isOpiIdGranted;
     }
 
-    //mapping(address=>bool) grantedOPIIds;
+    /// @notice mapping to match Adress to Profile
     mapping(address => OpiProfile) OpiProfiles;
     Counters.Counter private _OpiIdCounter;
 
@@ -41,14 +41,6 @@ contract OpiChainSBT is ERC721URIStorage, Ownable {
     event updatedOpiID(address _profileAddress);
 
     constructor() ERC721("OpiChainID", "OpiId") {}
-
-    /*        address test = 0xd9cB466B10b86Da36Cb7E39d6DD86d25A500Ccd6;
-        grantOpiID( test,
-       // "https://gateway.pinata.cloud/ipfs/QmQzEEbvYSV2atiDv8PdT4WuNyjTLbKpEWFVqFFVFLGAut/1.json",
-        "saad",
-        38,
-        0,
-        0); */
 
     // ::::::::::::: MODIFIERS ::::::::::::: //
     modifier onlySounders(address _profileAddress) {
@@ -97,6 +89,7 @@ contract OpiChainSBT is ERC721URIStorage, Ownable {
         return OpiProfiles[_profileAddress].isOpiIdGranted;
     }
 
+    /// @notice we check existence and role 
     function isSounder(address _profileAddress)
         external
         view
@@ -107,6 +100,7 @@ contract OpiChainSBT is ERC721URIStorage, Ownable {
             OpiProfiles[_profileAddress].role == Role.Sounder);
     }
 
+    /// @notice we check existence and role
     function isSurveyed(address _profileAddress)
         external
         view
@@ -118,6 +112,14 @@ contract OpiChainSBT is ERC721URIStorage, Ownable {
     }
 
     // ::::::::::::: MEMBERS MANAGEMENT ::::::::::::: //
+
+    /// @notice Owner grant SBT
+    /// @dev We check non existence of profile
+    /// @param _profileAddress Address of new profile
+    /// @param _name Name 
+    /// @param _age age
+    /// @param _gender gender( )
+    /// @return newOpiID Id OF SBT
     function grantOpiID(
         address _profileAddress,
         // string memory _SBTUri,
@@ -126,7 +128,6 @@ contract OpiChainSBT is ERC721URIStorage, Ownable {
         uint8 _gender,
         uint8 _role
     ) public onlyOwner returns (uint256) {
-        //To change to external after test
         require(
             !OpiProfiles[_profileAddress].isOpiIdGranted,
             "OpiID already exists"
@@ -155,9 +156,13 @@ contract OpiChainSBT is ERC721URIStorage, Ownable {
         _setTokenURI(newOpiID, _SBTUri);
 
         emit grantedOpiID(newOpiProfile);
-        return newOpiProfile.OpiIdCounter;
+        return newOpiID;
     }
 
+
+    /// @notice Owner revoke SBT
+    /// @dev Wecheck exitence before revoking
+    /// @param _profileAddress Address of the revoked profile
     function revokeOpiID(address _profileAddress) external onlyOwner {
         require(
            OpiProfiles[_profileAddress].isOpiIdGranted,
@@ -167,6 +172,13 @@ contract OpiChainSBT is ERC721URIStorage, Ownable {
         delete OpiProfiles[_profileAddress];
     }
 
+
+    /// @notice Owner update SBT
+    /// @dev We check  existence of profile
+    /// @param _profileAddress Address of  profile to be updated
+    /// @param _name Name 
+    /// @param _age age
+    /// @param _gender gender( )
     function updateOpiID(
         address _profileAddress,
         string calldata _name,
@@ -192,6 +204,7 @@ contract OpiChainSBT is ERC721URIStorage, Ownable {
     }
 
     // ::::::::::::: OVVERIDES ::::::::::::: //
+    /// @notice Usage of hook to block Transfer of SBT
     function _beforeTokenTransfer(
         address from,
         address to,

@@ -4,7 +4,10 @@ pragma solidity 0.8.17;
 import "../node_modules/@openzeppelin/contracts/access/Ownable.sol";
 import "../node_modules/@openzeppelin/contracts/token/ERC20/IERC20.sol";
 
-
+/// @title  OpiDex
+/// @author Saad Igueninni
+/// @notice Responsible of selling OPIs, withdraw...
+/// @dev Inherits the OpenZepplin Ownable contract
 contract OpiDex is Ownable {
     IERC20 opi;
     address public opiContractAddress;
