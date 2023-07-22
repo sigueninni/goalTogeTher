@@ -1,16 +1,16 @@
 // SPDX-License-Identifier: GPL-3.0
-pragma solidity 0.8.17;
+pragma solidity 0.8.19;
 
 import "../node_modules/@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
 import "../node_modules/@openzeppelin/contracts/utils/Counters.sol";
 import "../node_modules/@openzeppelin/contracts/access/Ownable.sol";
 import "../node_modules/@openzeppelin/contracts/utils/Strings.sol";
            
-/// @title  OpiChain SBT contract
+/// @title  ChlChain SBT contract
 /// @author Saad Igueninni
 /// @notice ERC721 not transferable, bound to Soul
 /// @dev Inherits the OpenZepplin Ownable ,ERC721URIStorage,Counters & Strings contracts
-contract OpiChainSBT is ERC721URIStorage, Ownable {
+contract ChlChainSBT is ERC721URIStorage, Ownable {
     using Counters for Counters.Counter;
 
     enum Gender {
@@ -20,73 +20,73 @@ contract OpiChainSBT is ERC721URIStorage, Ownable {
 
     enum Role {
         Sounder,
-        Surveyed
+        Challengeed
     }
 
-    struct OpiProfile {
-        uint256 OpiIdCounter;
+    struct ChlProfile {
+        uint256 ChlIdCounter;
         string name;
         Gender gender;
         uint256 age;
         Role role;
-        bool isOpiIdGranted;
+        bool isChlIdGranted;
     }
 
     /// @notice mapping to match Adress to Profile
-    mapping(address => OpiProfile) OpiProfiles;
-    Counters.Counter private _OpiIdCounter;
+    mapping(address => ChlProfile) ChlProfiles;
+    Counters.Counter private _ChlIdCounter;
 
-    event grantedOpiID(OpiProfile _newOpiProfile);
-    event revokedOpiID(address _profileAddress);
-    event updatedOpiID(address _profileAddress);
+    event grantedChlID(ChlProfile _newChlProfile);
+    event revokedChlID(address _profileAddress);
+    event updatedChlID(address _profileAddress);
 
-    constructor() ERC721("OpiChainID", "OpiId") {}
+    constructor() ERC721("ChlChainID", "ChlId") {}
 
     // ::::::::::::: MODIFIERS ::::::::::::: //
     modifier onlySounders(address _profileAddress) {
         require(
-            (OpiProfiles[_profileAddress].isOpiIdGranted &&
-                OpiProfiles[_profileAddress].role == Role.Sounder),
+            (ChlProfiles[_profileAddress].isChlIdGranted &&
+                ChlProfiles[_profileAddress].role == Role.Sounder),
             "You are not a sounder"
         );
         _;
     }
 
-    modifier onlySurveyeds(address _profileAddress) {
+    modifier onlyChallengeeds(address _profileAddress) {
         require(
-            (OpiProfiles[_profileAddress].isOpiIdGranted &&
-                OpiProfiles[msg.sender].role == Role.Surveyed),
-            "You are not a surveyed"
+            (ChlProfiles[_profileAddress].isChlIdGranted &&
+                ChlProfiles[msg.sender].role == Role.Challengeed),
+            "You are not a Challengeed"
         );
         _;
     }
 
-    modifier opiIdExists(address _profileAddress) {
+    modifier ChlIdExists(address _profileAddress) {
         require(
-            OpiProfiles[_profileAddress].isOpiIdGranted,
-            "OpiID do not exists"
+            ChlProfiles[_profileAddress].isChlIdGranted,
+            "ChlID do not exists"
         );
         _;
     }
 
     // ::::::::::::: GETTERS ::::::::::::: //
-    function getOpiID(address _profileAddress)
+    function getChlID(address _profileAddress)
         external
         view
         onlyOwner
-        opiIdExists(_profileAddress)
-        returns (OpiProfile memory)
+        ChlIdExists(_profileAddress)
+        returns (ChlProfile memory)
     {
-        return OpiProfiles[_profileAddress];
+        return ChlProfiles[_profileAddress];
     }
 
-    function isGrantedOpiID(address _profileAddress)
+    function isGrantedChlID(address _profileAddress)
         external
         view
         onlyOwner
         returns (bool)
     {
-        return OpiProfiles[_profileAddress].isOpiIdGranted;
+        return ChlProfiles[_profileAddress].isChlIdGranted;
     }
 
     /// @notice we check existence and role 
@@ -96,19 +96,19 @@ contract OpiChainSBT is ERC721URIStorage, Ownable {
         onlyOwner
         returns (bool)
     {
-        return (OpiProfiles[_profileAddress].isOpiIdGranted &&
-            OpiProfiles[_profileAddress].role == Role.Sounder);
+        return (ChlProfiles[_profileAddress].isChlIdGranted &&
+            ChlProfiles[_profileAddress].role == Role.Sounder);
     }
 
     /// @notice we check existence and role
-    function isSurveyed(address _profileAddress)
+    function isChallengeed(address _profileAddress)
         external
         view
         onlyOwner
         returns (bool)
     {
-        return (OpiProfiles[_profileAddress].isOpiIdGranted &&
-            OpiProfiles[_profileAddress].role == Role.Surveyed);
+        return (ChlProfiles[_profileAddress].isChlIdGranted &&
+            ChlProfiles[_profileAddress].role == Role.Challengeed);
     }
 
     // ::::::::::::: MEMBERS MANAGEMENT ::::::::::::: //
@@ -119,8 +119,8 @@ contract OpiChainSBT is ERC721URIStorage, Ownable {
     /// @param _name Name 
     /// @param _age age
     /// @param _gender gender( )
-    /// @return newOpiID Id OF SBT
-    function grantOpiID(
+    /// @return newChlID Id OF SBT
+    function grantChlID(
         address _profileAddress,
         // string memory _SBTUri,
         string memory _name,
@@ -129,47 +129,47 @@ contract OpiChainSBT is ERC721URIStorage, Ownable {
         uint8 _role
     ) public onlyOwner returns (uint256) {
         require(
-            !OpiProfiles[_profileAddress].isOpiIdGranted,
-            "OpiID already exists"
+            !ChlProfiles[_profileAddress].isChlIdGranted,
+            "ChlID already exists"
         );
 
-        _OpiIdCounter.increment(); //To start at 1
-        uint256 newOpiID = _OpiIdCounter.current();
-        OpiProfile memory newOpiProfile;
+        _ChlIdCounter.increment(); //To start at 1
+        uint256 newChlID = _ChlIdCounter.current();
+        ChlProfile memory newChlProfile;
 
         //Add new Profile
-        newOpiProfile.OpiIdCounter = newOpiID;
-        newOpiProfile.name = _name;
-        newOpiProfile.age = _age;
-        newOpiProfile.gender = Gender(_gender);
-        newOpiProfile.role = Role(_role);
-        newOpiProfile.isOpiIdGranted = true;
-        OpiProfiles[_profileAddress] = newOpiProfile;
+        newChlProfile.ChlIdCounter = newChlID;
+        newChlProfile.name = _name;
+        newChlProfile.age = _age;
+        newChlProfile.gender = Gender(_gender);
+        newChlProfile.role = Role(_role);
+        newChlProfile.isChlIdGranted = true;
+        ChlProfiles[_profileAddress] = newChlProfile;
 
-        _mint(_profileAddress, newOpiID);
+        _mint(_profileAddress, newChlID);
 
-        string memory urinumber = Strings.toString(newOpiID);
+        string memory urinumber = Strings.toString(newChlID);
         string
             memory tokenURI = "https://ipfs.io/ipfs/QmQiceiGFxV72zuKhy3ggZhoFu1Gcuvu35khedjtxAML6G/";
         string memory _SBTUri = string.concat(tokenURI, urinumber, ".json");
 
-        _setTokenURI(newOpiID, _SBTUri);
+        _setTokenURI(newChlID, _SBTUri);
 
-        emit grantedOpiID(newOpiProfile);
-        return newOpiID;
+        emit grantedChlID(newChlProfile);
+        return newChlID;
     }
 
 
     /// @notice Owner revoke SBT
     /// @dev Wecheck exitence before revoking
     /// @param _profileAddress Address of the revoked profile
-    function revokeOpiID(address _profileAddress) external onlyOwner {
+    function revokeChlID(address _profileAddress) external onlyOwner {
         require(
-           OpiProfiles[_profileAddress].isOpiIdGranted,
-            "OpiID do not exists"
+           ChlProfiles[_profileAddress].isChlIdGranted,
+            "ChlID do not exists"
         );
-        emit revokedOpiID(_profileAddress);
-        delete OpiProfiles[_profileAddress];
+        emit revokedChlID(_profileAddress);
+        delete ChlProfiles[_profileAddress];
     }
 
 
@@ -179,7 +179,7 @@ contract OpiChainSBT is ERC721URIStorage, Ownable {
     /// @param _name Name 
     /// @param _age age
     /// @param _gender gender( )
-    function updateOpiID(
+    function updateChlID(
         address _profileAddress,
         string calldata _name,
         uint256 _age,
@@ -187,20 +187,20 @@ contract OpiChainSBT is ERC721URIStorage, Ownable {
         uint8 _role
     ) external onlyOwner {
         require(
-           OpiProfiles[_profileAddress].isOpiIdGranted,
-            "OpiID do not exists"
+           ChlProfiles[_profileAddress].isChlIdGranted,
+            "ChlID do not exists"
         );
 
-        OpiProfile memory UpdOpiProfile;
+        ChlProfile memory UpdChlProfile;
 
-        UpdOpiProfile = OpiProfiles[_profileAddress];
-        UpdOpiProfile.name = _name;
-        UpdOpiProfile.age = _age;
-        UpdOpiProfile.gender = Gender(_gender);
-        UpdOpiProfile.role = Role(_role);
-        OpiProfiles[_profileAddress] = UpdOpiProfile;
+        UpdChlProfile = ChlProfiles[_profileAddress];
+        UpdChlProfile.name = _name;
+        UpdChlProfile.age = _age;
+        UpdChlProfile.gender = Gender(_gender);
+        UpdChlProfile.role = Role(_role);
+        ChlProfiles[_profileAddress] = UpdChlProfile;
 
-        emit updatedOpiID(_profileAddress);
+        emit updatedChlID(_profileAddress);
     }
 
     // ::::::::::::: OVVERIDES ::::::::::::: //
@@ -213,7 +213,7 @@ contract OpiChainSBT is ERC721URIStorage, Ownable {
     ) internal virtual override {
         require(
             from == address(0),
-            "SBT : not possible to Transfer your OpiId"
+            "SBT : not possible to Transfer your ChlId"
         );
         super._beforeTokenTransfer(from, to, tokenId, batchSize);
     }

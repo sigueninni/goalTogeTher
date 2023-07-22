@@ -14,12 +14,8 @@ function Topbar() {
     <div className="topbar">
       <div className="topbarWrapper">
         <div className="topLeft">
-          <span className="logo">OpiChain</span>
+          <span className="logo">GoalTogether</span>
         </div>
-{/*         <div className="topCenter">
-          <div id="topBarchip"> {accounts && accounts[0] && <Chip variant="outlined" label={accounts[0]} color="secondary" icon={<PersonIcon />} />}</div>
-          <div>Balance : 30 OPI</div>
-        </div> */}
         <div className="topRight">
           <div className="topbarIconContainer">
             <NotificationsNone />

@@ -1,4 +1,4 @@
-import '../css/page/opidex.css';
+import '../css/page/chldex.css';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Stack from '@mui/material/Stack';
@@ -10,15 +10,15 @@ import SwapHorizIcon from '@mui/icons-material/SwapHoriz';
 import { useNavigate } from 'react-router-dom';
 
 
-function OpiDex() {
-    const { state: { web3 ,accounts, owner, contractOPI ,contractOpiDex } } = useEth();
+function ChlDex() {
+    const { state: { web3 ,accounts, owner, contractCHL ,contractChlDex } } = useEth();
     const [amountEth, setAmountEth] = useState('');
     const navigate = useNavigate();
 
     const buyTokens = async (_amount) => {
         try {
-          //  await contractOPI.methods.approve( contractOpiDex.address, "1000").send({ from: accounts[0]});
-            await contractOpiDex.methods.buyTokens().send({ from: accounts[0],  value: web3.utils.toWei(_amount, 'ether') });//value:web3.utils.fromWei(_amount, "ether")} );
+          //  await contractCHL.methods.approve( contractChlDex.address, "1000").send({ from: accounts[0]});
+            await contractChlDex.methods.buyTokens().send({ from: accounts[0],  value: web3.utils.toWei(_amount, 'ether') });//value:web3.utils.fromWei(_amount, "ether")} );
         } catch (err) {
             console.log(err);
         }
@@ -44,7 +44,7 @@ function OpiDex() {
       };
 
   return (
-    <div className="opidex">
+    <div className="Chldex">
        <Box sx={{ width: '100%' }}  display="flex"   justifyContent="center"
        >
       <Stack  direction="row"
@@ -59,12 +59,12 @@ function OpiDex() {
           value={amountEth}
         />
 
-       <button className="opidexButton"  onClick={onBuyToken}>Buy OPIs</button>
-       <Chip icon={<SwapHorizIcon />}   label="1 Ether = 50 OPI =  1 survey**" color="secondary" variant="outlined" />
+       <button className="ChldexButton"  onClick={onBuyToken}>Buy CHLs</button>
+       <Chip icon={<SwapHorizIcon />}   label="1 Ether = 50 CHL =  1 Challenge**" color="secondary" variant="outlined" />
        </Stack>
     </Box>
     </div>
   );
 }
 
-export default OpiDex;
+export default ChlDex;

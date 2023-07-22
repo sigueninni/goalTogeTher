@@ -21,7 +21,7 @@ function UserList() {
         if (contractSBT && contractSBT?.methods) {
             (async function () {
 
-                let oldEvents = await contractSBT.getPastEvents('grantedOpiID', {
+                let oldEvents = await contractSBT.getPastEvents('grantedChlID', {
                     fromBlock: 0,
                     toBlock: 'latest'
                 });
@@ -29,16 +29,16 @@ function UserList() {
                 oldEvents.forEach(event => {
                     usersDataLcl.push(
                         {
-                            'OpiIdCounter': event.returnValues._newOpiProfile.OpiIdCounter,
-                            'role': event.returnValues._newOpiProfile.role,
-                            'gender': event.returnValues._newOpiProfile.gender,
-                            'age': event.returnValues._newOpiProfile.age,
-                            'isOpiIdGranted': event.returnValues._newOpiProfile.isOpiIdGranted,
-                            'balance': '50 opi5',
+                            'ChlIdCounter': event.returnValues._newChlProfile.ChlIdCounter,
+                            'role': event.returnValues._newChlProfile.role,
+                            'gender': event.returnValues._newChlProfile.gender,
+                            'age': event.returnValues._newChlProfile.age,
+                            'isChlIdGranted': event.returnValues._newChlProfile.isChlIdGranted,
+                            'balance': '0 CHL',
                             'location': 'Paris,France'
 
                         }
-                        //  event.returnValues._newOpiProfile,
+                        //  event.returnValues._newChlProfile,
                     );
 
                 });
@@ -51,7 +51,7 @@ function UserList() {
 
     const getRoleById = (role) => {
 
-        return (role === "0" ? 'Sounder' : 'Surveyed');
+        return (role === "0" ? 'Sounder' : 'Challengeed');
     };
 
     const getGenderById = (gender) => {
@@ -60,11 +60,11 @@ function UserList() {
 
 
     const handleDelete = (id) => {
-        setUsersData(usersData.filter((item) => item.OpiIdCounter !== id));
+        setUsersData(usersData.filter((item) => item.ChlIdCounter !== id));
     };
 
     const columns = [
-        { field: "OpiIdCounter", headerName: "Opi Id", width: 90 },
+        { field: "ChlIdCounter", headerName: "Chl Id", width: 90 },
         {
             field: "user",
             headerName: "User",
@@ -72,7 +72,7 @@ function UserList() {
             renderCell: (params) => {
                 return (
                     <div className="userListUser">
-                        <img className="userListImg" src={"https://gateway.pinata.cloud/ipfs/QmdGwjCgrCAyUddv8z1XBhuS5EptRjVKUnEraHwuKvr66A/" + params.row.OpiIdCounter.toString() + ".png"} alt="" />
+                        <img className="userListImg" src={"https://gateway.pinata.cloud/ipfs/QmdGwjCgrCAyUddv8z1XBhuS5EptRjVKUnEraHwuKvr66A/" + params.row.ChlIdCounter.toString() + ".png"} alt="" />
                         {params.row.username}
                     </div>
                 );
@@ -105,7 +105,7 @@ function UserList() {
         { field: "age", headerName: "Age", width: 90 },
         { field: "balance", headerName: "Balance", width: 90 },
         { field: "location", headerName: "Location", width: 90 },
-        { field: "isOpiIdGranted", headerName: "Opi Id Granted", width: 90 },
+        { field: "isChlIdGranted", headerName: "Chl Id Granted", width: 90 },
         {
             field: "action",
             headerName: "Action",
@@ -113,12 +113,12 @@ function UserList() {
             renderCell: (params) => {
                 return (
                     <>
-                        <Link to={"/user/" + params.row.OpiIdCounter} state={{ row: params.row }}>
+                        <Link to={"/user/" + params.row.ChlIdCounter} state={{ row: params.row }}>
                             <button className="userListEdit">Edit</button>
                         </Link>
                         <DeleteOutline
                             className="userListDelete"
-                            onClick={() => handleDelete(params.row.OpiIdCounter)}
+                            onClick={() => handleDelete(params.row.ChlIdCounter)}
                         />
                     </>
                 );
@@ -130,7 +130,7 @@ function UserList() {
 
         <div className="userList">
             <div className="userListTitleContainer">
-                <h1 className="userListTitle">Create a new OPI member</h1>
+                <h1 className="userListTitle">Create a new GoalTogether Member</h1>
                 <Link to="/newUser">
                     <button className="userListAddButton">Create</button>
                 </Link>
@@ -141,7 +141,7 @@ function UserList() {
                 columns={columns}
                 pageSize={8}
                 checkboxSelection
-                getRowId={(row) => row.OpiIdCounter}
+                getRowId={(row) => row.ChlIdCounter}
             />
         </div>
     );

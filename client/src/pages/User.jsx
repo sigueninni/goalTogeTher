@@ -19,7 +19,7 @@ function User() {
 
 
   const getRoleById = (role) => {
-    return (role === 0 ? 'Sounder' : 'Surveyed');
+    return (role === 0 ? 'Sounder' : 'Challengeed');
   };
 
   const getGenderById = (gender) => {
@@ -39,7 +39,7 @@ function User() {
         <div className="userShow">
           <div className="userShowTop">
             <img
-              src={"https://gateway.pinata.cloud/ipfs/QmdGwjCgrCAyUddv8z1XBhuS5EptRjVKUnEraHwuKvr66A/" + row.OpiIdCounter.toString() + ".png"}
+              src={"https://gateway.pinata.cloud/ipfs/QmdGwjCgrCAyUddv8z1XBhuS5EptRjVKUnEraHwuKvr66A/" + row.ChlIdCounter.toString() + ".png"}
               alt=""
               className="userShowImg"
             />
@@ -52,7 +52,7 @@ function User() {
             <span className="userShowTitle">Account Details</span>
             <div className="userShowInfo">
               <PermIdentity className="userShowIcon" />
-              <span className="userShowInfoTitle">{row.OpiIdCounter}</span>
+              <span className="userShowInfoTitle">{row.ChlIdCounter}</span>
             </div>
             <div className="userShowInfo">
               <Transgender className="userShowIcon" />
@@ -73,7 +73,7 @@ function User() {
             </div>
             <div className="userShowInfo">
               <MailOutline className="userShowIcon" />
-              <span className="userShowInfoTitle">alyra@opichain.com</span>
+              <span className="userShowInfoTitle">alyra@Chlchain.com</span>
             </div>
             <div className="userShowInfo">
               <LocationSearching className="userShowIcon" />
@@ -113,7 +113,7 @@ function User() {
                 <label>Email</label>
                 <input
                   type="text"
-                  placeholder="alyra@opichain.com"
+                  placeholder="alyra@Chlchain.com"
                   className="userUpdateInput"
                 />
               </div>

@@ -20,7 +20,7 @@ function App() {
         <Topbar />
         <div className="container"> 
         {/* <Container> */}
-          {/* <Sidebar /> */}
+          <Sidebar />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/users" element={<UserList />} />

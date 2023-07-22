@@ -1,13 +1,13 @@
-.newSurvey {
+.NewChallenge {
   flex: 4;
   padding: 50px;
 }
 
-.newSurveyTitle {
+.NewChallengeTitle {
   color: #683aa4;
 }
 
-.newSurveyForm {
+.NewChallengeForm {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -16,7 +16,7 @@
 }
 
 
-.newSurveyItem {
+.NewChallengeItem {
   width: 400px;
   display: flex;
   flex-direction: column;
@@ -25,7 +25,7 @@
 }
 
 
-.newSurveyItem {
+.NewChallengeItem {
   width: 400px;
   display: flex;
   flex-direction: column;
@@ -34,7 +34,7 @@
 }
 
 
-.newSurveyItemQuestion {
+.NewChallengeItemQuestion {
   width: 800px;
   display: flex;
   flex-direction: column;
@@ -43,14 +43,14 @@
 }
 
 
-.newSurveyItem>label {
+.NewChallengeItem>label {
   margin-bottom: 10px;
   font-size: 14px;
   font-weight: 600;
   color: rgb(151, 150, 150);
 }
 
-.newSurveyItem>input {
+.NewChallengeItem>input {
   height: 20px;
   padding: 10px;
   border: 1px solid gray;
@@ -58,7 +58,7 @@
 }
 
 
-.newSurveyItemQuestion>label {
+.NewChallengeItemQuestion>label {
   margin-bottom: 10px;
   font-size: 14px;
   font-weight: 600;
@@ -66,7 +66,7 @@
 }
 
 
-.newSurveyItemQuestion>input {
+.NewChallengeItemQuestion>input {
   height: 20px;
   padding: 10px;
   border: 1px solid gray;
@@ -75,7 +75,7 @@
 
 
 
-.newSurveyButton {
+.NewChallengeButton {
   width: 200px;
   border: none;
   background-color: #683aa4;
@@ -87,7 +87,7 @@
   cursor: pointer;
 }
 
-.newSurveyBuyOpi {
+.NewChallengeBuyChl {
   height: 50%;
   color: #fd3f83;
   font-size: 15px;

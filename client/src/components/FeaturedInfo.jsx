@@ -1,12 +1,41 @@
-import '../css/component/featuredInfo.css'
+import '../css/component/featuredInfo.css';
+import ChallengeCard from '../components/ChallengeCard';
+import Typography from '@mui/material/Typography';
+import { AddCircle} from '@mui/icons-material';
 
 import { ArrowDownward, ArrowUpward } from '@mui/icons-material';
 
 function FeaturedInfo() {
   return (
-    <div className="featured">
-      <div className="featuredItem">
-        <span className="featuredTitle">OPI value</span>
+    <>
+
+      <h3 className="featuredTitle">My Challenges</h3>
+      <div className="featured">
+        <div className="featuredItem">
+          <ChallengeCard type='P' />
+        </div>
+      </div>
+
+     <div className='featuredtitle'> <div className='act'><h3 className="featuredTitle">Challenges</h3> </div>  <div className='tit'><AddCircle /></div>  </div>
+      <div className="featured">
+        <div className="featuredItem">
+          <ChallengeCard type='D' />
+        </div>
+
+        <div className="featuredItem">
+          <ChallengeCard type='D' />
+        </div>
+        <div className="featuredItem">
+          <ChallengeCard type='D' />
+        </div>
+        <div className="featuredItem">
+          <ChallengeCard type='D' />
+        </div>
+      </div>
+
+
+      {/*  <div className="featuredItem">
+        <span className="featuredTitle">CHL value</span>
         <div className="featuredMoneyContainer">
           <span className="featuredMoney">0,415€</span>
           <span className="featuredMoneyRate">
@@ -15,7 +44,7 @@ function FeaturedInfo() {
         </div>
       </div>
       <div className="featuredItem">
-        <span className="featuredTitle">OPI Volume</span>
+        <span className="featuredTitle">CHL Volume</span>
         <div className="featuredMoneyContainer">
           <span className="featuredMoney">23678€</span>
           <span className="featuredMoneyRate">
@@ -24,7 +53,7 @@ function FeaturedInfo() {
         </div>
       </div>
       <div className="featuredItem">
-        <span className="featuredTitle">New Surveys</span>
+        <span className="featuredTitle">New Challenges</span>
         <div className="featuredMoneyContainer">
           <span className="featuredMoney">9</span>
           <span className="featuredMoneyRate">
@@ -42,8 +71,9 @@ function FeaturedInfo() {
           </span>
         </div>
         <span className="featuredSub">Compared to last month</span>
-      </div>
-    </div>
+      </div> */}
+
+    </>
   );
 }
 

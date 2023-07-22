@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: GPL-3.0
-pragma solidity 0.8.17;
+pragma solidity 0.8.19;
 
 import "../node_modules/@openzeppelin/contracts/utils/Counters.sol";
 import "../node_modules/@openzeppelin/contracts/token/ERC721/ERC721.sol";
@@ -8,74 +8,74 @@ import "../node_modules/@openzeppelin/contracts/security/ReentrancyGuard.sol";
 import "../node_modules/@openzeppelin/contracts/access/Ownable.sol";
 
 
-/// @title  OpiSurveysMarketPlace
+/// @title  ChlChallengesMarketPlace
 /// @author Saad Igueninni
-/// @notice Marketplace for NFT surveys results
+/// @notice Marketplace for NFT Challenges results
 /// @dev Inherits the OpenZepplin ReentrancyGuard Ownable contracts
 
-contract OpiSurveysMarketPlace is ReentrancyGuard, Ownable {
+contract ChlChallengesMarketPlace is ReentrancyGuard, Ownable {
     using Counters for Counters.Counter;
 
-    Counters.Counter private _nftsSurveySold;
-    Counters.Counter private _nftSurveyCount;
+    Counters.Counter private _nftsChallengeSold;
+    Counters.Counter private _nftChallengeCount;
 
-    IERC20 public opi;
-    IERC721 public surveyOpiNFT;
+    IERC20 public Chl;
+    IERC721 public ChallengeChlNFT;
 
-    uint256 public LISTING_OPICHAIN_FEE = 0.0001 ether; // we keep ether as fees to have a stable fee
+    uint256 public LISTING_CHLCHAIN_FEE = 0.0001 ether; // we keep ether as fees to have a stable fee
 
-    mapping(uint256 => SurveyNFT) private _idToNFT; //Keep trace of listed NFT, actual owner and seller
+    mapping(uint256 => ChallengeNFT) private _idToNFT; //Keep trace of listed NFT, actual owner and seller
 
-    struct SurveyNFT {
+    struct ChallengeNFT {
         uint256 id;
         address payable seller;
         address payable owner;
         uint256 price;
         bool listed;
     }
-    event SurveyNFTListed(
+    event ChallengeNFTListed(
         uint256 id,
         address seller,
         address owner, //current owner of contract
         uint256 price
     );
-    event SurveyNFTSold(
+    event ChallengeNFTSold(
         uint256 id,
         address seller,
         address owner,
         uint256 price
     );
 
-    constructor(address _opiAddress, address _surveyOpiNFTAddress) {
+    constructor(address _ChlAddress, address _ChallengeChlNFTAddress) {
      
-         opi = IERC20(_opiAddress);
-        surveyOpiNFT = IERC721(_surveyOpiNFTAddress);
+         Chl = IERC20(_ChlAddress);
+        ChallengeChlNFT = IERC721(_ChallengeChlNFTAddress);
     }
 
     // ::::::::::::: MODIFIERS ::::::::::::: //
 
     // ::::::::::::: GETTERS ::::::::::::: //
     function getListingFee() public view returns (uint256) {
-        return LISTING_OPICHAIN_FEE;
+        return LISTING_CHLCHAIN_FEE;
     }
 
-    function getListedSurveysNfts() public view returns (SurveyNFT[] memory) {
-        uint256 nftCount = _nftSurveyCount.current();
-        uint256 unsoldNftsCount = nftCount - _nftsSurveySold.current();
+    function getListedChallengesNfts() public view returns (ChallengeNFT[] memory) {
+        uint256 nftCount = _nftChallengeCount.current();
+        uint256 unsoldNftsCount = nftCount - _nftsChallengeSold.current();
 
-        SurveyNFT[] memory ListedSurveysNfts = new SurveyNFT[](unsoldNftsCount);
+        ChallengeNFT[] memory ListedChallengesNfts = new ChallengeNFT[](unsoldNftsCount);
         uint256 nftsIndex = 0;
         for (uint256 i = 0; i < nftCount; i++) {
             if (_idToNFT[i + 1].listed) {
-                ListedSurveysNfts[nftsIndex] = _idToNFT[i + 1];
+                ListedChallengesNfts[nftsIndex] = _idToNFT[i + 1];
                 nftsIndex++;
             }
         }
-        return ListedSurveysNfts;
+        return ListedChallengesNfts;
     }
 
-    function getMySurveysNfts() public view returns (SurveyNFT[] memory) {
-        uint256 nftCount = _nftSurveyCount.current();
+    function getMyChallengesNfts() public view returns (ChallengeNFT[] memory) {
+        uint256 nftCount = _nftChallengeCount.current();
         uint256 myNftCount = 0;
         for (uint256 i = 0; i < nftCount; i++) {
             if (_idToNFT[i + 1].owner == msg.sender) {
@@ -83,19 +83,19 @@ contract OpiSurveysMarketPlace is ReentrancyGuard, Ownable {
             }
         }
 
-        SurveyNFT[] memory MyNftsSurvey = new SurveyNFT[](myNftCount);
+        ChallengeNFT[] memory MyNftsChallenge = new ChallengeNFT[](myNftCount);
         uint256 nftsIndex = 0;
         for (uint256 i = 0; i < nftCount; i++) {
             if (_idToNFT[i + 1].owner == msg.sender) {
-                MyNftsSurvey[nftsIndex] = _idToNFT[i + 1];
+                MyNftsChallenge[nftsIndex] = _idToNFT[i + 1];
                 nftsIndex++;
             }
         }
-        return MyNftsSurvey;
+        return MyNftsChallenge;
     }
 
-    function getMyListedSurveysNfts() public view returns (SurveyNFT[] memory) {
-        uint256 nftCount = _nftSurveyCount.current();
+    function getMyListedChallengesNfts() public view returns (ChallengeNFT[] memory) {
+        uint256 nftCount = _nftChallengeCount.current();
         uint256 myListedNftCount = 0;
         for (uint256 i = 0; i < nftCount; i++) {
             if (
@@ -105,7 +105,7 @@ contract OpiSurveysMarketPlace is ReentrancyGuard, Ownable {
             }
         }
 
-        SurveyNFT[] memory nfts = new SurveyNFT[](myListedNftCount);
+        ChallengeNFT[] memory nfts = new ChallengeNFT[](myListedNftCount);
         uint256 nftsIndex = 0;
         for (uint256 i = 0; i < nftCount; i++) {
             if (
@@ -121,24 +121,24 @@ contract OpiSurveysMarketPlace is ReentrancyGuard, Ownable {
     // ::::::::::::: MARKETPLACE MANAGEMENT ::::::::::::: //
 
     // List the NFT on the marketplace
-    function listSurveyNft(uint256 _tokenId, uint256 _price)
+    function listChallengeNft(uint256 _tokenId, uint256 _price)
         public
         payable
         nonReentrant
     {
-        require(_price > 0, "Price must be at least 1 opi");
+        require(_price > 0, "Price must be at least 1 Chl");
         require(
-            msg.value >= LISTING_OPICHAIN_FEE,
+            msg.value >= LISTING_CHLCHAIN_FEE,
             "Not enough ether for listing fee"
         );
         //require tokenid est au statut Terminated!
-       // surveyOpiNFT.transferFrom(msg.sender, address(this), _tokenId); 
+       // ChallengeChlNFT.transferFrom(msg.sender, address(this), _tokenId); 
        //We choose to  mint to Marketplace from the beginning because we have 2 NFTs, 
-       //one represnting the Survey and One for results of Survey if to be listed
+       //one represnting the Challenge and One for results of Challenge if to be listed
 
-        _nftSurveyCount.increment();
+        _nftChallengeCount.increment();
 
-        _idToNFT[_tokenId] = SurveyNFT(
+        _idToNFT[_tokenId] = ChallengeNFT(
             _tokenId,
             payable(msg.sender),
             payable(address(this)),
@@ -146,16 +146,16 @@ contract OpiSurveysMarketPlace is ReentrancyGuard, Ownable {
             true
         );
 
-        emit SurveyNFTListed(_tokenId, msg.sender, address(this), _price);
+        emit ChallengeNFTListed(_tokenId, msg.sender, address(this), _price);
     }
 
-    // Buy a Survey result
-    function buySurveyResultNft(uint256 _tokenId) //address _nftContract, 
+    // Buy a Challenge result
+    function buyChallengeResultNft(uint256 _tokenId) //address _nftContract, 
         public
         payable
         nonReentrant
     {
-        SurveyNFT storage nft = _idToNFT[_tokenId];
+        ChallengeNFT storage nft = _idToNFT[_tokenId];
         require(
             msg.value >= nft.price,
             "Not enough ether to cover asking price"
@@ -163,36 +163,36 @@ contract OpiSurveysMarketPlace is ReentrancyGuard, Ownable {
 
         address payable buyer = payable(msg.sender);
         payable(nft.seller).transfer(msg.value);
-        surveyOpiNFT.transferFrom(address(this), buyer, nft.id);
-        payable(owner()).transfer(LISTING_OPICHAIN_FEE);
+        ChallengeChlNFT.transferFrom(address(this), buyer, nft.id);
+        payable(owner()).transfer(LISTING_CHLCHAIN_FEE);
         nft.owner = buyer;
         nft.listed = false;
 
-        _nftsSurveySold.increment();
-        emit SurveyNFTSold(nft.id, nft.seller, buyer, msg.value);
+        _nftsChallengeSold.increment();
+        emit ChallengeNFTSold(nft.id, nft.seller, buyer, msg.value);
     }
 
-    // Resell the Survey results
-    function resellSurveyResultNft(
+    // Resell the Challenge results
+    function resellChallengeResultNft(
        // address _nftContract,
         uint256 _tokenId,
         uint256 _price
     ) public payable nonReentrant {
         require(_price > 0, "Price must be at least 1 wei");
         require(
-            msg.value == LISTING_OPICHAIN_FEE,
+            msg.value == LISTING_CHLCHAIN_FEE,
             "Not enough ether for listing fee"
         );
 
-        surveyOpiNFT.transferFrom(msg.sender, address(this), _tokenId);
+        ChallengeChlNFT.transferFrom(msg.sender, address(this), _tokenId);
 
-        SurveyNFT storage nft = _idToNFT[_tokenId];
+        ChallengeNFT storage nft = _idToNFT[_tokenId];
         nft.seller = payable(msg.sender);
         nft.owner = payable(address(this));
         nft.listed = true;
         nft.price = _price;
 
-        _nftsSurveySold.decrement();
-        emit SurveyNFTListed(_tokenId, msg.sender, address(this), _price);
+        _nftsChallengeSold.decrement();
+        emit ChallengeNFTListed(_tokenId, msg.sender, address(this), _price);
     }
 }

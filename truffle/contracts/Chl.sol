@@ -1,16 +1,16 @@
 // SPDX-License-Identifier: MIT
 
-pragma solidity 0.8.17;
+pragma solidity 0.8.19;
 
 import  "../node_modules/@openzeppelin/contracts/token/ERC20/ERC20.sol";
 
-/// @title  OpiChain ERC20 token opi
+/// @title  ChlChain ERC20 token chl
 /// @author Saad Igueninni
 /// @notice ERC20 
 /// @dev Inherits the OpenZepplin ERC20 contract
-contract Opi is ERC20 {
+contract Chl is ERC20 {
 
-    constructor() ERC20("OpiChain", "OPI") {
+    constructor() ERC20("ChlChain", "CHL") {
         _mint(msg.sender, 10000 * (10 ** uint256(decimals())));
     }
 

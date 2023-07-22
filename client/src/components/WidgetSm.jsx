@@ -14,14 +14,14 @@ function WidgetSm() {
     if (contractSBT && contractSBT?.methods) {
       (async function () {
 
-        let oldEvents = await contractSBT.getPastEvents('grantedOpiID', {
+        let oldEvents = await contractSBT.getPastEvents('grantedChlID', {
           fromBlock: 0,
           toBlock: 'latest'
         });
 
         oldEvents.forEach(event => {
           usersDataLcl.push(
-            event.returnValues._newOpiProfile,
+            event.returnValues._newChlProfile,
           );
 
         });
@@ -33,7 +33,7 @@ function WidgetSm() {
   }, [contractSBT, accounts]);
 
   const getRoleById = (role) => {
-    return (role === "0" ? 'Sounder' : 'Surveyed');
+    return (role === "0" ? 'Sounder' : 'Challengeed');
   };
 
   const getGenderById = (gender) => {
@@ -49,7 +49,7 @@ function WidgetSm() {
           {/* <FormControlLabel    control={<Checkbox color="secondary" />} label={p.proposalId} /> */}
           <li className="widgetSmListItem">
             <img
-              src={"https://gateway.pinata.cloud/ipfs/QmdGwjCgrCAyUddv8z1XBhuS5EptRjVKUnEraHwuKvr66A/" + m.OpiIdCounter.toString() + ".png"}
+              src={"https://gateway.pinata.cloud/ipfs/QmdGwjCgrCAyUddv8z1XBhuS5EptRjVKUnEraHwuKvr66A/" + m.ChlIdCounter.toString() + ".png"}
               alt=""
               className="widgetSmImg"
             />
@@ -82,7 +82,7 @@ function WidgetSm() {
           />
           <div className="widgetSmUser">
             <span className="widgetSmUsername">Female/36/Paris</span>
-            <span className="widgetSmUserTitle">Surveyed</span>
+            <span className="widgetSmUserTitle">Challengeed</span>
           </div>
           <button className="widgetSmButton">
             <Visibility className="widgetSmIcon" />
@@ -98,7 +98,7 @@ function WidgetSm() {
           />
           <div className="widgetSmUser">
             <span className="widgetSmUsername">Male/24/Toulouse</span>
-            <span className="widgetSmUserTitle">Surveyed</span>
+            <span className="widgetSmUserTitle">Challengeed</span>
           </div>
           <button className="widgetSmButton">
             <Visibility className="widgetSmIcon" />

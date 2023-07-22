@@ -6,28 +6,28 @@ import { useState, useEffect } from "react";
 
 function WidgetLg() {
 
-  let surveysDataLcl = [];
-  let surveysDataLclExt = [];
-  const [surveysData, setSurveysData] = useState([]);
-  const [surveysDesc, setSurveysDesc] = useState([]);
-  const { state: { accounts, contractOpiChainSurveyNFT } } = useEth();
+  let ChallengesDataLcl = [];
+  let ChallengesDataLclExt = [];
+  const [ChallengesData, setChallengesData] = useState([]);
+  const [ChallengesDesc, setChallengesDesc] = useState([]);
+  const { state: { accounts, contractChlChainChallengeNFT } } = useEth();
 
 
   useEffect(() => {
 
-    if (contractOpiChainSurveyNFT && contractOpiChainSurveyNFT?.methods) {
+    if (contractChlChainChallengeNFT && contractChlChainChallengeNFT?.methods) {
       (async function () {
 
-        let oldEvents = await contractOpiChainSurveyNFT.getPastEvents('surveyCreated', {
+        let oldEvents = await contractChlChainChallengeNFT.getPastEvents('ChallengeCreated', {
           fromBlock: 0,
           toBlock: 'latest'
         });
 
         oldEvents.forEach(event => {
           
-            surveysDataLcl.push({
-              '_idSurvey': event.returnValues._idSurvey,
-              '_ownerSurvey': event.returnValues._ownerSurvey,
+            ChallengesDataLcl.push({
+              '_idChallenge': event.returnValues._idChallenge,
+              '_ownerChallenge': event.returnValues._ownerChallenge,
             });
          // }
 
@@ -35,37 +35,37 @@ function WidgetLg() {
 
 
 
-        for (let [index, s] of surveysDataLcl.entries()) {
-          let survey = await contractOpiChainSurveyNFT.methods.getSurveyById(s._idSurvey).call({ from: accounts[0] });
-          s = { ...s, ...survey };
-          surveysDataLclExt.push(s);
+        for (let [index, s] of ChallengesDataLcl.entries()) {
+          let Challenge = await contractChlChainChallengeNFT.methods.getChallengeById(s._idChallenge).call({ from: accounts[0] });
+          s = { ...s, ...Challenge };
+          ChallengesDataLclExt.push(s);
           console.log(s);
         }
-        setSurveysData(surveysDataLclExt);
+        setChallengesData(ChallengesDataLclExt);
       })();
     }
 
-  }, [contractOpiChainSurveyNFT, accounts]);
+  }, [contractChlChainChallengeNFT, accounts]);
 
 
   const getStatusById = (status) => {
     return (status === "0" ? 'Ongoing' : 'Terminated');
   };
 
-  const getSurveyDetails = async () => {
-    let surveysDescLcl = [];
-    for (let i = 0; i < surveysData.length; i++) {
-      let survey = await contractOpiChainSurveyNFT.methods.getSurveyById(surveysData[i]._idSurvey).call({ from: accounts[0] });
+  const getChallengeDetails = async () => {
+    let ChallengesDescLcl = [];
+    for (let i = 0; i < ChallengesData.length; i++) {
+      let Challenge = await contractChlChainChallengeNFT.methods.getChallengeById(ChallengesData[i]._idChallenge).call({ from: accounts[0] });
     }
-    setSurveysDesc(surveysDescLcl);
-    console.log(surveysDesc);
+    setChallengesDesc(ChallengesDescLcl);
+    console.log(ChallengesDesc);
 
   }
 
-  const getSurveys = () => {
-    let surveys = [...surveysData];
+  const getChallenges = () => {
+    let Challenges = [...ChallengesData];
 
-    return surveys.map((p, i) => {
+    return Challenges.map((p, i) => {
       return (
 
 
@@ -82,7 +82,7 @@ function WidgetLg() {
           <td className="widgetLgAmount">50</td>
           <td className="widgetLgAmount">10</td>
           <td className="widgetLgStatus">
-            <Button type={getStatusById(p.surveyStatus)} size="small" />
+            <Button type={getStatusById(p.ChallengeStatus)} size="small" />
           </td>
         </tr>
 
@@ -97,13 +97,13 @@ function WidgetLg() {
   };
   return (
     <div className="widgetLg">
-      <h3 className="widgetLgTitle">Latest Surveys interactions</h3>
+      <h3 className="widgetLgTitle">Latest Challenges interactions</h3>
       <table className="widgetLgTable">
         <tbody>
           <tr className="widgetLgTr">
             <th className="widgetLgTh">Title</th>
-            <th className="widgetLgTh">Cost in OPI</th>
-            <th className="widgetLgTh">Survey Sample</th>
+            <th className="widgetLgTh">Deposit</th>
+            <th className="widgetLgTh">Total joiners</th>
             <th className="widgetLgTh">Status</th>
           </tr>
 
@@ -114,7 +114,7 @@ function WidgetLg() {
                 alt=""
                 className="widgetLgImg"
               />
-              <span className="widgetLgName">Young people reading</span>
+              <span className="widgetLgName">Learn Solidity in 30 days</span>
             </td>
             {/* <td className="widgetLgDate">14 January 2023</td> */}
             <td className="widgetLgAmount">100</td>
@@ -131,7 +131,7 @@ function WidgetLg() {
                 alt=""
                 className="widgetLgImg"
               />
-              <span className="widgetLgName">Cinema entries </span>
+              <span className="widgetLgName">45 days hard Challenge</span>
             </td>
             {/* <td className="widgetLgDate">14 January 2023</td> */}
             <td className="widgetLgAmount">1000</td>
@@ -148,7 +148,7 @@ function WidgetLg() {
                 alt=""
                 className="widgetLgImg"
               />
-              <span className="widgetLgName">Womand and sport</span>
+              <span className="widgetLgName">Gym Challenge</span>
             </td>
             {/* <td className="widgetLgDate">14 January 2023</td> */}
             <td className="widgetLgAmount">400</td>
@@ -158,7 +158,7 @@ function WidgetLg() {
             </td>
           </tr>
 
-          {getSurveys()}
+          {getChallenges()}
 
         </tbody>
       </table>

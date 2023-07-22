@@ -1,4 +1,4 @@
-.opidex{
+.Chldex{
     flex: 4;
     padding: 50px;
     display: flex;
@@ -6,7 +6,7 @@
     justify-content: center;
   }
 
-  .opidexButton{
+  .ChldexButton{
     width: 200px;
     border: none;
     background-color: #683aa4;

@@ -6,18 +6,18 @@ import { useState, useEffect } from "react";
 
 function Container() {
 
-    const { state: { web3,contractSBT,contractOPI ,accounts,owner ,sounder, surveyed} } = useEth();
+    const { state: { web3,contractSBT,contractCHL ,accounts,owner ,sounder, Challengeed} } = useEth();
     const [balance, setBalance] = useState('0');
               
     useEffect(() => {
 
 
-        if (contractOPI && contractOPI?.methods) {
+        if (contractCHL && contractCHL?.methods) {
 
             (async function () {
 
                 try {
-                   const balance = await contractOPI.methods.balanceOf(accounts[0]).call({ from: accounts[0]} );
+                   const balance = await contractCHL.methods.balanceOf(accounts[0]).call({ from: accounts[0]} );
                  //  const wei = parseInt(balance);
                  //  const ether = web3.utils.fromWei(balance, "ether");
                    setBalance(balance);

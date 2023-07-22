@@ -4,21 +4,21 @@ const actions = {
 
 const initialState = {
   artifactSBT: null,
-  artifactOPI: null, 
-  artifactOpiDex: null,
-  artifactOpiChainSurveyNFT: null,
+  artifactCHL: null, 
+  artifactChlDex: null,
+  artifactChlChainChallengeNFT: null,
   artifactMarketPlace : null,
   web3: null,
   accounts: null,
   networkID: null,
   contractSBT: null,
-  contractOPI: null, 
-  contractOpiDex: null,
-  contractOpiChainSurveyNFT :null,
+  contractCHL: null, 
+  contractChlDex: null,
+  contractChlChainChallengeNFT :null,
   contractMarketPlace :null,
   owner: null,
   sounder: null,
-  surveyed: null
+  Challengeed: null
 };
 
 const reducer = (state, action) => {

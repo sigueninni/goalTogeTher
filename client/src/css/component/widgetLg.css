@@ -47,14 +47,17 @@
   .widgetLgButton.Draft{
       background-color: #e5faf2;
       color: #ec407a;
+      font-family: 'Londrina Solid', cursive !important;
   }
   .widgetLgButton.Ongoing{
       background-color: #fff0f1;
       color: #9c27b0;
+      font-family: 'Londrina Solid', cursive !important;
   
   }
   .widgetLgButton.Terminated{
       background-color: #ebf1fe;
       color: #683aa4;
+      font-family: 'Londrina Solid', cursive !important;
   
   }

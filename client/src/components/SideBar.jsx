@@ -32,7 +32,7 @@ import { Link } from "react-router-dom";
 
 function Sidebar() {
 
-  const { state: { contractSBT, accounts, owner, sounder, surveyed } } = useEth();
+  const { state: { contractSBT, accounts, owner, sounder, Challengeed } } = useEth();
 
   return (
     <div className="sidebar">
@@ -59,16 +59,16 @@ function Sidebar() {
           </ul>
         </div>
 
-        {(surveyed) &&
+        {(Challengeed  || (accounts && owner === accounts[0]) ) &&
           <div className="sidebarMenu">
-            <h3 className="sidebarTitle">Quick Menu Surveyed</h3>
+            <h3 className="sidebarTitle">Quick Member Menu</h3>
             <ul className="sidebarList">
-              <Link to="/MarketPlace" className="link">
+            {/*   <Link to="/MarketPlace" className="link">
                 <li className="sidebarListItem">
                   <Storefront className="sidebarIcon" />
-                  Surveys Marketplace
+                  Challenges Marketplace
                 </li>
-              </Link>
+              </Link> */}
               <li className="sidebarListItem">
                 <AttachMoney className="sidebarIcon" />
                 Transactions
@@ -77,41 +77,48 @@ function Sidebar() {
                 <Savings className="sidebarIcon" />
                 Stacking
               </li>
-              <Link to="/opiDex" className="link">
+              <Link to="/chlDex" className="link">
                 <li className="sidebarListItem">
                   <ShoppingCart className="sidebarIcon" />
-                  Buy Opi
+                  Buy Chl
                 </li>
               </Link>
-              <Link to="/NewSurvey" className="link">
+              <Link to="/NewChallenge" className="link">
                 <li className="sidebarListItem">
                   <AddCircle className="sidebarIcon" />
-                  Create Survey
+                  Create a Challenge
                 </li>
               </Link>
 
-              <Link to="/SurveyList" className="link">
+              <Link to="/ChallengeList" className="link">
                 <li className="sidebarListItem">
                   <ShoppingBag className="sidebarIcon" />
-                  My Surveys
+                  My Challenges
                 </li>
               </Link>
               <li className="sidebarListItem">
                 <MoveUp className="sidebarIcon" />
-                Withdraw my Opis
+                Withdraw my Chls
               </li>
             </ul>
           </div>
         }
 
-        {(sounder) &&
+        {(sounder ) &&
           <div className="sidebarMenu">
             <h3 className="sidebarTitle">Quick Menu Sounder</h3>
             <ul className="sidebarList">
+            <Link to="/MarketPlace" className="link">
+                <li className="sidebarListItem">
+                  <Storefront className="sidebarIcon" />
+                  My Challenges
+                </li>
+              </Link>
+
               <Link to="/products" className="link">
                 <li className="sidebarListItem">
                   <Storefront className="sidebarIcon" />
-                  Respond a survey
+                  Join a Challenge
                 </li>
               </Link>
               <li className="sidebarListItem">
@@ -124,7 +131,7 @@ function Sidebar() {
               </li>
               <li className="sidebarListItem">
                 <MoveUp className="sidebarIcon" />
-                Withdraw my Opis
+                Withdraw my Chls
               </li>
             </ul>
           </div>
@@ -167,8 +174,8 @@ function Sidebar() {
           </div>
         }
 
-        {/* surveyed and sounder */}
-        {(sounder || surveyed) &&
+        {/* Challengeed and sounder */}
+        {(sounder || Challengeed) &&
           <div className="sidebarMenu">
             <h3 className="sidebarTitle">My Data</h3>
             <ul className="sidebarList">

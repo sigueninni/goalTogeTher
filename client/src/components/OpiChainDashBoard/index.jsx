@@ -1,11 +1,11 @@
-function OpiChainDashBoard() {
+function ChlChainDashBoard() {
 
   return (
-    <div id="OpiChainDashBoard_main">
+    <div id="ChlChainDashBoard_main">
       {/* {isOwner ? <div>Owner</div> : <div>Pas Owner</div>} */}
       DashBoard
     </div>
   );
 }
 
-export default OpiChainDashBoard;
+export default ChlChainDashBoard;

@@ -1,43 +1,43 @@
-const OpiDex = artifacts.require("./OpiDex.sol");
-const Opi= artifacts.require("./Opi.sol");
+const ChlDex = artifacts.require("./ChlDex.sol");
+const Chl= artifacts.require("./Chl.sol");
 const { BN, expectRevert, expectEvent } = require('@openzeppelin/test-helpers');
 const { expect } = require('chai');
 
 
-contract("OpiDex", accounts => {
+contract("ChlDex", accounts => {
 
     const _owner = accounts[0];
     const _buyer = accounts[1];
-    let OpiDexinstance , Opiinstance;
+    let ChlDexinstance , Chlinstance;
 
 
    /******************************************/ 
   /***we test the buy Token               ***/
   /*****************************************/ 
-  describe("Buy Token OPI", function () {
+  describe("Buy Token CHL", function () {
 
     beforeEach(async function () {
-       Opiinstance = await Opi.new({from:_owner});
-        OpiDexinstance = await OpiDex.new(Opiinstance.address,{from:_owner});
+       Chlinstance = await Chl.new({from:_owner});
+        ChlDexinstance = await ChlDex.new(Chlinstance.address,{from:_owner});
     });
 
-    it("Eth needed to buy OPI -> OK", async () => {
+    it("Eth needed to buy CHL -> OK", async () => {
       await expectRevert(
-        OpiDexinstance.buyTokens( { from: _buyer }),
-        "ETH needed to buy OPIs",
+        ChlDexinstance.buyTokens( { from: _buyer }),
+        "ETH needed to buy CHLs",
       );
     });
 
 
-    it("Not enough OPIs in balance of OpiDex -> OK", async () => {
+    it("Not enough CHLs in balance of ChlDex -> OK", async () => {
         await expectRevert(
-          OpiDexinstance.buyTokens( { from: _buyer ,  value: web3.utils.toWei("1000000000000000000000000000000000000000000000000000000000", 'ether') }),
-          "Not enough OPIs in balance of OpiDex",
+          ChlDexinstance.buyTokens( { from: _buyer ,  value: web3.utils.toWei("1000000000000000000000000000000000000000000000000000000000", 'ether') }),
+          "Not enough CHLs in balance of ChlDex",
         );
       });
 
     after(async function () {
-        OpiDexinstance = null;
+        ChlDexinstance = null;
     });
   });
 

@@ -6,9 +6,9 @@ function NewUser() {
 
     const { state: { accounts, contractSBT } } = useEth();
     const navigate = useNavigate();
-    const grantOpiID = async (_profileAddress, _name, _age, _gender, _role) => {
+    const grantChlID = async (_profileAddress, _name, _age, _gender, _role) => {
         try {
-            await contractSBT.methods.grantOpiID(_profileAddress, _name, _age, _gender, _role).send({ from: accounts[0] });
+            await contractSBT.methods.grantChlID(_profileAddress, _name, _age, _gender, _role).send({ from: accounts[0] });
             navigate('/');
         } catch (err) {
             console.log(err);
@@ -16,19 +16,19 @@ function NewUser() {
     };
 
 
-    const onGrantOpiID = (event) => {
+    const onGrantChlID = (event) => {
         event.preventDefault();
         var data = new FormData(event.target);
         let formObject = Object.fromEntries(data.entries());
         debugger;
-        grantOpiID(formObject.address, formObject.name, parseInt(formObject.age), parseInt(formObject.gender), parseInt(formObject.role));
+        grantChlID(formObject.address, formObject.name, parseInt(formObject.age), parseInt(formObject.gender), parseInt(formObject.role));
     }
 
 
     return (
         <div className="newUser">
-            <h1 className="newUserTitle">New OPI member</h1>
-            <form className="newUserForm" onSubmit={onGrantOpiID}>
+            <h1 className="newUserTitle">New GoalTogether Member</h1>
+            <form className="newUserForm" onSubmit={onGrantChlID}>
                 <div className="newUserItem">
                     <label>ETH address</label>
                     <input name="address" type="text" placeholder="0x0000000000000000000000000000000000000000" required={true}/>
@@ -46,7 +46,7 @@ function NewUser() {
 
                 <div className="newUserItem">
                     <label>Email</label>
-                    <input name="email" type="email" placeholder="alyra@opichain.com" required={true}/>
+                    <input name="email" type="email" placeholder="alyra@Chlchain.com" required={true}/>
                 </div>
 
                 <div className="newUserItem">
@@ -71,8 +71,8 @@ function NewUser() {
                     <div className="newUserGender">
                         <input type="radio" name="role" id="sounder" value="0" />
                         <label htmlFor="sounder">sounder</label>
-                        <input type="radio" name="role" id="surveyed" value="1" />
-                        <label htmlFor="surveyed">surveyed</label>
+                        <input type="radio" name="role" id="Challengeed" value="1" />
+                        <label htmlFor="Challengeed">Challengeed</label>
 
                     </div>
                 </div>
@@ -83,7 +83,7 @@ function NewUser() {
                         <option value="no">No</option>
                     </select>
                 </div>
-                <button className="newUserButton" type="submit"  >Grant OPI ID</button>
+                <button className="newUserButton" type="submit"  >Grant CHL ID</button>
             </form>
         </div>
     );

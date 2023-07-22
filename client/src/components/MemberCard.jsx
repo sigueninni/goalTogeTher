@@ -6,23 +6,24 @@ import CardHeader from '@mui/material/CardHeader';
 import CardContent from '@mui/material/CardContent';
 import Avatar from '@mui/material/Avatar';
 import Stack from '@mui/material/Stack';
-import { ShowChart } from '@mui/icons-material';
+import { Savings , ShowChart } from '@mui/icons-material';
+
 import { useState, useEffect } from "react";
 
 function CardPerson({ address }) {
 
-    const { state: { contractSBT,contractOPI ,accounts,owner ,sounder, surveyed} } = useEth();
+    const { state: { contractSBT,contractCHL ,accounts,owner ,sounder, Challengeed} } = useEth();
     const [balance, setBalance] = useState('0');
               
     useEffect(() => {
 
 
-        if (contractOPI && contractOPI?.methods) {
+        if (contractCHL && contractCHL?.methods) {
 
             (async function () {
 
                 try {
-                   const balance = await contractOPI.methods.balanceOf(accounts[0]).call({ from: accounts[0]} );
+                   const balance = await contractCHL.methods.balanceOf(accounts[0]).call({ from: accounts[0]} );
                  //  const wei = parseInt(balance);
                  //  const ether = web3.utils.fromWei(balance, "ether");
                    setBalance(balance);
@@ -35,12 +36,12 @@ function CardPerson({ address }) {
 
         }
 
-    },[contractSBT,contractOPI,accounts,balance]);
+    },[contractSBT,contractCHL,accounts,balance]);
 
     return (
         
         <div key="{address}" id="CardPerson_main">
-            {accounts && <pre> {sounder}  {surveyed} </pre>} 
+            {accounts && <pre> {sounder}  {Challengeed} </pre>} 
             <Card >
                 <CardHeader
                     avatar={
@@ -50,14 +51,21 @@ function CardPerson({ address }) {
 
 
                     title={address}
-                    subheader={ accounts && owner === accounts[0] ? "OpiChain owner" : ( accounts && sounder ?  "Opichain sounder" : ( accounts && surveyed ?  "Opichain surveyed" : "not a member!")) 
+                    subheader={ accounts && owner === accounts[0] ? "ChlChain owner" : ( accounts && sounder ?  "Chlchain sounder" : ( accounts && Challengeed ?  "Chlchain Challengeed" : "not a member!")) 
                    }
                 />
 
                 <CardContent>
                     <Stack direction="row" spacing={2}>
-                        <div id="membercardWallet"><ShowChart fontSize="large" /></div>
-                        <div id="membercardBalance">{balance} OPI</div>
+                        <div id="membercardWallet"><ShowChart fontSize="medium" /><span>Balance</span></div>
+                        <div id="membercardBalance">{balance} CHL</div>
+                      -
+                    </Stack>
+
+                    <Stack direction="row" spacing={2}>
+                        <div id="membercardWallet"><Savings fontSize="medium" /><span>Stacked Amount</span></div>
+                        <div id="membercardBalance">0 CHL</div>
+                        -
                     </Stack>
 
                 </CardContent>

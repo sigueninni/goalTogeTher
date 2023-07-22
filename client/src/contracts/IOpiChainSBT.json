@@ -1,5 +1,5 @@
 {
-  "contractName": "IOpiChainSBT",
+  "contractName": "IChlChainSBT",
   "abi": [
     {
       "inputs": [],
@@ -15,7 +15,7 @@
       "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.8.17+commit.8df45f5f\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"greet\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/OpiChainSBT.sol\":\"IOpiChainSBT\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/OpiChainSBT.sol\":{\"keccak256\":\"0x2723a7f2722798d31289e6a523a7dcac39f043f55ed809d0e3e747f5a219bde2\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://420e5bbc772a83f0d86f1e59b2efe8782b1ed1e6b00f17db963870f3a16f0f9a\",\"dweb:/ipfs/QmcF2jVrej15GNtnBiHTjPnM67TV5gxSxtFLxNm8tUi7AZ\"]},\"project:/node_modules/@openzeppelin/contracts/access/Ownable.sol\":{\"keccak256\":\"0xa94b34880e3c1b0b931662cb1c09e5dfa6662f31cba80e07c5ee71cd135c9673\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://40fb1b5102468f783961d0af743f91b9980cf66b50d1d12009f6bb1869cea4d2\",\"dweb:/ipfs/QmYqEbJML4jB1GHbzD4cUZDtJg5wVwNm3vDJq1GbyDus8y\"]},\"project:/node_modules/@openzeppelin/contracts/token/ERC721/ERC721.sol\":{\"keccak256\":\"0xd89f3585b211fc9e3408384a4c4efdc3a93b2f877a3821046fa01c219d35be1b\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://5ea15ef7c8980240ccd46df13809d163f749bc0a01d8bced1875660d4872da1c\",\"dweb:/ipfs/QmbDfAT9VeCSG4cnPd6tjDMp8ED85dLHbWyMyv7wbmL4CH\"]},\"project:/node_modules/@openzeppelin/contracts/token/ERC721/IERC721.sol\":{\"keccak256\":\"0xab28a56179c1db258c9bf5235b382698cb650debecb51b23d12be9e241374b68\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://daae589a9d6fa7e55f99f86c0a16796ca490f243fb3693632c3711c0646c1d56\",\"dweb:/ipfs/QmR3zpd7wNw3rcUdekwiv6FYHJqksuTCXLVioTxu6Fbxk3\"]},\"project:/node_modules/@openzeppelin/contracts/token/ERC721/IERC721Receiver.sol\":{\"keccak256\":\"0xa82b58eca1ee256be466e536706850163d2ec7821945abd6b4778cfb3bee37da\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://6e75cf83beb757b8855791088546b8337e9d4684e169400c20d44a515353b708\",\"dweb:/ipfs/QmYvPafLfoquiDMEj7CKHtvbgHu7TJNPSVPSCjrtjV8HjV\"]},\"project:/node_modules/@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol\":{\"keccak256\":\"0x5c3501c1b70fcfc64417e9da5cc6a3597191baa354781e508e1e14cc0e50a038\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://899c87a849a94c848818d0afede6961d2c87665af1dd23a5c983e78981a65691\",\"dweb:/ipfs/QmUeFDffQRDmX87FX3MRxN3bmpUxDTWpWLwPJzeAJ3yF6H\"]},\"project:/node_modules/@openzeppelin/contracts/token/ERC721/extensions/IERC721Metadata.sol\":{\"keccak256\":\"0x75b829ff2f26c14355d1cba20e16fe7b29ca58eb5fef665ede48bc0f9c6c74b9\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://a0a107160525724f9e1bbbab031defc2f298296dd9e331f16a6f7130cec32146\",\"dweb:/ipfs/QmemujxSd7gX8A9M8UwmNbz4Ms3U9FG9QfudUgxwvTmPWf\"]},\"project:/node_modules/@openzeppelin/contracts/utils/Address.sol\":{\"keccak256\":\"0xf96f969e24029d43d0df89e59d365f277021dac62b48e1c1e3ebe0acdd7f1ca1\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://ec772b45a624be516f1c81970caa8a2e144301e9d0921cbc1a2789fef39a1269\",\"dweb:/ipfs/QmNyjwxCrGhQMyzLD93oUobJXVe9ceJvRvfXwbEtuxPiEj\"]},\"project:/node_modules/@openzeppelin/contracts/utils/Context.sol\":{\"keccak256\":\"0xe2e337e6dde9ef6b680e07338c493ebea1b5fd09b43424112868e9cc1706bca7\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://6df0ddf21ce9f58271bdfaa85cde98b200ef242a05a3f85c2bc10a8294800a92\",\"dweb:/ipfs/QmRK2Y5Yc6BK7tGKkgsgn3aJEQGi5aakeSPZvS65PV8Xp3\"]},\"project:/node_modules/@openzeppelin/contracts/utils/Counters.sol\":{\"keccak256\":\"0xf0018c2440fbe238dd3a8732fa8e17a0f9dce84d31451dc8a32f6d62b349c9f1\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://59e1c62884d55b70f3ae5432b44bb3166ad71ae3acd19c57ab6ddc3c87c325ee\",\"dweb:/ipfs/QmezuXg5GK5oeA4F91EZhozBFekhq5TD966bHPH18cCqhu\"]},\"project:/node_modules/@openzeppelin/contracts/utils/Strings.sol\":{\"keccak256\":\"0xa4d1d62251f8574deb032a35fc948386a9b4de74b812d4f545a1ac120486b48a\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://8c969013129ba9e651a20735ef659fef6d8a1139ea3607bd4b26ddea2d645634\",\"dweb:/ipfs/QmVhVa6LGuzAcB8qgDtVHRkucn4ihj5UZr8xBLcJkP6ucb\"]},\"project:/node_modules/@openzeppelin/contracts/utils/introspection/ERC165.sol\":{\"keccak256\":\"0xd10975de010d89fd1c78dc5e8a9a7e7f496198085c151648f20cba166b32582b\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://fb0048dee081f6fffa5f74afc3fb328483c2a30504e94a0ddd2a5114d731ec4d\",\"dweb:/ipfs/QmZptt1nmYoA5SgjwnSgWqgUSDgm4q52Yos3xhnMv3MV43\"]},\"project:/node_modules/@openzeppelin/contracts/utils/introspection/IERC165.sol\":{\"keccak256\":\"0x447a5f3ddc18419d41ff92b3773fb86471b1db25773e07f877f548918a185bf1\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://be161e54f24e5c6fae81a12db1a8ae87bc5ae1b0ddc805d82a1440a68455088f\",\"dweb:/ipfs/QmP7C3CHdY9urF4dEMb9wmsp1wMxHF6nhA2yQE5SKiPAdy\"]},\"project:/node_modules/@openzeppelin/contracts/utils/math/Math.sol\":{\"keccak256\":\"0xa1e8e83cd0087785df04ac79fb395d9f3684caeaf973d9e2c71caef723a3a5d6\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://33bbf48cc069be677705037ba7520c22b1b622c23b33e1a71495f2d36549d40b\",\"dweb:/ipfs/Qmct36zWXv3j7LZB83uwbg7TXwnZSN1fqHNDZ93GG98bGz\"]}},\"version\":1}",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.17+commit.8df45f5f\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"greet\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/ChlChainSBT.sol\":\"IChlChainSBT\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/ChlChainSBT.sol\":{\"keccak256\":\"0x2723a7f2722798d31289e6a523a7dcac39f043f55ed809d0e3e747f5a219bde2\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://420e5bbc772a83f0d86f1e59b2efe8782b1ed1e6b00f17db963870f3a16f0f9a\",\"dweb:/ipfs/QmcF2jVrej15GNtnBiHTjPnM67TV5gxSxtFLxNm8tUi7AZ\"]},\"project:/node_modules/@openzeppelin/contracts/access/Ownable.sol\":{\"keccak256\":\"0xa94b34880e3c1b0b931662cb1c09e5dfa6662f31cba80e07c5ee71cd135c9673\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://40fb1b5102468f783961d0af743f91b9980cf66b50d1d12009f6bb1869cea4d2\",\"dweb:/ipfs/QmYqEbJML4jB1GHbzD4cUZDtJg5wVwNm3vDJq1GbyDus8y\"]},\"project:/node_modules/@openzeppelin/contracts/token/ERC721/ERC721.sol\":{\"keccak256\":\"0xd89f3585b211fc9e3408384a4c4efdc3a93b2f877a3821046fa01c219d35be1b\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://5ea15ef7c8980240ccd46df13809d163f749bc0a01d8bced1875660d4872da1c\",\"dweb:/ipfs/QmbDfAT9VeCSG4cnPd6tjDMp8ED85dLHbWyMyv7wbmL4CH\"]},\"project:/node_modules/@openzeppelin/contracts/token/ERC721/IERC721.sol\":{\"keccak256\":\"0xab28a56179c1db258c9bf5235b382698cb650debecb51b23d12be9e241374b68\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://daae589a9d6fa7e55f99f86c0a16796ca490f243fb3693632c3711c0646c1d56\",\"dweb:/ipfs/QmR3zpd7wNw3rcUdekwiv6FYHJqksuTCXLVioTxu6Fbxk3\"]},\"project:/node_modules/@openzeppelin/contracts/token/ERC721/IERC721Receiver.sol\":{\"keccak256\":\"0xa82b58eca1ee256be466e536706850163d2ec7821945abd6b4778cfb3bee37da\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://6e75cf83beb757b8855791088546b8337e9d4684e169400c20d44a515353b708\",\"dweb:/ipfs/QmYvPafLfoquiDMEj7CKHtvbgHu7TJNPSVPSCjrtjV8HjV\"]},\"project:/node_modules/@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol\":{\"keccak256\":\"0x5c3501c1b70fcfc64417e9da5cc6a3597191baa354781e508e1e14cc0e50a038\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://899c87a849a94c848818d0afede6961d2c87665af1dd23a5c983e78981a65691\",\"dweb:/ipfs/QmUeFDffQRDmX87FX3MRxN3bmpUxDTWpWLwPJzeAJ3yF6H\"]},\"project:/node_modules/@openzeppelin/contracts/token/ERC721/extensions/IERC721Metadata.sol\":{\"keccak256\":\"0x75b829ff2f26c14355d1cba20e16fe7b29ca58eb5fef665ede48bc0f9c6c74b9\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://a0a107160525724f9e1bbbab031defc2f298296dd9e331f16a6f7130cec32146\",\"dweb:/ipfs/QmemujxSd7gX8A9M8UwmNbz4Ms3U9FG9QfudUgxwvTmPWf\"]},\"project:/node_modules/@openzeppelin/contracts/utils/Address.sol\":{\"keccak256\":\"0xf96f969e24029d43d0df89e59d365f277021dac62b48e1c1e3ebe0acdd7f1ca1\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://ec772b45a624be516f1c81970caa8a2e144301e9d0921cbc1a2789fef39a1269\",\"dweb:/ipfs/QmNyjwxCrGhQMyzLD93oUobJXVe9ceJvRvfXwbEtuxPiEj\"]},\"project:/node_modules/@openzeppelin/contracts/utils/Context.sol\":{\"keccak256\":\"0xe2e337e6dde9ef6b680e07338c493ebea1b5fd09b43424112868e9cc1706bca7\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://6df0ddf21ce9f58271bdfaa85cde98b200ef242a05a3f85c2bc10a8294800a92\",\"dweb:/ipfs/QmRK2Y5Yc6BK7tGKkgsgn3aJEQGi5aakeSPZvS65PV8Xp3\"]},\"project:/node_modules/@openzeppelin/contracts/utils/Counters.sol\":{\"keccak256\":\"0xf0018c2440fbe238dd3a8732fa8e17a0f9dce84d31451dc8a32f6d62b349c9f1\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://59e1c62884d55b70f3ae5432b44bb3166ad71ae3acd19c57ab6ddc3c87c325ee\",\"dweb:/ipfs/QmezuXg5GK5oeA4F91EZhozBFekhq5TD966bHPH18cCqhu\"]},\"project:/node_modules/@openzeppelin/contracts/utils/Strings.sol\":{\"keccak256\":\"0xa4d1d62251f8574deb032a35fc948386a9b4de74b812d4f545a1ac120486b48a\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://8c969013129ba9e651a20735ef659fef6d8a1139ea3607bd4b26ddea2d645634\",\"dweb:/ipfs/QmVhVa6LGuzAcB8qgDtVHRkucn4ihj5UZr8xBLcJkP6ucb\"]},\"project:/node_modules/@openzeppelin/contracts/utils/introspection/ERC165.sol\":{\"keccak256\":\"0xd10975de010d89fd1c78dc5e8a9a7e7f496198085c151648f20cba166b32582b\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://fb0048dee081f6fffa5f74afc3fb328483c2a30504e94a0ddd2a5114d731ec4d\",\"dweb:/ipfs/QmZptt1nmYoA5SgjwnSgWqgUSDgm4q52Yos3xhnMv3MV43\"]},\"project:/node_modules/@openzeppelin/contracts/utils/introspection/IERC165.sol\":{\"keccak256\":\"0x447a5f3ddc18419d41ff92b3773fb86471b1db25773e07f877f548918a185bf1\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://be161e54f24e5c6fae81a12db1a8ae87bc5ae1b0ddc805d82a1440a68455088f\",\"dweb:/ipfs/QmP7C3CHdY9urF4dEMb9wmsp1wMxHF6nhA2yQE5SKiPAdy\"]},\"project:/node_modules/@openzeppelin/contracts/utils/math/Math.sol\":{\"keccak256\":\"0xa1e8e83cd0087785df04ac79fb395d9f3684caeaf973d9e2c71caef723a3a5d6\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://33bbf48cc069be677705037ba7520c22b1b622c23b33e1a71495f2d36549d40b\",\"dweb:/ipfs/Qmct36zWXv3j7LZB83uwbg7TXwnZSN1fqHNDZ93GG98bGz\"]}},\"version\":1}",
   "bytecode": "0x",
   "deployedBytecode": "0x",
   "immutableReferences": {},
@@ -23,10 +23,10 @@
   "deployedGeneratedSources": [],
   "sourceMap": "",
   "deployedSourceMap": "",
-  "source": "// SPDX-License-Identifier: GPL-3.0\npragma solidity 0.8.17;\n\nimport \"../node_modules/@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol\";\nimport \"../node_modules/@openzeppelin/contracts/utils/Counters.sol\";\nimport \"../node_modules/@openzeppelin/contracts/access/Ownable.sol\";\nimport \"../node_modules/@openzeppelin/contracts/utils/Strings.sol\";\n\n\n//Interface name is not important, however functions in it are important\ninterface IOpiChainSBT{\n  function greet() external view returns (string memory);\n \n}\n\n\n\n/// @title  OpiChain SBT contract\n/// @author Saad Igueninni\n/// @notice ERC721 not transferable, bound to Soul\n/// @dev Inherits the OpenZepplin Ownable ,ERC721URIStorage,Counters & Strings contracts\ncontract OpiChainSBT is ERC721URIStorage, Ownable {\n    using Counters for Counters.Counter;\n\n    enum Gender {\n        Male,\n        Female\n    }\n\n    enum Role {\n        Sounder,\n        Surveyed\n    }\n\n    struct OpiProfile {\n        uint256 OpiIdCounter;\n        string name;\n        Gender gender;\n        uint256 age;\n        Role role;\n        bool isOpiIdGranted;\n    }\n\n    //mapping(address=>bool) grantedOPIIds;\n    mapping(address => OpiProfile) OpiProfiles;\n    Counters.Counter private _OpiIdCounter;\n\n    event grantedOpiID(OpiProfile _newOpiProfile);\n    event revokedOpiID(address _profileAddress);\n    event updatedOpiID(address _profileAddress);\n\n    constructor() ERC721(\"OpiChainID\", \"OpiId\") {}\n\n    /*        address test = 0xd9cB466B10b86Da36Cb7E39d6DD86d25A500Ccd6;\n        grantOpiID( test,\n       // \"https://gateway.pinata.cloud/ipfs/QmQzEEbvYSV2atiDv8PdT4WuNyjTLbKpEWFVqFFVFLGAut/1.json\",\n        \"saad\",\n        38,\n        0,\n        0); */\n\n    // ::::::::::::: MODIFIERS ::::::::::::: //\n    modifier onlySounders(address _profileAddress) {\n        require(\n            (OpiProfiles[_profileAddress].isOpiIdGranted &&\n                OpiProfiles[_profileAddress].role == Role.Sounder),\n            \"You are not a sounder\"\n        );\n        _;\n    }\n\n    modifier onlySurveyeds(address _profileAddress) {\n        require(\n            (OpiProfiles[_profileAddress].isOpiIdGranted &&\n                OpiProfiles[msg.sender].role == Role.Surveyed),\n            \"You are not a surveyed\"\n        );\n        _;\n    }\n\n    modifier opiIdExists(address _profileAddress) {\n        require(\n            OpiProfiles[_profileAddress].isOpiIdGranted,\n            \"OpiID do not exists\"\n        );\n        _;\n    }\n\n    // ::::::::::::: GETTERS ::::::::::::: //\n    function getOpiID(address _profileAddress)\n        external\n        view\n        onlyOwner\n        opiIdExists(_profileAddress)\n        returns (OpiProfile memory)\n    {\n        return OpiProfiles[_profileAddress];\n    }\n\n    function isGrantedOpiID(address _profileAddress)\n        external\n        view\n        onlyOwner\n        returns (bool)\n    {\n        return OpiProfiles[_profileAddress].isOpiIdGranted;\n    }\n\n    function isSounder(address _profileAddress)\n        external\n        view\n        onlyOwner\n        returns (bool)\n    {\n        return (OpiProfiles[_profileAddress].isOpiIdGranted &&\n            OpiProfiles[_profileAddress].role == Role.Sounder);\n    }\n\n    function isSurveyed(address _profileAddress)\n        external\n        view\n        onlyOwner\n        returns (bool)\n    {\n        return (OpiProfiles[_profileAddress].isOpiIdGranted &&\n            OpiProfiles[_profileAddress].role == Role.Surveyed);\n    }\n\n    // ::::::::::::: MEMBERS MANAGEMENT ::::::::::::: //\n    function grantOpiID(\n        address _profileAddress,\n        // string memory _SBTUri,\n        string memory _name,\n        uint256 _age,\n        uint8 _gender,\n        uint8 _role\n    ) public onlyOwner returns (uint256) {\n        //To change to external after test\n        require(\n            !OpiProfiles[msg.sender].isOpiIdGranted,\n            \"OpiID already exists\"\n        );\n\n        _OpiIdCounter.increment(); //To start at 1\n        uint256 newOpiID = _OpiIdCounter.current();\n        OpiProfile memory newOpiProfile;\n\n        //Add new Profile\n        newOpiProfile.OpiIdCounter = newOpiID;\n        newOpiProfile.name = _name;\n        newOpiProfile.age = _age;\n        newOpiProfile.gender = Gender(_gender);\n        newOpiProfile.role = Role(_role);\n        newOpiProfile.isOpiIdGranted = true;\n        OpiProfiles[_profileAddress] = newOpiProfile;\n\n        _mint(_profileAddress, newOpiID);\n\n        string memory urinumber = Strings.toString(newOpiID);\n        string\n            memory tokenURI = \"https://ipfs.io/ipfs/QmQiceiGFxV72zuKhy3ggZhoFu1Gcuvu35khedjtxAML6G/\";\n        string memory _SBTUri = string.concat(tokenURI, urinumber, \".json\");\n\n        _setTokenURI(newOpiID, _SBTUri);\n\n        emit grantedOpiID(newOpiProfile);\n        return newOpiID;\n    }\n\n    function revokeOpiID(address _profileAddress) external onlyOwner {\n        require(\n            OpiProfiles[msg.sender].OpiIdCounter != 0,\n            \"OpiID do not exists\"\n        );\n        delete OpiProfiles[_profileAddress];\n        emit revokedOpiID(_profileAddress);\n    }\n\n    function updateOpiID(\n        address _profileAddress,\n        string calldata _name,\n        uint256 _age,\n        uint8 _gender,\n        uint8 _role\n    ) external onlyOwner {\n        require(\n            OpiProfiles[msg.sender].OpiIdCounter != 0,\n            \"OpiID do not exists\"\n        );\n\n        OpiProfile memory UpdOpiProfile;\n\n        UpdOpiProfile = OpiProfiles[_profileAddress];\n        UpdOpiProfile.name = _name;\n        UpdOpiProfile.age = _age;\n        UpdOpiProfile.gender = Gender(_gender);\n        UpdOpiProfile.role = Role(_role);\n        OpiProfiles[_profileAddress] = UpdOpiProfile;\n\n        emit revokedOpiID(_profileAddress);\n    }\n\n    // ::::::::::::: OVVERIDES ::::::::::::: //\n    function _beforeTokenTransfer(\n        address from,\n        address to,\n        uint256 tokenId,\n        uint256 batchSize\n    ) internal virtual override {\n        require(\n            from == address(0),\n            \"SBT : not possible de Transfer your OpiId\"\n        );\n        super._beforeTokenTransfer(from, to, tokenId, batchSize);\n    }\n}\n",
-  "sourcePath": "/home/saadi/coursAlyra/OpiChain/truffle/contracts/OpiChainSBT.sol",
+  "source": "// SPDX-License-Identifier: GPL-3.0\npragma solidity 0.8.17;\n\nimport \"../node_modules/@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol\";\nimport \"../node_modules/@openzeppelin/contracts/utils/Counters.sol\";\nimport \"../node_modules/@openzeppelin/contracts/access/Ownable.sol\";\nimport \"../node_modules/@openzeppelin/contracts/utils/Strings.sol\";\n\n\n//Interface name is not important, however functions in it are important\ninterface IChlChainSBT{\n  function greet() external view returns (string memory);\n \n}\n\n\n\n/// @title  ChlChain SBT contract\n/// @author Saad Igueninni\n/// @notice ERC721 not transferable, bound to Soul\n/// @dev Inherits the OpenZepplin Ownable ,ERC721URIStorage,Counters & Strings contracts\ncontract ChlChainSBT is ERC721URIStorage, Ownable {\n    using Counters for Counters.Counter;\n\n    enum Gender {\n        Male,\n        Female\n    }\n\n    enum Role {\n        Sounder,\n        Challengeed\n    }\n\n    struct ChlProfile {\n        uint256 ChlIdCounter;\n        string name;\n        Gender gender;\n        uint256 age;\n        Role role;\n        bool isChlIdGranted;\n    }\n\n    //mapping(address=>bool) grantedCHLIds;\n    mapping(address => ChlProfile) ChlProfiles;\n    Counters.Counter private _ChlIdCounter;\n\n    event grantedChlID(ChlProfile _newChlProfile);\n    event revokedChlID(address _profileAddress);\n    event updatedChlID(address _profileAddress);\n\n    constructor() ERC721(\"ChlChainID\", \"ChlId\") {}\n\n    /*        address test = 0xd9cB466B10b86Da36Cb7E39d6DD86d25A500Ccd6;\n        grantChlID( test,\n       // \"https://gateway.pinata.cloud/ipfs/QmQzEEbvYSV2atiDv8PdT4WuNyjTLbKpEWFVqFFVFLGAut/1.json\",\n        \"saad\",\n        38,\n        0,\n        0); */\n\n    // ::::::::::::: MODIFIERS ::::::::::::: //\n    modifier onlySounders(address _profileAddress) {\n        require(\n            (ChlProfiles[_profileAddress].isChlIdGranted &&\n                ChlProfiles[_profileAddress].role == Role.Sounder),\n            \"You are not a sounder\"\n        );\n        _;\n    }\n\n    modifier onlyChallengeeds(address _profileAddress) {\n        require(\n            (ChlProfiles[_profileAddress].isChlIdGranted &&\n                ChlProfiles[msg.sender].role == Role.Challengeed),\n            \"You are not a Challengeed\"\n        );\n        _;\n    }\n\n    modifier ChlIdExists(address _profileAddress) {\n        require(\n            ChlProfiles[_profileAddress].isChlIdGranted,\n            \"ChlID do not exists\"\n        );\n        _;\n    }\n\n    // ::::::::::::: GETTERS ::::::::::::: //\n    function getChlID(address _profileAddress)\n        external\n        view\n        onlyOwner\n        ChlIdExists(_profileAddress)\n        returns (ChlProfile memory)\n    {\n        return ChlProfiles[_profileAddress];\n    }\n\n    function isGrantedChlID(address _profileAddress)\n        external\n        view\n        onlyOwner\n        returns (bool)\n    {\n        return ChlProfiles[_profileAddress].isChlIdGranted;\n    }\n\n    function isSounder(address _profileAddress)\n        external\n        view\n        onlyOwner\n        returns (bool)\n    {\n        return (ChlProfiles[_profileAddress].isChlIdGranted &&\n            ChlProfiles[_profileAddress].role == Role.Sounder);\n    }\n\n    function isChallengeed(address _profileAddress)\n        external\n        view\n        onlyOwner\n        returns (bool)\n    {\n        return (ChlProfiles[_profileAddress].isChlIdGranted &&\n            ChlProfiles[_profileAddress].role == Role.Challengeed);\n    }\n\n    // ::::::::::::: MEMBERS MANAGEMENT ::::::::::::: //\n    function grantChlID(\n        address _profileAddress,\n        // string memory _SBTUri,\n        string memory _name,\n        uint256 _age,\n        uint8 _gender,\n        uint8 _role\n    ) public onlyOwner returns (uint256) {\n        //To change to external after test\n        require(\n            !ChlProfiles[msg.sender].isChlIdGranted,\n            \"ChlID already exists\"\n        );\n\n        _ChlIdCounter.increment(); //To start at 1\n        uint256 newChlID = _ChlIdCounter.current();\n        ChlProfile memory newChlProfile;\n\n        //Add new Profile\n        newChlProfile.ChlIdCounter = newChlID;\n        newChlProfile.name = _name;\n        newChlProfile.age = _age;\n        newChlProfile.gender = Gender(_gender);\n        newChlProfile.role = Role(_role);\n        newChlProfile.isChlIdGranted = true;\n        ChlProfiles[_profileAddress] = newChlProfile;\n\n        _mint(_profileAddress, newChlID);\n\n        string memory urinumber = Strings.toString(newChlID);\n        string\n            memory tokenURI = \"https://ipfs.io/ipfs/QmQiceiGFxV72zuKhy3ggZhoFu1Gcuvu35khedjtxAML6G/\";\n        string memory _SBTUri = string.concat(tokenURI, urinumber, \".json\");\n\n        _setTokenURI(newChlID, _SBTUri);\n\n        emit grantedChlID(newChlProfile);\n        return newChlID;\n    }\n\n    function revokeChlID(address _profileAddress) external onlyOwner {\n        require(\n            ChlProfiles[msg.sender].ChlIdCounter != 0,\n            \"ChlID do not exists\"\n        );\n        delete ChlProfiles[_profileAddress];\n        emit revokedChlID(_profileAddress);\n    }\n\n    function updateChlID(\n        address _profileAddress,\n        string calldata _name,\n        uint256 _age,\n        uint8 _gender,\n        uint8 _role\n    ) external onlyOwner {\n        require(\n            ChlProfiles[msg.sender].ChlIdCounter != 0,\n            \"ChlID do not exists\"\n        );\n\n        ChlProfile memory UpdChlProfile;\n\n        UpdChlProfile = ChlProfiles[_profileAddress];\n        UpdChlProfile.name = _name;\n        UpdChlProfile.age = _age;\n        UpdChlProfile.gender = Gender(_gender);\n        UpdChlProfile.role = Role(_role);\n        ChlProfiles[_profileAddress] = UpdChlProfile;\n\n        emit revokedChlID(_profileAddress);\n    }\n\n    // ::::::::::::: OVVERIDES ::::::::::::: //\n    function _beforeTokenTransfer(\n        address from,\n        address to,\n        uint256 tokenId,\n        uint256 batchSize\n    ) internal virtual override {\n        require(\n            from == address(0),\n            \"SBT : not possible de Transfer your ChlId\"\n        );\n        super._beforeTokenTransfer(from, to, tokenId, batchSize);\n    }\n}\n",
+  "sourcePath": "/home/saadi/coursAlyra/ChlChain/truffle/contracts/ChlChainSBT.sol",
   "ast": {
-    "absolutePath": "project:/contracts/OpiChainSBT.sol",
+    "absolutePath": "project:/contracts/ChlChainSBT.sol",
     "exportedSymbols": {
       "Address": [
         2867
@@ -58,13 +58,13 @@
       "IERC721Receiver": [
         2385
       ],
-      "IOpiChainSBT": [
+      "IChlChainSBT": [
         40
       ],
       "Math": [
         4039
       ],
-      "OpiChainSBT": [
+      "ChlChainSBT": [
         503
       ],
       "Ownable": [
@@ -139,7 +139,7 @@
       {
         "abstract": false,
         "baseContracts": [],
-        "canonicalName": "IOpiChainSBT",
+        "canonicalName": "IChlChainSBT",
         "contractDependencies": [],
         "contractKind": "interface",
         "fullyImplemented": false,
@@ -147,7 +147,7 @@
         "linearizedBaseContracts": [
           40
         ],
-        "name": "IOpiChainSBT",
+        "name": "IChlChainSBT",
         "nameLocation": "447:12:1",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -245,14 +245,14 @@
             "src": "769:7:1"
           }
         ],
-        "canonicalName": "OpiChainSBT",
+        "canonicalName": "ChlChainSBT",
         "contractDependencies": [],
         "contractKind": "contract",
         "documentation": {
           "id": 41,
           "nodeType": "StructuredDocumentation",
           "src": "526:201:1",
-          "text": "@title  OpiChain SBT contract\n @author Saad Igueninni\n @notice ERC721 not transferable, bound to Soul\n @dev Inherits the OpenZepplin Ownable ,ERC721URIStorage,Counters & Strings contracts"
+          "text": "@title  ChlChain SBT contract\n @author Saad Igueninni\n @notice ERC721 not transferable, bound to Soul\n @dev Inherits the OpenZepplin Ownable ,ERC721URIStorage,Counters & Strings contracts"
         },
         "fullyImplemented": true,
         "id": 503,
@@ -267,7 +267,7 @@
           3174,
           2889
         ],
-        "name": "OpiChainSBT",
+        "name": "ChlChainSBT",
         "nameLocation": "736:11:1",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -309,7 +309,7 @@
             }
           },
           {
-            "canonicalName": "OpiChainSBT.Gender",
+            "canonicalName": "ChlChainSBT.Gender",
             "id": 52,
             "members": [
               {
@@ -333,7 +333,7 @@
             "src": "825:48:1"
           },
           {
-            "canonicalName": "OpiChainSBT.Role",
+            "canonicalName": "ChlChainSBT.Role",
             "id": 55,
             "members": [
               {
@@ -345,7 +345,7 @@
               },
               {
                 "id": 54,
-                "name": "Surveyed",
+                "name": "Challengeed",
                 "nameLocation": "916:8:1",
                 "nodeType": "EnumValue",
                 "src": "916:8:1"
@@ -357,14 +357,14 @@
             "src": "879:51:1"
           },
           {
-            "canonicalName": "OpiChainSBT.OpiProfile",
+            "canonicalName": "ChlChainSBT.ChlProfile",
             "id": 70,
             "members": [
               {
                 "constant": false,
                 "id": 57,
                 "mutability": "mutable",
-                "name": "OpiIdCounter",
+                "name": "ChlIdCounter",
                 "nameLocation": "972:12:1",
                 "nodeType": "VariableDeclaration",
                 "scope": 70,
@@ -427,7 +427,7 @@
                 "storageLocation": "default",
                 "typeDescriptions": {
                   "typeIdentifier": "t_enum$_Gender_$52",
-                  "typeString": "enum OpiChainSBT.Gender"
+                  "typeString": "enum ChlChainSBT.Gender"
                 },
                 "typeName": {
                   "id": 61,
@@ -446,7 +446,7 @@
                   "src": "1015:6:1",
                   "typeDescriptions": {
                     "typeIdentifier": "t_enum$_Gender_$52",
-                    "typeString": "enum OpiChainSBT.Gender"
+                    "typeString": "enum ChlChainSBT.Gender"
                   }
                 },
                 "visibility": "internal"
@@ -491,7 +491,7 @@
                 "storageLocation": "default",
                 "typeDescriptions": {
                   "typeIdentifier": "t_enum$_Role_$55",
-                  "typeString": "enum OpiChainSBT.Role"
+                  "typeString": "enum ChlChainSBT.Role"
                 },
                 "typeName": {
                   "id": 66,
@@ -510,7 +510,7 @@
                   "src": "1059:4:1",
                   "typeDescriptions": {
                     "typeIdentifier": "t_enum$_Role_$55",
-                    "typeString": "enum OpiChainSBT.Role"
+                    "typeString": "enum ChlChainSBT.Role"
                   }
                 },
                 "visibility": "internal"
@@ -519,7 +519,7 @@
                 "constant": false,
                 "id": 69,
                 "mutability": "mutable",
-                "name": "isOpiIdGranted",
+                "name": "isChlIdGranted",
                 "nameLocation": "1083:14:1",
                 "nodeType": "VariableDeclaration",
                 "scope": 70,
@@ -543,7 +543,7 @@
                 "visibility": "internal"
               }
             ],
-            "name": "OpiProfile",
+            "name": "ChlProfile",
             "nameLocation": "943:10:1",
             "nodeType": "StructDefinition",
             "scope": 503,
@@ -554,7 +554,7 @@
             "constant": false,
             "id": 75,
             "mutability": "mutable",
-            "name": "OpiProfiles",
+            "name": "ChlProfiles",
             "nameLocation": "1185:11:1",
             "nodeType": "VariableDeclaration",
             "scope": 503,
@@ -562,8 +562,8 @@
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_OpiProfile_$70_storage_$",
-              "typeString": "mapping(address => struct OpiChainSBT.OpiProfile)"
+              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_ChlProfile_$70_storage_$",
+              "typeString": "mapping(address => struct ChlChainSBT.ChlProfile)"
             },
             "typeName": {
               "id": 74,
@@ -580,15 +580,15 @@
               "nodeType": "Mapping",
               "src": "1154:30:1",
               "typeDescriptions": {
-                "typeIdentifier": "t_mapping$_t_address_$_t_struct$_OpiProfile_$70_storage_$",
-                "typeString": "mapping(address => struct OpiChainSBT.OpiProfile)"
+                "typeIdentifier": "t_mapping$_t_address_$_t_struct$_ChlProfile_$70_storage_$",
+                "typeString": "mapping(address => struct ChlChainSBT.ChlProfile)"
               },
               "valueType": {
                 "id": 73,
                 "nodeType": "UserDefinedTypeName",
                 "pathNode": {
                   "id": 72,
-                  "name": "OpiProfile",
+                  "name": "ChlProfile",
                   "nameLocations": [
                     "1173:10:1"
                   ],
@@ -599,8 +599,8 @@
                 "referencedDeclaration": 70,
                 "src": "1173:10:1",
                 "typeDescriptions": {
-                  "typeIdentifier": "t_struct$_OpiProfile_$70_storage_ptr",
-                  "typeString": "struct OpiChainSBT.OpiProfile"
+                  "typeIdentifier": "t_struct$_ChlProfile_$70_storage_ptr",
+                  "typeString": "struct ChlChainSBT.ChlProfile"
                 }
               }
             },
@@ -610,7 +610,7 @@
             "constant": false,
             "id": 78,
             "mutability": "mutable",
-            "name": "_OpiIdCounter",
+            "name": "_ChlIdCounter",
             "nameLocation": "1227:13:1",
             "nodeType": "VariableDeclaration",
             "scope": 503,
@@ -648,7 +648,7 @@
             "anonymous": false,
             "eventSelector": "b82f9ae6643517fa1e435850fb48a60e89bf1821da9b0bdc113da9e425f38dd3",
             "id": 83,
-            "name": "grantedOpiID",
+            "name": "grantedChlID",
             "nameLocation": "1253:12:1",
             "nodeType": "EventDefinition",
             "parameters": {
@@ -660,7 +660,7 @@
                   "id": 81,
                   "indexed": false,
                   "mutability": "mutable",
-                  "name": "_newOpiProfile",
+                  "name": "_newChlProfile",
                   "nameLocation": "1277:14:1",
                   "nodeType": "VariableDeclaration",
                   "scope": 83,
@@ -668,15 +668,15 @@
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_struct$_OpiProfile_$70_memory_ptr",
-                    "typeString": "struct OpiChainSBT.OpiProfile"
+                    "typeIdentifier": "t_struct$_ChlProfile_$70_memory_ptr",
+                    "typeString": "struct ChlChainSBT.ChlProfile"
                   },
                   "typeName": {
                     "id": 80,
                     "nodeType": "UserDefinedTypeName",
                     "pathNode": {
                       "id": 79,
-                      "name": "OpiProfile",
+                      "name": "ChlProfile",
                       "nameLocations": [
                         "1266:10:1"
                       ],
@@ -687,8 +687,8 @@
                     "referencedDeclaration": 70,
                     "src": "1266:10:1",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_OpiProfile_$70_storage_ptr",
-                      "typeString": "struct OpiChainSBT.OpiProfile"
+                      "typeIdentifier": "t_struct$_ChlProfile_$70_storage_ptr",
+                      "typeString": "struct ChlChainSBT.ChlProfile"
                     }
                   },
                   "visibility": "internal"
@@ -702,7 +702,7 @@
             "anonymous": false,
             "eventSelector": "fbe677b07b780a20c8f6f9ab6061b5dec9604f4b7bacd0b4172b887d6c882f11",
             "id": 87,
-            "name": "revokedOpiID",
+            "name": "revokedChlID",
             "nameLocation": "1304:12:1",
             "nodeType": "EventDefinition",
             "parameters": {
@@ -747,7 +747,7 @@
             "anonymous": false,
             "eventSelector": "072e436f0a5ac64f8b14996ced3d0c28cffaf8d7ca50541807ab142828d0394a",
             "id": 91,
-            "name": "updatedOpiID",
+            "name": "updatedChlID",
             "nameLocation": "1353:12:1",
             "nodeType": "EventDefinition",
             "parameters": {
@@ -813,9 +813,9 @@
                     "src": "1418:12:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_stringliteral_b615ec1ecd90a07f408520b19d18f7a1599bc908f2ce5ceb28b17c343bdbc0b1",
-                      "typeString": "literal_string \"OpiChainID\""
+                      "typeString": "literal_string \"ChlChainID\""
                     },
-                    "value": "OpiChainID"
+                    "value": "ChlChainID"
                   },
                   {
                     "hexValue": "4f70694964",
@@ -829,9 +829,9 @@
                     "src": "1432:7:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_stringliteral_760d80e0e3bf4f35e80a566ec5a1fdef109770323e5b22049ef37e3228d1dbff",
-                      "typeString": "literal_string \"OpiId\""
+                      "typeString": "literal_string \"ChlId\""
                     },
-                    "value": "OpiId"
+                    "value": "ChlId"
                   }
                 ],
                 "id": 96,
@@ -896,14 +896,14 @@
                               "expression": {
                                 "baseExpression": {
                                   "id": 104,
-                                  "name": "OpiProfiles",
+                                  "name": "ChlProfiles",
                                   "nodeType": "Identifier",
                                   "overloadedDeclarations": [],
                                   "referencedDeclaration": 75,
                                   "src": "1831:11:1",
                                   "typeDescriptions": {
-                                    "typeIdentifier": "t_mapping$_t_address_$_t_struct$_OpiProfile_$70_storage_$",
-                                    "typeString": "mapping(address => struct OpiChainSBT.OpiProfile storage ref)"
+                                    "typeIdentifier": "t_mapping$_t_address_$_t_struct$_ChlProfile_$70_storage_$",
+                                    "typeString": "mapping(address => struct ChlChainSBT.ChlProfile storage ref)"
                                   }
                                 },
                                 "id": 106,
@@ -926,8 +926,8 @@
                                 "nodeType": "IndexAccess",
                                 "src": "1831:28:1",
                                 "typeDescriptions": {
-                                  "typeIdentifier": "t_struct$_OpiProfile_$70_storage",
-                                  "typeString": "struct OpiChainSBT.OpiProfile storage ref"
+                                  "typeIdentifier": "t_struct$_ChlProfile_$70_storage",
+                                  "typeString": "struct ChlChainSBT.ChlProfile storage ref"
                                 }
                               },
                               "id": 107,
@@ -936,7 +936,7 @@
                               "isPure": false,
                               "lValueRequested": false,
                               "memberLocation": "1860:14:1",
-                              "memberName": "isOpiIdGranted",
+                              "memberName": "isChlIdGranted",
                               "nodeType": "MemberAccess",
                               "referencedDeclaration": 69,
                               "src": "1831:43:1",
@@ -950,7 +950,7 @@
                             "rightExpression": {
                               "commonType": {
                                 "typeIdentifier": "t_enum$_Role_$55",
-                                "typeString": "enum OpiChainSBT.Role"
+                                "typeString": "enum ChlChainSBT.Role"
                               },
                               "id": 114,
                               "isConstant": false,
@@ -961,14 +961,14 @@
                                 "expression": {
                                   "baseExpression": {
                                     "id": 108,
-                                    "name": "OpiProfiles",
+                                    "name": "ChlProfiles",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
                                     "referencedDeclaration": 75,
                                     "src": "1894:11:1",
                                     "typeDescriptions": {
-                                      "typeIdentifier": "t_mapping$_t_address_$_t_struct$_OpiProfile_$70_storage_$",
-                                      "typeString": "mapping(address => struct OpiChainSBT.OpiProfile storage ref)"
+                                      "typeIdentifier": "t_mapping$_t_address_$_t_struct$_ChlProfile_$70_storage_$",
+                                      "typeString": "mapping(address => struct ChlChainSBT.ChlProfile storage ref)"
                                     }
                                   },
                                   "id": 110,
@@ -991,8 +991,8 @@
                                   "nodeType": "IndexAccess",
                                   "src": "1894:28:1",
                                   "typeDescriptions": {
-                                    "typeIdentifier": "t_struct$_OpiProfile_$70_storage",
-                                    "typeString": "struct OpiChainSBT.OpiProfile storage ref"
+                                    "typeIdentifier": "t_struct$_ChlProfile_$70_storage",
+                                    "typeString": "struct ChlChainSBT.ChlProfile storage ref"
                                   }
                                 },
                                 "id": 111,
@@ -1007,7 +1007,7 @@
                                 "src": "1894:33:1",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_enum$_Role_$55",
-                                  "typeString": "enum OpiChainSBT.Role"
+                                  "typeString": "enum ChlChainSBT.Role"
                                 }
                               },
                               "nodeType": "BinaryOperation",
@@ -1022,7 +1022,7 @@
                                   "src": "1931:4:1",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_type$_t_enum$_Role_$55_$",
-                                    "typeString": "type(enum OpiChainSBT.Role)"
+                                    "typeString": "type(enum ChlChainSBT.Role)"
                                   }
                                 },
                                 "id": 113,
@@ -1037,7 +1037,7 @@
                                 "src": "1931:12:1",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_enum$_Role_$55",
-                                  "typeString": "enum OpiChainSBT.Role"
+                                  "typeString": "enum ChlChainSBT.Role"
                                 }
                               },
                               "src": "1894:49:1",
@@ -1203,14 +1203,14 @@
                               "expression": {
                                 "baseExpression": {
                                   "id": 127,
-                                  "name": "OpiProfiles",
+                                  "name": "ChlProfiles",
                                   "nodeType": "Identifier",
                                   "overloadedDeclarations": [],
                                   "referencedDeclaration": 75,
                                   "src": "2095:11:1",
                                   "typeDescriptions": {
-                                    "typeIdentifier": "t_mapping$_t_address_$_t_struct$_OpiProfile_$70_storage_$",
-                                    "typeString": "mapping(address => struct OpiChainSBT.OpiProfile storage ref)"
+                                    "typeIdentifier": "t_mapping$_t_address_$_t_struct$_ChlProfile_$70_storage_$",
+                                    "typeString": "mapping(address => struct ChlChainSBT.ChlProfile storage ref)"
                                   }
                                 },
                                 "id": 129,
@@ -1233,8 +1233,8 @@
                                 "nodeType": "IndexAccess",
                                 "src": "2095:28:1",
                                 "typeDescriptions": {
-                                  "typeIdentifier": "t_struct$_OpiProfile_$70_storage",
-                                  "typeString": "struct OpiChainSBT.OpiProfile storage ref"
+                                  "typeIdentifier": "t_struct$_ChlProfile_$70_storage",
+                                  "typeString": "struct ChlChainSBT.ChlProfile storage ref"
                                 }
                               },
                               "id": 130,
@@ -1243,7 +1243,7 @@
                               "isPure": false,
                               "lValueRequested": false,
                               "memberLocation": "2124:14:1",
-                              "memberName": "isOpiIdGranted",
+                              "memberName": "isChlIdGranted",
                               "nodeType": "MemberAccess",
                               "referencedDeclaration": 69,
                               "src": "2095:43:1",
@@ -1257,7 +1257,7 @@
                             "rightExpression": {
                               "commonType": {
                                 "typeIdentifier": "t_enum$_Role_$55",
-                                "typeString": "enum OpiChainSBT.Role"
+                                "typeString": "enum ChlChainSBT.Role"
                               },
                               "id": 138,
                               "isConstant": false,
@@ -1268,14 +1268,14 @@
                                 "expression": {
                                   "baseExpression": {
                                     "id": 131,
-                                    "name": "OpiProfiles",
+                                    "name": "ChlProfiles",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
                                     "referencedDeclaration": 75,
                                     "src": "2158:11:1",
                                     "typeDescriptions": {
-                                      "typeIdentifier": "t_mapping$_t_address_$_t_struct$_OpiProfile_$70_storage_$",
-                                      "typeString": "mapping(address => struct OpiChainSBT.OpiProfile storage ref)"
+                                      "typeIdentifier": "t_mapping$_t_address_$_t_struct$_ChlProfile_$70_storage_$",
+                                      "typeString": "mapping(address => struct ChlChainSBT.ChlProfile storage ref)"
                                     }
                                   },
                                   "id": 134,
@@ -1313,8 +1313,8 @@
                                   "nodeType": "IndexAccess",
                                   "src": "2158:23:1",
                                   "typeDescriptions": {
-                                    "typeIdentifier": "t_struct$_OpiProfile_$70_storage",
-                                    "typeString": "struct OpiChainSBT.OpiProfile storage ref"
+                                    "typeIdentifier": "t_struct$_ChlProfile_$70_storage",
+                                    "typeString": "struct ChlChainSBT.ChlProfile storage ref"
                                   }
                                 },
                                 "id": 135,
@@ -1329,7 +1329,7 @@
                                 "src": "2158:28:1",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_enum$_Role_$55",
-                                  "typeString": "enum OpiChainSBT.Role"
+                                  "typeString": "enum ChlChainSBT.Role"
                                 }
                               },
                               "nodeType": "BinaryOperation",
@@ -1344,7 +1344,7 @@
                                   "src": "2190:4:1",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_type$_t_enum$_Role_$55_$",
-                                    "typeString": "type(enum OpiChainSBT.Role)"
+                                    "typeString": "type(enum ChlChainSBT.Role)"
                                   }
                                 },
                                 "id": 137,
@@ -1353,13 +1353,13 @@
                                 "isPure": true,
                                 "lValueRequested": false,
                                 "memberLocation": "2195:8:1",
-                                "memberName": "Surveyed",
+                                "memberName": "Challengeed",
                                 "nodeType": "MemberAccess",
                                 "referencedDeclaration": 54,
                                 "src": "2190:13:1",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_enum$_Role_$55",
-                                  "typeString": "enum OpiChainSBT.Role"
+                                  "typeString": "enum ChlChainSBT.Role"
                                 }
                               },
                               "src": "2158:45:1",
@@ -1400,9 +1400,9 @@
                         "src": "2218:24:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_stringliteral_e712c32fb749057e01ef17aef1c78e463546f1e6354e208ce0f592192553ec0b",
-                          "typeString": "literal_string \"You are not a surveyed\""
+                          "typeString": "literal_string \"You are not a Challengeed\""
                         },
-                        "value": "You are not a surveyed"
+                        "value": "You are not a Challengeed"
                       }
                     ],
                     "expression": {
@@ -1413,7 +1413,7 @@
                         },
                         {
                           "typeIdentifier": "t_stringliteral_e712c32fb749057e01ef17aef1c78e463546f1e6354e208ce0f592192553ec0b",
-                          "typeString": "literal_string \"You are not a surveyed\""
+                          "typeString": "literal_string \"You are not a Challengeed\""
                         }
                       ],
                       "id": 126,
@@ -1458,7 +1458,7 @@
               ]
             },
             "id": 146,
-            "name": "onlySurveyeds",
+            "name": "onlyChallengeeds",
             "nameLocation": "2024:13:1",
             "nodeType": "ModifierDefinition",
             "parameters": {
@@ -1513,14 +1513,14 @@
                         "expression": {
                           "baseExpression": {
                             "id": 151,
-                            "name": "OpiProfiles",
+                            "name": "ChlProfiles",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
                             "referencedDeclaration": 75,
                             "src": "2353:11:1",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_OpiProfile_$70_storage_$",
-                              "typeString": "mapping(address => struct OpiChainSBT.OpiProfile storage ref)"
+                              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_ChlProfile_$70_storage_$",
+                              "typeString": "mapping(address => struct ChlChainSBT.ChlProfile storage ref)"
                             }
                           },
                           "id": 153,
@@ -1543,8 +1543,8 @@
                           "nodeType": "IndexAccess",
                           "src": "2353:28:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_struct$_OpiProfile_$70_storage",
-                            "typeString": "struct OpiChainSBT.OpiProfile storage ref"
+                            "typeIdentifier": "t_struct$_ChlProfile_$70_storage",
+                            "typeString": "struct ChlChainSBT.ChlProfile storage ref"
                           }
                         },
                         "id": 154,
@@ -1553,7 +1553,7 @@
                         "isPure": false,
                         "lValueRequested": false,
                         "memberLocation": "2382:14:1",
-                        "memberName": "isOpiIdGranted",
+                        "memberName": "isChlIdGranted",
                         "nodeType": "MemberAccess",
                         "referencedDeclaration": 69,
                         "src": "2353:43:1",
@@ -1574,9 +1574,9 @@
                         "src": "2410:21:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_stringliteral_5bf19ca20067b3400af30def15010cd14f09b6a41e799ac590d7abac446f2e20",
-                          "typeString": "literal_string \"OpiID do not exists\""
+                          "typeString": "literal_string \"ChlID do not exists\""
                         },
-                        "value": "OpiID do not exists"
+                        "value": "ChlID do not exists"
                       }
                     ],
                     "expression": {
@@ -1587,7 +1587,7 @@
                         },
                         {
                           "typeIdentifier": "t_stringliteral_5bf19ca20067b3400af30def15010cd14f09b6a41e799ac590d7abac446f2e20",
-                          "typeString": "literal_string \"OpiID do not exists\""
+                          "typeString": "literal_string \"ChlID do not exists\""
                         }
                       ],
                       "id": 150,
@@ -1632,7 +1632,7 @@
               ]
             },
             "id": 160,
-            "name": "opiIdExists",
+            "name": "ChlIdExists",
             "nameLocation": "2285:11:1",
             "nodeType": "ModifierDefinition",
             "parameters": {
@@ -1684,14 +1684,14 @@
                   "expression": {
                     "baseExpression": {
                       "id": 173,
-                      "name": "OpiProfiles",
+                      "name": "ChlProfiles",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 75,
                       "src": "2696:11:1",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_mapping$_t_address_$_t_struct$_OpiProfile_$70_storage_$",
-                        "typeString": "mapping(address => struct OpiChainSBT.OpiProfile storage ref)"
+                        "typeIdentifier": "t_mapping$_t_address_$_t_struct$_ChlProfile_$70_storage_$",
+                        "typeString": "mapping(address => struct ChlChainSBT.ChlProfile storage ref)"
                       }
                     },
                     "id": 175,
@@ -1714,8 +1714,8 @@
                     "nodeType": "IndexAccess",
                     "src": "2696:28:1",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_OpiProfile_$70_storage",
-                      "typeString": "struct OpiChainSBT.OpiProfile storage ref"
+                      "typeIdentifier": "t_struct$_ChlProfile_$70_storage",
+                      "typeString": "struct ChlChainSBT.ChlProfile storage ref"
                     }
                   },
                   "functionReturnParameters": 172,
@@ -1765,7 +1765,7 @@
                 "kind": "modifierInvocation",
                 "modifierName": {
                   "id": 166,
-                  "name": "opiIdExists",
+                  "name": "ChlIdExists",
                   "nameLocations": [
                     "2610:11:1"
                   ],
@@ -1777,7 +1777,7 @@
                 "src": "2610:28:1"
               }
             ],
-            "name": "getOpiID",
+            "name": "getChlID",
             "nameLocation": "2520:8:1",
             "nodeType": "FunctionDefinition",
             "parameters": {
@@ -1831,15 +1831,15 @@
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_struct$_OpiProfile_$70_memory_ptr",
-                    "typeString": "struct OpiChainSBT.OpiProfile"
+                    "typeIdentifier": "t_struct$_ChlProfile_$70_memory_ptr",
+                    "typeString": "struct ChlChainSBT.ChlProfile"
                   },
                   "typeName": {
                     "id": 170,
                     "nodeType": "UserDefinedTypeName",
                     "pathNode": {
                       "id": 169,
-                      "name": "OpiProfile",
+                      "name": "ChlProfile",
                       "nameLocations": [
                         "2656:10:1"
                       ],
@@ -1850,8 +1850,8 @@
                     "referencedDeclaration": 70,
                     "src": "2656:10:1",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_OpiProfile_$70_storage_ptr",
-                      "typeString": "struct OpiChainSBT.OpiProfile"
+                      "typeIdentifier": "t_struct$_ChlProfile_$70_storage_ptr",
+                      "typeString": "struct ChlChainSBT.ChlProfile"
                     }
                   },
                   "visibility": "internal"
@@ -1876,14 +1876,14 @@
                     "expression": {
                       "baseExpression": {
                         "id": 187,
-                        "name": "OpiProfiles",
+                        "name": "ChlProfiles",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 75,
                         "src": "2878:11:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_mapping$_t_address_$_t_struct$_OpiProfile_$70_storage_$",
-                          "typeString": "mapping(address => struct OpiChainSBT.OpiProfile storage ref)"
+                          "typeIdentifier": "t_mapping$_t_address_$_t_struct$_ChlProfile_$70_storage_$",
+                          "typeString": "mapping(address => struct ChlChainSBT.ChlProfile storage ref)"
                         }
                       },
                       "id": 189,
@@ -1906,8 +1906,8 @@
                       "nodeType": "IndexAccess",
                       "src": "2878:28:1",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_OpiProfile_$70_storage",
-                        "typeString": "struct OpiChainSBT.OpiProfile storage ref"
+                        "typeIdentifier": "t_struct$_ChlProfile_$70_storage",
+                        "typeString": "struct ChlChainSBT.ChlProfile storage ref"
                       }
                     },
                     "id": 190,
@@ -1916,7 +1916,7 @@
                     "isPure": false,
                     "lValueRequested": false,
                     "memberLocation": "2907:14:1",
-                    "memberName": "isOpiIdGranted",
+                    "memberName": "isChlIdGranted",
                     "nodeType": "MemberAccess",
                     "referencedDeclaration": 69,
                     "src": "2878:43:1",
@@ -1954,7 +1954,7 @@
                 "src": "2824:9:1"
               }
             ],
-            "name": "isGrantedOpiID",
+            "name": "isGrantedChlID",
             "nameLocation": "2746:14:1",
             "nodeType": "FunctionDefinition",
             "parameters": {
@@ -2055,14 +2055,14 @@
                           "expression": {
                             "baseExpression": {
                               "id": 202,
-                              "name": "OpiProfiles",
+                              "name": "ChlProfiles",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
                               "referencedDeclaration": 75,
                               "src": "3071:11:1",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_mapping$_t_address_$_t_struct$_OpiProfile_$70_storage_$",
-                                "typeString": "mapping(address => struct OpiChainSBT.OpiProfile storage ref)"
+                                "typeIdentifier": "t_mapping$_t_address_$_t_struct$_ChlProfile_$70_storage_$",
+                                "typeString": "mapping(address => struct ChlChainSBT.ChlProfile storage ref)"
                               }
                             },
                             "id": 204,
@@ -2085,8 +2085,8 @@
                             "nodeType": "IndexAccess",
                             "src": "3071:28:1",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_struct$_OpiProfile_$70_storage",
-                              "typeString": "struct OpiChainSBT.OpiProfile storage ref"
+                              "typeIdentifier": "t_struct$_ChlProfile_$70_storage",
+                              "typeString": "struct ChlChainSBT.ChlProfile storage ref"
                             }
                           },
                           "id": 205,
@@ -2095,7 +2095,7 @@
                           "isPure": false,
                           "lValueRequested": false,
                           "memberLocation": "3100:14:1",
-                          "memberName": "isOpiIdGranted",
+                          "memberName": "isChlIdGranted",
                           "nodeType": "MemberAccess",
                           "referencedDeclaration": 69,
                           "src": "3071:43:1",
@@ -2109,7 +2109,7 @@
                         "rightExpression": {
                           "commonType": {
                             "typeIdentifier": "t_enum$_Role_$55",
-                            "typeString": "enum OpiChainSBT.Role"
+                            "typeString": "enum ChlChainSBT.Role"
                           },
                           "id": 212,
                           "isConstant": false,
@@ -2120,14 +2120,14 @@
                             "expression": {
                               "baseExpression": {
                                 "id": 206,
-                                "name": "OpiProfiles",
+                                "name": "ChlProfiles",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
                                 "referencedDeclaration": 75,
                                 "src": "3130:11:1",
                                 "typeDescriptions": {
-                                  "typeIdentifier": "t_mapping$_t_address_$_t_struct$_OpiProfile_$70_storage_$",
-                                  "typeString": "mapping(address => struct OpiChainSBT.OpiProfile storage ref)"
+                                  "typeIdentifier": "t_mapping$_t_address_$_t_struct$_ChlProfile_$70_storage_$",
+                                  "typeString": "mapping(address => struct ChlChainSBT.ChlProfile storage ref)"
                                 }
                               },
                               "id": 208,
@@ -2150,8 +2150,8 @@
                               "nodeType": "IndexAccess",
                               "src": "3130:28:1",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_struct$_OpiProfile_$70_storage",
-                                "typeString": "struct OpiChainSBT.OpiProfile storage ref"
+                                "typeIdentifier": "t_struct$_ChlProfile_$70_storage",
+                                "typeString": "struct ChlChainSBT.ChlProfile storage ref"
                               }
                             },
                             "id": 209,
@@ -2166,7 +2166,7 @@
                             "src": "3130:33:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_enum$_Role_$55",
-                              "typeString": "enum OpiChainSBT.Role"
+                              "typeString": "enum ChlChainSBT.Role"
                             }
                           },
                           "nodeType": "BinaryOperation",
@@ -2181,7 +2181,7 @@
                               "src": "3167:4:1",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_type$_t_enum$_Role_$55_$",
-                                "typeString": "type(enum OpiChainSBT.Role)"
+                                "typeString": "type(enum ChlChainSBT.Role)"
                               }
                             },
                             "id": 211,
@@ -2196,7 +2196,7 @@
                             "src": "3167:12:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_enum$_Role_$55",
-                              "typeString": "enum OpiChainSBT.Role"
+                              "typeString": "enum ChlChainSBT.Role"
                             }
                           },
                           "src": "3130:49:1",
@@ -2355,14 +2355,14 @@
                           "expression": {
                             "baseExpression": {
                               "id": 226,
-                              "name": "OpiProfiles",
+                              "name": "ChlProfiles",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
                               "referencedDeclaration": 75,
                               "src": "3331:11:1",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_mapping$_t_address_$_t_struct$_OpiProfile_$70_storage_$",
-                                "typeString": "mapping(address => struct OpiChainSBT.OpiProfile storage ref)"
+                                "typeIdentifier": "t_mapping$_t_address_$_t_struct$_ChlProfile_$70_storage_$",
+                                "typeString": "mapping(address => struct ChlChainSBT.ChlProfile storage ref)"
                               }
                             },
                             "id": 228,
@@ -2385,8 +2385,8 @@
                             "nodeType": "IndexAccess",
                             "src": "3331:28:1",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_struct$_OpiProfile_$70_storage",
-                              "typeString": "struct OpiChainSBT.OpiProfile storage ref"
+                              "typeIdentifier": "t_struct$_ChlProfile_$70_storage",
+                              "typeString": "struct ChlChainSBT.ChlProfile storage ref"
                             }
                           },
                           "id": 229,
@@ -2395,7 +2395,7 @@
                           "isPure": false,
                           "lValueRequested": false,
                           "memberLocation": "3360:14:1",
-                          "memberName": "isOpiIdGranted",
+                          "memberName": "isChlIdGranted",
                           "nodeType": "MemberAccess",
                           "referencedDeclaration": 69,
                           "src": "3331:43:1",
@@ -2409,7 +2409,7 @@
                         "rightExpression": {
                           "commonType": {
                             "typeIdentifier": "t_enum$_Role_$55",
-                            "typeString": "enum OpiChainSBT.Role"
+                            "typeString": "enum ChlChainSBT.Role"
                           },
                           "id": 236,
                           "isConstant": false,
@@ -2420,14 +2420,14 @@
                             "expression": {
                               "baseExpression": {
                                 "id": 230,
-                                "name": "OpiProfiles",
+                                "name": "ChlProfiles",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
                                 "referencedDeclaration": 75,
                                 "src": "3390:11:1",
                                 "typeDescriptions": {
-                                  "typeIdentifier": "t_mapping$_t_address_$_t_struct$_OpiProfile_$70_storage_$",
-                                  "typeString": "mapping(address => struct OpiChainSBT.OpiProfile storage ref)"
+                                  "typeIdentifier": "t_mapping$_t_address_$_t_struct$_ChlProfile_$70_storage_$",
+                                  "typeString": "mapping(address => struct ChlChainSBT.ChlProfile storage ref)"
                                 }
                               },
                               "id": 232,
@@ -2450,8 +2450,8 @@
                               "nodeType": "IndexAccess",
                               "src": "3390:28:1",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_struct$_OpiProfile_$70_storage",
-                                "typeString": "struct OpiChainSBT.OpiProfile storage ref"
+                                "typeIdentifier": "t_struct$_ChlProfile_$70_storage",
+                                "typeString": "struct ChlChainSBT.ChlProfile storage ref"
                               }
                             },
                             "id": 233,
@@ -2466,7 +2466,7 @@
                             "src": "3390:33:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_enum$_Role_$55",
-                              "typeString": "enum OpiChainSBT.Role"
+                              "typeString": "enum ChlChainSBT.Role"
                             }
                           },
                           "nodeType": "BinaryOperation",
@@ -2481,7 +2481,7 @@
                               "src": "3427:4:1",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_type$_t_enum$_Role_$55_$",
-                                "typeString": "type(enum OpiChainSBT.Role)"
+                                "typeString": "type(enum ChlChainSBT.Role)"
                               }
                             },
                             "id": 235,
@@ -2490,13 +2490,13 @@
                             "isPure": true,
                             "lValueRequested": false,
                             "memberLocation": "3432:8:1",
-                            "memberName": "Surveyed",
+                            "memberName": "Challengeed",
                             "nodeType": "MemberAccess",
                             "referencedDeclaration": 54,
                             "src": "3427:13:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_enum$_Role_$55",
-                              "typeString": "enum OpiChainSBT.Role"
+                              "typeString": "enum ChlChainSBT.Role"
                             }
                           },
                           "src": "3390:50:1",
@@ -2554,7 +2554,7 @@
                 "src": "3276:9:1"
               }
             ],
-            "name": "isSurveyed",
+            "name": "isChallengeed",
             "nameLocation": "3202:10:1",
             "nodeType": "FunctionDefinition",
             "parameters": {
@@ -2655,14 +2655,14 @@
                           "expression": {
                             "baseExpression": {
                               "id": 259,
-                              "name": "OpiProfiles",
+                              "name": "ChlProfiles",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
                               "referencedDeclaration": 75,
                               "src": "3809:11:1",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_mapping$_t_address_$_t_struct$_OpiProfile_$70_storage_$",
-                                "typeString": "mapping(address => struct OpiChainSBT.OpiProfile storage ref)"
+                                "typeIdentifier": "t_mapping$_t_address_$_t_struct$_ChlProfile_$70_storage_$",
+                                "typeString": "mapping(address => struct ChlChainSBT.ChlProfile storage ref)"
                               }
                             },
                             "id": 262,
@@ -2700,8 +2700,8 @@
                             "nodeType": "IndexAccess",
                             "src": "3809:23:1",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_struct$_OpiProfile_$70_storage",
-                              "typeString": "struct OpiChainSBT.OpiProfile storage ref"
+                              "typeIdentifier": "t_struct$_ChlProfile_$70_storage",
+                              "typeString": "struct ChlChainSBT.ChlProfile storage ref"
                             }
                           },
                           "id": 263,
@@ -2710,7 +2710,7 @@
                           "isPure": false,
                           "lValueRequested": false,
                           "memberLocation": "3833:14:1",
-                          "memberName": "isOpiIdGranted",
+                          "memberName": "isChlIdGranted",
                           "nodeType": "MemberAccess",
                           "referencedDeclaration": 69,
                           "src": "3809:38:1",
@@ -2736,9 +2736,9 @@
                         "src": "3861:22:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_stringliteral_1500a7e8d0915a7000c46eca03aced8c2598d73d0ca857dfd27dfddc2dcda52c",
-                          "typeString": "literal_string \"OpiID already exists\""
+                          "typeString": "literal_string \"ChlID already exists\""
                         },
-                        "value": "OpiID already exists"
+                        "value": "ChlID already exists"
                       }
                     ],
                     "expression": {
@@ -2749,7 +2749,7 @@
                         },
                         {
                           "typeIdentifier": "t_stringliteral_1500a7e8d0915a7000c46eca03aced8c2598d73d0ca857dfd27dfddc2dcda52c",
-                          "typeString": "literal_string \"OpiID already exists\""
+                          "typeString": "literal_string \"ChlID already exists\""
                         }
                       ],
                       "id": 258,
@@ -2793,7 +2793,7 @@
                       "argumentTypes": [],
                       "expression": {
                         "id": 268,
-                        "name": "_OpiIdCounter",
+                        "name": "_ChlIdCounter",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 78,
@@ -2847,7 +2847,7 @@
                       "constant": false,
                       "id": 274,
                       "mutability": "mutable",
-                      "name": "newOpiID",
+                      "name": "newChlID",
                       "nameLocation": "3963:8:1",
                       "nodeType": "VariableDeclaration",
                       "scope": 366,
@@ -2878,7 +2878,7 @@
                       "argumentTypes": [],
                       "expression": {
                         "id": 275,
-                        "name": "_OpiIdCounter",
+                        "name": "_ChlIdCounter",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 78,
@@ -2931,7 +2931,7 @@
                       "constant": false,
                       "id": 281,
                       "mutability": "mutable",
-                      "name": "newOpiProfile",
+                      "name": "newChlProfile",
                       "nameLocation": "4025:13:1",
                       "nodeType": "VariableDeclaration",
                       "scope": 366,
@@ -2939,15 +2939,15 @@
                       "stateVariable": false,
                       "storageLocation": "memory",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_OpiProfile_$70_memory_ptr",
-                        "typeString": "struct OpiChainSBT.OpiProfile"
+                        "typeIdentifier": "t_struct$_ChlProfile_$70_memory_ptr",
+                        "typeString": "struct ChlChainSBT.ChlProfile"
                       },
                       "typeName": {
                         "id": 280,
                         "nodeType": "UserDefinedTypeName",
                         "pathNode": {
                           "id": 279,
-                          "name": "OpiProfile",
+                          "name": "ChlProfile",
                           "nameLocations": [
                             "4007:10:1"
                           ],
@@ -2958,8 +2958,8 @@
                         "referencedDeclaration": 70,
                         "src": "4007:10:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_OpiProfile_$70_storage_ptr",
-                          "typeString": "struct OpiChainSBT.OpiProfile"
+                          "typeIdentifier": "t_struct$_ChlProfile_$70_storage_ptr",
+                          "typeString": "struct ChlChainSBT.ChlProfile"
                         }
                       },
                       "visibility": "internal"
@@ -2979,14 +2979,14 @@
                     "leftHandSide": {
                       "expression": {
                         "id": 283,
-                        "name": "newOpiProfile",
+                        "name": "newChlProfile",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 281,
                         "src": "4075:13:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_OpiProfile_$70_memory_ptr",
-                          "typeString": "struct OpiChainSBT.OpiProfile memory"
+                          "typeIdentifier": "t_struct$_ChlProfile_$70_memory_ptr",
+                          "typeString": "struct ChlChainSBT.ChlProfile memory"
                         }
                       },
                       "id": 285,
@@ -2995,7 +2995,7 @@
                       "isPure": false,
                       "lValueRequested": true,
                       "memberLocation": "4089:12:1",
-                      "memberName": "OpiIdCounter",
+                      "memberName": "ChlIdCounter",
                       "nodeType": "MemberAccess",
                       "referencedDeclaration": 57,
                       "src": "4075:26:1",
@@ -3008,7 +3008,7 @@
                     "operator": "=",
                     "rightHandSide": {
                       "id": 286,
-                      "name": "newOpiID",
+                      "name": "newChlID",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 274,
@@ -3038,14 +3038,14 @@
                     "leftHandSide": {
                       "expression": {
                         "id": 289,
-                        "name": "newOpiProfile",
+                        "name": "newChlProfile",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 281,
                         "src": "4122:13:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_OpiProfile_$70_memory_ptr",
-                          "typeString": "struct OpiChainSBT.OpiProfile memory"
+                          "typeIdentifier": "t_struct$_ChlProfile_$70_memory_ptr",
+                          "typeString": "struct ChlChainSBT.ChlProfile memory"
                         }
                       },
                       "id": 291,
@@ -3097,14 +3097,14 @@
                     "leftHandSide": {
                       "expression": {
                         "id": 295,
-                        "name": "newOpiProfile",
+                        "name": "newChlProfile",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 281,
                         "src": "4158:13:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_OpiProfile_$70_memory_ptr",
-                          "typeString": "struct OpiChainSBT.OpiProfile memory"
+                          "typeIdentifier": "t_struct$_ChlProfile_$70_memory_ptr",
+                          "typeString": "struct ChlChainSBT.ChlProfile memory"
                         }
                       },
                       "id": 297,
@@ -3156,14 +3156,14 @@
                     "leftHandSide": {
                       "expression": {
                         "id": 301,
-                        "name": "newOpiProfile",
+                        "name": "newChlProfile",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 281,
                         "src": "4192:13:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_OpiProfile_$70_memory_ptr",
-                          "typeString": "struct OpiChainSBT.OpiProfile memory"
+                          "typeIdentifier": "t_struct$_ChlProfile_$70_memory_ptr",
+                          "typeString": "struct ChlChainSBT.ChlProfile memory"
                         }
                       },
                       "id": 303,
@@ -3178,7 +3178,7 @@
                       "src": "4192:20:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_enum$_Gender_$52",
-                        "typeString": "enum OpiChainSBT.Gender"
+                        "typeString": "enum ChlChainSBT.Gender"
                       }
                     },
                     "nodeType": "Assignment",
@@ -3213,7 +3213,7 @@
                         "src": "4215:6:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_type$_t_enum$_Gender_$52_$",
-                          "typeString": "type(enum OpiChainSBT.Gender)"
+                          "typeString": "type(enum ChlChainSBT.Gender)"
                         }
                       },
                       "id": 306,
@@ -3229,13 +3229,13 @@
                       "tryCall": false,
                       "typeDescriptions": {
                         "typeIdentifier": "t_enum$_Gender_$52",
-                        "typeString": "enum OpiChainSBT.Gender"
+                        "typeString": "enum ChlChainSBT.Gender"
                       }
                     },
                     "src": "4192:38:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_enum$_Gender_$52",
-                      "typeString": "enum OpiChainSBT.Gender"
+                      "typeString": "enum ChlChainSBT.Gender"
                     }
                   },
                   "id": 308,
@@ -3252,14 +3252,14 @@
                     "leftHandSide": {
                       "expression": {
                         "id": 309,
-                        "name": "newOpiProfile",
+                        "name": "newChlProfile",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 281,
                         "src": "4240:13:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_OpiProfile_$70_memory_ptr",
-                          "typeString": "struct OpiChainSBT.OpiProfile memory"
+                          "typeIdentifier": "t_struct$_ChlProfile_$70_memory_ptr",
+                          "typeString": "struct ChlChainSBT.ChlProfile memory"
                         }
                       },
                       "id": 311,
@@ -3274,7 +3274,7 @@
                       "src": "4240:18:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_enum$_Role_$55",
-                        "typeString": "enum OpiChainSBT.Role"
+                        "typeString": "enum ChlChainSBT.Role"
                       }
                     },
                     "nodeType": "Assignment",
@@ -3309,7 +3309,7 @@
                         "src": "4261:4:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_type$_t_enum$_Role_$55_$",
-                          "typeString": "type(enum OpiChainSBT.Role)"
+                          "typeString": "type(enum ChlChainSBT.Role)"
                         }
                       },
                       "id": 314,
@@ -3325,13 +3325,13 @@
                       "tryCall": false,
                       "typeDescriptions": {
                         "typeIdentifier": "t_enum$_Role_$55",
-                        "typeString": "enum OpiChainSBT.Role"
+                        "typeString": "enum ChlChainSBT.Role"
                       }
                     },
                     "src": "4240:32:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_enum$_Role_$55",
-                      "typeString": "enum OpiChainSBT.Role"
+                      "typeString": "enum ChlChainSBT.Role"
                     }
                   },
                   "id": 316,
@@ -3348,14 +3348,14 @@
                     "leftHandSide": {
                       "expression": {
                         "id": 317,
-                        "name": "newOpiProfile",
+                        "name": "newChlProfile",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 281,
                         "src": "4282:13:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_OpiProfile_$70_memory_ptr",
-                          "typeString": "struct OpiChainSBT.OpiProfile memory"
+                          "typeIdentifier": "t_struct$_ChlProfile_$70_memory_ptr",
+                          "typeString": "struct ChlChainSBT.ChlProfile memory"
                         }
                       },
                       "id": 319,
@@ -3364,7 +3364,7 @@
                       "isPure": false,
                       "lValueRequested": true,
                       "memberLocation": "4296:14:1",
-                      "memberName": "isOpiIdGranted",
+                      "memberName": "isChlIdGranted",
                       "nodeType": "MemberAccess",
                       "referencedDeclaration": 69,
                       "src": "4282:28:1",
@@ -3411,14 +3411,14 @@
                     "leftHandSide": {
                       "baseExpression": {
                         "id": 323,
-                        "name": "OpiProfiles",
+                        "name": "ChlProfiles",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 75,
                         "src": "4327:11:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_mapping$_t_address_$_t_struct$_OpiProfile_$70_storage_$",
-                          "typeString": "mapping(address => struct OpiChainSBT.OpiProfile storage ref)"
+                          "typeIdentifier": "t_mapping$_t_address_$_t_struct$_ChlProfile_$70_storage_$",
+                          "typeString": "mapping(address => struct ChlChainSBT.ChlProfile storage ref)"
                         }
                       },
                       "id": 325,
@@ -3441,28 +3441,28 @@
                       "nodeType": "IndexAccess",
                       "src": "4327:28:1",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_OpiProfile_$70_storage",
-                        "typeString": "struct OpiChainSBT.OpiProfile storage ref"
+                        "typeIdentifier": "t_struct$_ChlProfile_$70_storage",
+                        "typeString": "struct ChlChainSBT.ChlProfile storage ref"
                       }
                     },
                     "nodeType": "Assignment",
                     "operator": "=",
                     "rightHandSide": {
                       "id": 326,
-                      "name": "newOpiProfile",
+                      "name": "newChlProfile",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 281,
                       "src": "4358:13:1",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_OpiProfile_$70_memory_ptr",
-                        "typeString": "struct OpiChainSBT.OpiProfile memory"
+                        "typeIdentifier": "t_struct$_ChlProfile_$70_memory_ptr",
+                        "typeString": "struct ChlChainSBT.ChlProfile memory"
                       }
                     },
                     "src": "4327:44:1",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_OpiProfile_$70_storage",
-                      "typeString": "struct OpiChainSBT.OpiProfile storage ref"
+                      "typeIdentifier": "t_struct$_ChlProfile_$70_storage",
+                      "typeString": "struct ChlChainSBT.ChlProfile storage ref"
                     }
                   },
                   "id": 328,
@@ -3486,7 +3486,7 @@
                       },
                       {
                         "id": 331,
-                        "name": "newOpiID",
+                        "name": "newChlID",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 274,
@@ -3577,7 +3577,7 @@
                     "arguments": [
                       {
                         "id": 338,
-                        "name": "newOpiID",
+                        "name": "newChlID",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 274,
@@ -3844,7 +3844,7 @@
                     "arguments": [
                       {
                         "id": 356,
-                        "name": "newOpiID",
+                        "name": "newChlID",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 274,
@@ -3914,33 +3914,33 @@
                     "arguments": [
                       {
                         "id": 361,
-                        "name": "newOpiProfile",
+                        "name": "newChlProfile",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 281,
                         "src": "4742:13:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_OpiProfile_$70_memory_ptr",
-                          "typeString": "struct OpiChainSBT.OpiProfile memory"
+                          "typeIdentifier": "t_struct$_ChlProfile_$70_memory_ptr",
+                          "typeString": "struct ChlChainSBT.ChlProfile memory"
                         }
                       }
                     ],
                     "expression": {
                       "argumentTypes": [
                         {
-                          "typeIdentifier": "t_struct$_OpiProfile_$70_memory_ptr",
-                          "typeString": "struct OpiChainSBT.OpiProfile memory"
+                          "typeIdentifier": "t_struct$_ChlProfile_$70_memory_ptr",
+                          "typeString": "struct ChlChainSBT.ChlProfile memory"
                         }
                       ],
                       "id": 360,
-                      "name": "grantedOpiID",
+                      "name": "grantedChlID",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 83,
                       "src": "4729:12:1",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_event_nonpayable$_t_struct$_OpiProfile_$70_memory_ptr_$returns$__$",
-                        "typeString": "function (struct OpiChainSBT.OpiProfile memory)"
+                        "typeIdentifier": "t_function_event_nonpayable$_t_struct$_ChlProfile_$70_memory_ptr_$returns$__$",
+                        "typeString": "function (struct ChlChainSBT.ChlProfile memory)"
                       }
                     },
                     "id": 362,
@@ -3966,7 +3966,7 @@
                 {
                   "expression": {
                     "id": 364,
-                    "name": "newOpiID",
+                    "name": "newChlID",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
                     "referencedDeclaration": 274,
@@ -4005,7 +4005,7 @@
                 "src": "3706:9:1"
               }
             ],
-            "name": "grantOpiID",
+            "name": "grantChlID",
             "nameLocation": "3520:10:1",
             "nodeType": "FunctionDefinition",
             "parameters": {
@@ -4214,14 +4214,14 @@
                           "expression": {
                             "baseExpression": {
                               "id": 375,
-                              "name": "OpiProfiles",
+                              "name": "ChlProfiles",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
                               "referencedDeclaration": 75,
                               "src": "4890:11:1",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_mapping$_t_address_$_t_struct$_OpiProfile_$70_storage_$",
-                                "typeString": "mapping(address => struct OpiChainSBT.OpiProfile storage ref)"
+                                "typeIdentifier": "t_mapping$_t_address_$_t_struct$_ChlProfile_$70_storage_$",
+                                "typeString": "mapping(address => struct ChlChainSBT.ChlProfile storage ref)"
                               }
                             },
                             "id": 378,
@@ -4259,8 +4259,8 @@
                             "nodeType": "IndexAccess",
                             "src": "4890:23:1",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_struct$_OpiProfile_$70_storage",
-                              "typeString": "struct OpiChainSBT.OpiProfile storage ref"
+                              "typeIdentifier": "t_struct$_ChlProfile_$70_storage",
+                              "typeString": "struct ChlChainSBT.ChlProfile storage ref"
                             }
                           },
                           "id": 379,
@@ -4269,7 +4269,7 @@
                           "isPure": false,
                           "lValueRequested": false,
                           "memberLocation": "4914:12:1",
-                          "memberName": "OpiIdCounter",
+                          "memberName": "ChlIdCounter",
                           "nodeType": "MemberAccess",
                           "referencedDeclaration": 57,
                           "src": "4890:36:1",
@@ -4314,9 +4314,9 @@
                         "src": "4945:21:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_stringliteral_5bf19ca20067b3400af30def15010cd14f09b6a41e799ac590d7abac446f2e20",
-                          "typeString": "literal_string \"OpiID do not exists\""
+                          "typeString": "literal_string \"ChlID do not exists\""
                         },
-                        "value": "OpiID do not exists"
+                        "value": "ChlID do not exists"
                       }
                     ],
                     "expression": {
@@ -4327,7 +4327,7 @@
                         },
                         {
                           "typeIdentifier": "t_stringliteral_5bf19ca20067b3400af30def15010cd14f09b6a41e799ac590d7abac446f2e20",
-                          "typeString": "literal_string \"OpiID do not exists\""
+                          "typeString": "literal_string \"ChlID do not exists\""
                         }
                       ],
                       "id": 374,
@@ -4378,14 +4378,14 @@
                     "subExpression": {
                       "baseExpression": {
                         "id": 385,
-                        "name": "OpiProfiles",
+                        "name": "ChlProfiles",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 75,
                         "src": "4993:11:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_mapping$_t_address_$_t_struct$_OpiProfile_$70_storage_$",
-                          "typeString": "mapping(address => struct OpiChainSBT.OpiProfile storage ref)"
+                          "typeIdentifier": "t_mapping$_t_address_$_t_struct$_ChlProfile_$70_storage_$",
+                          "typeString": "mapping(address => struct ChlChainSBT.ChlProfile storage ref)"
                         }
                       },
                       "id": 387,
@@ -4408,8 +4408,8 @@
                       "nodeType": "IndexAccess",
                       "src": "4993:28:1",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_OpiProfile_$70_storage",
-                        "typeString": "struct OpiChainSBT.OpiProfile storage ref"
+                        "typeIdentifier": "t_struct$_ChlProfile_$70_storage",
+                        "typeString": "struct ChlChainSBT.ChlProfile storage ref"
                       }
                     },
                     "typeDescriptions": {
@@ -4445,7 +4445,7 @@
                         }
                       ],
                       "id": 390,
-                      "name": "revokedOpiID",
+                      "name": "revokedChlID",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 87,
@@ -4499,7 +4499,7 @@
                 "src": "4849:9:1"
               }
             ],
-            "name": "revokeOpiID",
+            "name": "revokeChlID",
             "nameLocation": "4803:11:1",
             "nodeType": "FunctionDefinition",
             "parameters": {
@@ -4572,14 +4572,14 @@
                           "expression": {
                             "baseExpression": {
                               "id": 411,
-                              "name": "OpiProfiles",
+                              "name": "ChlProfiles",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
                               "referencedDeclaration": 75,
                               "src": "5285:11:1",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_mapping$_t_address_$_t_struct$_OpiProfile_$70_storage_$",
-                                "typeString": "mapping(address => struct OpiChainSBT.OpiProfile storage ref)"
+                                "typeIdentifier": "t_mapping$_t_address_$_t_struct$_ChlProfile_$70_storage_$",
+                                "typeString": "mapping(address => struct ChlChainSBT.ChlProfile storage ref)"
                               }
                             },
                             "id": 414,
@@ -4617,8 +4617,8 @@
                             "nodeType": "IndexAccess",
                             "src": "5285:23:1",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_struct$_OpiProfile_$70_storage",
-                              "typeString": "struct OpiChainSBT.OpiProfile storage ref"
+                              "typeIdentifier": "t_struct$_ChlProfile_$70_storage",
+                              "typeString": "struct ChlChainSBT.ChlProfile storage ref"
                             }
                           },
                           "id": 415,
@@ -4627,7 +4627,7 @@
                           "isPure": false,
                           "lValueRequested": false,
                           "memberLocation": "5309:12:1",
-                          "memberName": "OpiIdCounter",
+                          "memberName": "ChlIdCounter",
                           "nodeType": "MemberAccess",
                           "referencedDeclaration": 57,
                           "src": "5285:36:1",
@@ -4672,9 +4672,9 @@
                         "src": "5340:21:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_stringliteral_5bf19ca20067b3400af30def15010cd14f09b6a41e799ac590d7abac446f2e20",
-                          "typeString": "literal_string \"OpiID do not exists\""
+                          "typeString": "literal_string \"ChlID do not exists\""
                         },
-                        "value": "OpiID do not exists"
+                        "value": "ChlID do not exists"
                       }
                     ],
                     "expression": {
@@ -4685,7 +4685,7 @@
                         },
                         {
                           "typeIdentifier": "t_stringliteral_5bf19ca20067b3400af30def15010cd14f09b6a41e799ac590d7abac446f2e20",
-                          "typeString": "literal_string \"OpiID do not exists\""
+                          "typeString": "literal_string \"ChlID do not exists\""
                         }
                       ],
                       "id": 410,
@@ -4731,7 +4731,7 @@
                       "constant": false,
                       "id": 423,
                       "mutability": "mutable",
-                      "name": "UpdOpiProfile",
+                      "name": "UpdChlProfile",
                       "nameLocation": "5400:13:1",
                       "nodeType": "VariableDeclaration",
                       "scope": 469,
@@ -4739,15 +4739,15 @@
                       "stateVariable": false,
                       "storageLocation": "memory",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_OpiProfile_$70_memory_ptr",
-                        "typeString": "struct OpiChainSBT.OpiProfile"
+                        "typeIdentifier": "t_struct$_ChlProfile_$70_memory_ptr",
+                        "typeString": "struct ChlChainSBT.ChlProfile"
                       },
                       "typeName": {
                         "id": 422,
                         "nodeType": "UserDefinedTypeName",
                         "pathNode": {
                           "id": 421,
-                          "name": "OpiProfile",
+                          "name": "ChlProfile",
                           "nameLocations": [
                             "5382:10:1"
                           ],
@@ -4758,8 +4758,8 @@
                         "referencedDeclaration": 70,
                         "src": "5382:10:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_OpiProfile_$70_storage_ptr",
-                          "typeString": "struct OpiChainSBT.OpiProfile"
+                          "typeIdentifier": "t_struct$_ChlProfile_$70_storage_ptr",
+                          "typeString": "struct ChlChainSBT.ChlProfile"
                         }
                       },
                       "visibility": "internal"
@@ -4778,14 +4778,14 @@
                     "lValueRequested": false,
                     "leftHandSide": {
                       "id": 425,
-                      "name": "UpdOpiProfile",
+                      "name": "UpdChlProfile",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 423,
                       "src": "5424:13:1",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_OpiProfile_$70_memory_ptr",
-                        "typeString": "struct OpiChainSBT.OpiProfile memory"
+                        "typeIdentifier": "t_struct$_ChlProfile_$70_memory_ptr",
+                        "typeString": "struct ChlChainSBT.ChlProfile memory"
                       }
                     },
                     "nodeType": "Assignment",
@@ -4793,14 +4793,14 @@
                     "rightHandSide": {
                       "baseExpression": {
                         "id": 426,
-                        "name": "OpiProfiles",
+                        "name": "ChlProfiles",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 75,
                         "src": "5440:11:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_mapping$_t_address_$_t_struct$_OpiProfile_$70_storage_$",
-                          "typeString": "mapping(address => struct OpiChainSBT.OpiProfile storage ref)"
+                          "typeIdentifier": "t_mapping$_t_address_$_t_struct$_ChlProfile_$70_storage_$",
+                          "typeString": "mapping(address => struct ChlChainSBT.ChlProfile storage ref)"
                         }
                       },
                       "id": 428,
@@ -4823,14 +4823,14 @@
                       "nodeType": "IndexAccess",
                       "src": "5440:28:1",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_OpiProfile_$70_storage",
-                        "typeString": "struct OpiChainSBT.OpiProfile storage ref"
+                        "typeIdentifier": "t_struct$_ChlProfile_$70_storage",
+                        "typeString": "struct ChlChainSBT.ChlProfile storage ref"
                       }
                     },
                     "src": "5424:44:1",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_OpiProfile_$70_memory_ptr",
-                      "typeString": "struct OpiChainSBT.OpiProfile memory"
+                      "typeIdentifier": "t_struct$_ChlProfile_$70_memory_ptr",
+                      "typeString": "struct ChlChainSBT.ChlProfile memory"
                     }
                   },
                   "id": 430,
@@ -4847,14 +4847,14 @@
                     "leftHandSide": {
                       "expression": {
                         "id": 431,
-                        "name": "UpdOpiProfile",
+                        "name": "UpdChlProfile",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 423,
                         "src": "5478:13:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_OpiProfile_$70_memory_ptr",
-                          "typeString": "struct OpiChainSBT.OpiProfile memory"
+                          "typeIdentifier": "t_struct$_ChlProfile_$70_memory_ptr",
+                          "typeString": "struct ChlChainSBT.ChlProfile memory"
                         }
                       },
                       "id": 433,
@@ -4906,14 +4906,14 @@
                     "leftHandSide": {
                       "expression": {
                         "id": 437,
-                        "name": "UpdOpiProfile",
+                        "name": "UpdChlProfile",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 423,
                         "src": "5514:13:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_OpiProfile_$70_memory_ptr",
-                          "typeString": "struct OpiChainSBT.OpiProfile memory"
+                          "typeIdentifier": "t_struct$_ChlProfile_$70_memory_ptr",
+                          "typeString": "struct ChlChainSBT.ChlProfile memory"
                         }
                       },
                       "id": 439,
@@ -4965,14 +4965,14 @@
                     "leftHandSide": {
                       "expression": {
                         "id": 443,
-                        "name": "UpdOpiProfile",
+                        "name": "UpdChlProfile",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 423,
                         "src": "5548:13:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_OpiProfile_$70_memory_ptr",
-                          "typeString": "struct OpiChainSBT.OpiProfile memory"
+                          "typeIdentifier": "t_struct$_ChlProfile_$70_memory_ptr",
+                          "typeString": "struct ChlChainSBT.ChlProfile memory"
                         }
                       },
                       "id": 445,
@@ -4987,7 +4987,7 @@
                       "src": "5548:20:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_enum$_Gender_$52",
-                        "typeString": "enum OpiChainSBT.Gender"
+                        "typeString": "enum ChlChainSBT.Gender"
                       }
                     },
                     "nodeType": "Assignment",
@@ -5022,7 +5022,7 @@
                         "src": "5571:6:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_type$_t_enum$_Gender_$52_$",
-                          "typeString": "type(enum OpiChainSBT.Gender)"
+                          "typeString": "type(enum ChlChainSBT.Gender)"
                         }
                       },
                       "id": 448,
@@ -5038,13 +5038,13 @@
                       "tryCall": false,
                       "typeDescriptions": {
                         "typeIdentifier": "t_enum$_Gender_$52",
-                        "typeString": "enum OpiChainSBT.Gender"
+                        "typeString": "enum ChlChainSBT.Gender"
                       }
                     },
                     "src": "5548:38:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_enum$_Gender_$52",
-                      "typeString": "enum OpiChainSBT.Gender"
+                      "typeString": "enum ChlChainSBT.Gender"
                     }
                   },
                   "id": 450,
@@ -5061,14 +5061,14 @@
                     "leftHandSide": {
                       "expression": {
                         "id": 451,
-                        "name": "UpdOpiProfile",
+                        "name": "UpdChlProfile",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 423,
                         "src": "5596:13:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_OpiProfile_$70_memory_ptr",
-                          "typeString": "struct OpiChainSBT.OpiProfile memory"
+                          "typeIdentifier": "t_struct$_ChlProfile_$70_memory_ptr",
+                          "typeString": "struct ChlChainSBT.ChlProfile memory"
                         }
                       },
                       "id": 453,
@@ -5083,7 +5083,7 @@
                       "src": "5596:18:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_enum$_Role_$55",
-                        "typeString": "enum OpiChainSBT.Role"
+                        "typeString": "enum ChlChainSBT.Role"
                       }
                     },
                     "nodeType": "Assignment",
@@ -5118,7 +5118,7 @@
                         "src": "5617:4:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_type$_t_enum$_Role_$55_$",
-                          "typeString": "type(enum OpiChainSBT.Role)"
+                          "typeString": "type(enum ChlChainSBT.Role)"
                         }
                       },
                       "id": 456,
@@ -5134,13 +5134,13 @@
                       "tryCall": false,
                       "typeDescriptions": {
                         "typeIdentifier": "t_enum$_Role_$55",
-                        "typeString": "enum OpiChainSBT.Role"
+                        "typeString": "enum ChlChainSBT.Role"
                       }
                     },
                     "src": "5596:32:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_enum$_Role_$55",
-                      "typeString": "enum OpiChainSBT.Role"
+                      "typeString": "enum ChlChainSBT.Role"
                     }
                   },
                   "id": 458,
@@ -5157,14 +5157,14 @@
                     "leftHandSide": {
                       "baseExpression": {
                         "id": 459,
-                        "name": "OpiProfiles",
+                        "name": "ChlProfiles",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 75,
                         "src": "5638:11:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_mapping$_t_address_$_t_struct$_OpiProfile_$70_storage_$",
-                          "typeString": "mapping(address => struct OpiChainSBT.OpiProfile storage ref)"
+                          "typeIdentifier": "t_mapping$_t_address_$_t_struct$_ChlProfile_$70_storage_$",
+                          "typeString": "mapping(address => struct ChlChainSBT.ChlProfile storage ref)"
                         }
                       },
                       "id": 461,
@@ -5187,28 +5187,28 @@
                       "nodeType": "IndexAccess",
                       "src": "5638:28:1",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_OpiProfile_$70_storage",
-                        "typeString": "struct OpiChainSBT.OpiProfile storage ref"
+                        "typeIdentifier": "t_struct$_ChlProfile_$70_storage",
+                        "typeString": "struct ChlChainSBT.ChlProfile storage ref"
                       }
                     },
                     "nodeType": "Assignment",
                     "operator": "=",
                     "rightHandSide": {
                       "id": 462,
-                      "name": "UpdOpiProfile",
+                      "name": "UpdChlProfile",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 423,
                       "src": "5669:13:1",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_OpiProfile_$70_memory_ptr",
-                        "typeString": "struct OpiChainSBT.OpiProfile memory"
+                        "typeIdentifier": "t_struct$_ChlProfile_$70_memory_ptr",
+                        "typeString": "struct ChlChainSBT.ChlProfile memory"
                       }
                     },
                     "src": "5638:44:1",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_OpiProfile_$70_storage",
-                      "typeString": "struct OpiChainSBT.OpiProfile storage ref"
+                      "typeIdentifier": "t_struct$_ChlProfile_$70_storage",
+                      "typeString": "struct ChlChainSBT.ChlProfile storage ref"
                     }
                   },
                   "id": 464,
@@ -5239,7 +5239,7 @@
                         }
                       ],
                       "id": 465,
-                      "name": "revokedOpiID",
+                      "name": "revokedChlID",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 87,
@@ -5293,7 +5293,7 @@
                 "src": "5244:9:1"
               }
             ],
-            "name": "updateOpiID",
+            "name": "updateChlID",
             "nameLocation": "5087:11:1",
             "nodeType": "FunctionDefinition",
             "parameters": {
@@ -5566,9 +5566,9 @@
                         "src": "6007:43:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_stringliteral_520d6033ac680cf1e32a053f53fcb69ddaa35876836f03adfdb0c4297ee616e6",
-                          "typeString": "literal_string \"SBT : not possible de Transfer your OpiId\""
+                          "typeString": "literal_string \"SBT : not possible de Transfer your ChlId\""
                         },
-                        "value": "SBT : not possible de Transfer your OpiId"
+                        "value": "SBT : not possible de Transfer your ChlId"
                       }
                     ],
                     "expression": {
@@ -5579,7 +5579,7 @@
                         },
                         {
                           "typeIdentifier": "t_stringliteral_520d6033ac680cf1e32a053f53fcb69ddaa35876836f03adfdb0c4297ee616e6",
-                          "typeString": "literal_string \"SBT : not possible de Transfer your OpiId\""
+                          "typeString": "literal_string \"SBT : not possible de Transfer your ChlId\""
                         }
                       ],
                       "id": 482,
@@ -5695,8 +5695,8 @@
                         "referencedDeclaration": 4294967271,
                         "src": "6070:5:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_super$_OpiChainSBT_$503_$",
-                          "typeString": "type(contract super OpiChainSBT)"
+                          "typeIdentifier": "t_type$_t_super$_ChlChainSBT_$503_$",
+                          "typeString": "type(contract super ChlChainSBT)"
                         }
                       },
                       "id": 494,

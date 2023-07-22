@@ -10,21 +10,21 @@ import Box from '@mui/material/Box';
 function MarketPlace() {
 
     const [refresh, setRefresh] = useState(false);
-    const { state: { web3,accounts, contractOPI , contractOpiChainSurveyNFT, contractMarketPlace } } = useEth();
+    const { state: { web3,accounts, contractCHL , contractChlChainChallengeNFT, contractMarketPlace } } = useEth();
     const [listed, setListed] = useState([]);
-    const [surveysData, setSurveysData] = useState([]);
+    const [ChallengesData, setChallengesData] = useState([]);
     const [balance, setBalance] = useState('0');
 
     useEffect(() => {
 
 
         
-        if (contractOPI && contractOPI?.methods) {
+        if (contractCHL && contractCHL?.methods) {
 
             (async function () {
 
                 try {
-                   const balance = await contractOPI.methods.balanceOf(accounts[0]).call({ from: accounts[0]} );
+                   const balance = await contractCHL.methods.balanceOf(accounts[0]).call({ from: accounts[0]} );
                    console.log(balance);
                    setBalance(balance);
                 } catch (err) {
@@ -42,28 +42,28 @@ function MarketPlace() {
             (async function () {
 
 
-                let listedSurvey = await contractMarketPlace.methods.getListedSurveysNfts().call({ from: accounts[0] });
-                let surveysDataLclExt = [];
+                let listedChallenge = await contractMarketPlace.methods.getListedChallengesNfts().call({ from: accounts[0] });
+                let ChallengesDataLclExt = [];
 
-                for (let [index, s] of listedSurvey.entries()) {
-                    let survey = await contractOpiChainSurveyNFT.methods.getSurveyById(s.id).call({ from: accounts[0] });
-                    s = { ...s, ...survey };
-                    surveysDataLclExt.push(s);
+                for (let [index, s] of listedChallenge.entries()) {
+                    let Challenge = await contractChlChainChallengeNFT.methods.getChallengeById(s.id).call({ from: accounts[0] });
+                    s = { ...s, ...Challenge };
+                    ChallengesDataLclExt.push(s);
                     console.log(s);
                 }
-                setSurveysData(surveysDataLclExt);
-                //  setSurveysData(surveysDataLclExt);
+                setChallengesData(ChallengesDataLclExt);
+                //  setChallengesData(ChallengesDataLclExt);
             })();
         }
 
-    }, [contractMarketPlace, contractOpiChainSurveyNFT,accounts, refresh]);
+    }, [contractMarketPlace, contractChlChainChallengeNFT,accounts, refresh]);
 
 
 
-    const buySurveyResultNft = async (_idSurvey) => {
+    const buyChallengeResultNft = async (_idChallenge) => {
         try {
-            await contractMarketPlace.methods.buySurveyResultNft(_idSurvey).send({ from: accounts[0] , value: web3.utils.toWei('0.1', 'ether') })  ;
-            await contractOpiChainSurveyNFT.methods.setSurveyOwner(_idSurvey,accounts[0]).send({ from: accounts[0] });
+            await contractMarketPlace.methods.buyChallengeResultNft(_idChallenge).send({ from: accounts[0] , value: web3.utils.toWei('0.1', 'ether') })  ;
+            await contractChlChainChallengeNFT.methods.setChallengeOwner(_idChallenge,accounts[0]).send({ from: accounts[0] });
             
         } catch (err) {
             console.log(err);
@@ -80,7 +80,7 @@ function MarketPlace() {
 
         <div className="marketPlace">
             <ImageList sx={{ width: 400, height: 300 }} cols={3} gap={8}>
-                {surveysData.map((item) => (
+                {ChallengesData.map((item) => (
                     <Box key={item.id}>
                     <ImageListItem key={item.id} >
                         <img
@@ -98,10 +98,10 @@ function MarketPlace() {
                     <div id='buyContainerButt'>
                         
                       {item.owner !== accounts[0]  && balance != 0 &&  <button className="butMarketNotEdit" 
-                       onClick={() => buySurveyResultNft(item.id)} 
+                       onClick={() => buyChallengeResultNft(item.id)} 
                       >
-                        Buy Survey Result</button>}  
-                      {item.owner !== accounts[0]  &&  balance == 0 && <button className="userListNotEdit">Not enough Opis to buy Results!</button>}  
+                        Buy Challenge Result</button>}  
+                      {item.owner !== accounts[0]  &&  balance == 0 && <button className="userListNotEdit">Not enough Chls to buy Results!</button>}  
                       {item.owner === accounts[0]  &&  <button className="userListNotEdit">You are the seller!</button>}  
 
                     </div>

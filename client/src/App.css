@@ -1,10 +1,26 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@100&display=swap');
+
+
 .container{
   display: flex;
   margin-top: 10px;
+  font-family: 'Londrina Solid', cursive !important;
 }
-
 
 .link{
   text-decoration: none;
   color: inherit;
+}
+
+body, html { 
+   font-family: 'Londrina Solid', cursive !important;
+}
+
+
+
+[class$="MuiTypography-root"]
+{
+  font-family: 'Londrina Solid', cursive !important;
 }

@@ -1,0 +1,35 @@
+.challengeCardUL{
+    margin: 0px 0px 0px 10px;
+}
+
+.MuiCardHeader-subheader{
+    color:#fd3f83 !important;
+    font-weight: bolder !important;;
+}
+
+.MuiCardHeader-title{
+
+    font-weight: bolder !important;
+    ont-size: 1.7rem !important;
+}
+
+.challengeCardDeposit{
+    color:#fd3f83 !important;
+    font-weight: bolder !important;
+    margin-left: 10% !important;
+}
+
+.title
+{
+    display: block;
+    height: 8px;
+    /* line-height: 12px; */
+    /* padding: 2px 3px; */
+    font-size: 8px;
+    color: #000;
+    margin-bottom: 13px;
+    font-weight: bold;
+    clear: both;
+}
+.title .date { float:right }
+.title .name { float:left }
