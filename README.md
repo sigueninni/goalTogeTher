@@ -1,6 +1,6 @@
-# ChlChain
+# GoalTogether
 
-Certificaton Final project : Alyra 
+EthCC Paris 2023  - GolaTogeTher
 
 # Box
 
