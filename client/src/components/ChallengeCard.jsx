@@ -19,6 +19,16 @@ import Chip from '@mui/material/Chip';
 import Stack from '@mui/material/Stack';
 import DoneIcon from '@mui/icons-material/Done';
 import DeleteIcon from '@mui/icons-material/Delete';
+import TextField from '@mui/material/TextField';
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import DialogTitle from '@mui/material/DialogTitle';
+
+//import { EAS, SchemaEncoder } from "@ethereum-attestation-service/eas-sdk";
+
+
 
 import '../css/component/ChallengeCard.css';
 
@@ -33,66 +43,217 @@ const ExpandMore = styled((props) => {
   }),
 }));
 
-export default function RecipeReviewCard({type}) {
+export default function RecipeReviewCard({ type }) {
+
+
   const [expanded, setExpanded] = React.useState(false);
-  
+
+  const [openP, setOpenP] = React.useState(false);
+  const [openD, setOpenD] = React.useState(false);
+
+
+
+  const joinChallenge = (event) => {
+    debugger;
+  };
+
+
+  const   proove = (event) => {
+    /* debugger;
+
+    const eas = new EAS(EASContractAddress);
+    eas.connect(signer);
+
+    // Initialize SchemaEncoder with the schema string
+    const schemaEncoder = new SchemaEncoder("uint256 eventId, uint8 voteIndex");
+    const encodedData = schemaEncoder.encodeData([
+      { name: "eventId", value: 1, type: "uint256" },
+      { name: "voteIndex", value: 1, type: "uint8" },
+    ]);
+
+    const schemaUID = "0xb16fa048b0d597f5a821747eba64efa4762ee5143e9a80600d0005386edfc995";
+
+    const tx = await eas.attest({
+      schema: schemaUID,
+      data: {
+        recipient: "0xFD50b031E778fAb33DfD2Fc3Ca66a1EeF0652165",
+        expirationTime: 0,
+        revocable: true,
+        data: encodedData,
+      },
+    });
+
+    const newAttestationUID = await tx.wait();
+
+    console.log("New attestation UID:", newAttestationUID);
+ */
+
+  };
+
+
+  const onDepositJoin = (event) => {
+    debugger;
+    handleClickOpenD();
+  };
+
+
+  const onPROOF = (event) => {
+    handleClickOpenP();
+  };
+
+
+
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
 
+
+
+
+  const handleClickOpenP = () => {
+    setOpenP(true);
+  };
+
+  const handleCloseP = () => {
+    setOpenP(false);
+  };
+
+
+  const handleClickOpenD = () => {
+    setOpenD(true);
+  };
+
+  const handleCloseD = () => {
+    setOpenD(false);
+  };
+
   return (
-    <Card sx={{ maxWidth: 345 }}>
-      <CardHeader
-        title="Coding Challenge"
-        subheader="#Welness #Hard"
-      />
-      <CardContent>
-      <div class="title">
-        <span class="name">Total Deposit : 25 Eth</span>
-        <span class="date">256 Members</span>
-    </div>
 
-        <Typography className="" variant="body2" color="text.secondary">
-          For this Challenge, you need to commit every day a new project on github!
-          <ul className="challengeCardUL">
-            <li>Deposit 0.2 Ape</li>
-            <li>Daily Challenge</li>
-            <li>July 01, 2023 - September 01, 2023</li>
-          </ul>
-        </Typography>
+    <>
 
-      </CardContent>
-      <CardActions disableSpacing>
-        <IconButton aria-label="add to favorites">
-          <FavoriteIcon />
-        </IconButton>
-    
-        {( type === 'D' && <Button className="challengeCardDeposit" size="medium">Deposit Now!</Button> )} 
-        {( type === 'P' && <Button className="challengeCardDeposit" size="medium">Give Your Proofs!</Button> )} 
-        <ExpandMore
-          expand={expanded}
-          onClick={handleExpandClick}
-          aria-expanded={expanded}
-          aria-label="show requirement of the Challenge"
-        >
-          <ExpandMoreIcon />
-        </ExpandMore>
-        
-      </CardActions>
-      <Collapse in={expanded} timeout="auto" unmountOnExit>
+
+      {/*     <Button
+  variant="contained"
+  component="label"
+>
+  Upload File
+  <input
+    type="file"
+    hidden
+  />
+</Button> */}
+
+
+      {/* DIALOG to proov */}
+      <Dialog open={openP} onClose={handleCloseP} className='newChallDialog'>
+        <DialogTitle>Give your proofs!</DialogTitle>
+        <DialogContent>
+          <DialogContentText>
+            You need to give a proof, we believe in you!
+          </DialogContentText>
+          <Button
+            variant="contained"
+            component="label"
+          >
+            Upload File
+            <input
+              type="file"
+              hidden
+            />
+          </Button>
+
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleCloseP}>Cancel</Button>
+          <Button onClick={joinChallenge}>Send your proof!</Button>
+        </DialogActions>
+      </Dialog>
+
+
+
+      {/* DIALOG to deposit */}
+      <Dialog open={openD} onClose={handleCloseD} className='newChallDialog'>
+        <DialogTitle>New Challenge</DialogTitle>
+        <DialogContent>
+          <DialogContentText>
+            To join this Challenge, you need to deposit!
+            Your deposit will be stacked for the whole duration of the challenge!
+            Commit & earn! don't forget to give your proofs!
+          </DialogContentText>
+          <TextField
+            style={{ margin: 8 }}
+
+            label="Amount to deposit"
+            type="number"
+            fullWidth
+            defaultValue="Commitment description"
+          />
+
+
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleCloseD}>Cancel</Button>
+          <Button onClick={joinChallenge}>Deposit to Join!</Button>
+        </DialogActions>
+      </Dialog>
+
+
+
+
+      <Card sx={{ maxWidth: 345 }}>
+        <CardHeader
+          title="Coding Challenge"
+          subheader="#Welness #Hard"
+        />
         <CardContent>
-          <Typography paragraph>How to proove the mission:</Typography>
-          <Typography paragraph>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+          <div class="title">
+            <span class="name">Total Deposit : 25 Eth</span>
+            <span class="date">256 Members</span>
+          </div>
+
+          <Typography className="" variant="body2" color="text.secondary">
+            For this Challenge, you need to commit every day a new project on github!
+            <ul className="challengeCardUL">
+              <li>Deposit 0.2 Ape</li>
+              <li>Daily Challenge</li>
+              <li>July 01, 2023 - September 01, 2023</li>
+            </ul>
           </Typography>
-          <Typography>
-            Set aside off of the heat to let rest for 10 minutes, and then serve.
-          </Typography>
+
         </CardContent>
-        
-      </Collapse>
-    </Card>
+        <CardActions disableSpacing>
+          <IconButton aria-label="add to favorites">
+            <FavoriteIcon />
+          </IconButton>
+
+          {(type === 'D' && <Button className="challengeCardDeposit" size="medium" onClick={onDepositJoin}>Deposit Now!</Button>)}
+          {(type === 'P' && <Button className="challengeCardDeposit" size="medium" onClick={onPROOF} >Give Your Proofs!</Button>)}
+          <ExpandMore
+            expand={expanded}
+            onClick={handleExpandClick}
+            aria-expanded={expanded}
+            aria-label="show requirement of the Challenge"
+          >
+            <ExpandMoreIcon />
+          </ExpandMore>
+
+        </CardActions>
+        <Collapse in={expanded} timeout="auto" unmountOnExit>
+          <CardContent>
+            <Typography paragraph>How to proove the mission:</Typography>
+            <Typography paragraph>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+            </Typography>
+            <Typography>
+              Set aside off of the heat to let rest for 10 minutes, and then serve.
+            </Typography>
+          </CardContent>
+
+        </Collapse>
+      </Card>
+
+    </>
   );
 }
 

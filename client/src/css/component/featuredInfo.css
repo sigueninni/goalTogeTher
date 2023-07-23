@@ -15,6 +15,23 @@
 }
 
 
+p {
+    font-family: 'Londrina Solid', cursive !important;
+}
+
+.newChallDialog p h2 div label textarea{
+    font-family: 'Londrina Solid', cursive !important;
+}
+
+h2{
+    font-family: 'Londrina Solid', cursive !important;
+}
+
+html , body , p ,h2 ,div ,label ,textarea{
+    font-family: 'Londrina Solid', cursive !important;
+}
+
+
 .featuredItem>div {
     border: 0.1px solid #683aa4;
     /* #fd3f83; */
