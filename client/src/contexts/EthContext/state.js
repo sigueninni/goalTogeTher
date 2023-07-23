@@ -3,22 +3,24 @@ const actions = {
 };
 
 const initialState = {
-  artifactSBT: null,
-  artifactCHL: null, 
-  artifactChlDex: null,
-  artifactChlChainChallengeNFT: null,
-  artifactMarketPlace : null,
+  // artifactSBT: null,
+  // artifactCHL: null, 
+  // artifactChlDex: null,
+  // artifactChlChainChallengeNFT: null,
+  // artifactMarketPlace : null,
+  artifactGoalTogeTherHandling : null,
   web3: null,
   accounts: null,
   networkID: null,
-  contractSBT: null,
-  contractCHL: null, 
-  contractChlDex: null,
-  contractChlChainChallengeNFT :null,
-  contractMarketPlace :null,
-  owner: null,
+  // contractSBT: null,
+  // contractCHL: null, 
+  // contractChlDex: null,
+  // contractChlChainChallengeNFT :null,
+  // contractMarketPlace :null,
+  contractGoalTogeTherHandling : null,
+ /*  owner: null,
   sounder: null,
-  Challengeed: null
+  Challengeed: null */
 };
 
 const reducer = (state, action) => {

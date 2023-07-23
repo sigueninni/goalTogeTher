@@ -17,7 +17,7 @@ function UserList() {
 
     useEffect(() => {
         let usersDataLcl = [];
-
+        
         if (contractSBT && contractSBT?.methods) {
             (async function () {
 

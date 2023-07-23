@@ -24,7 +24,7 @@ function ChallengeList() {
 
 
     useEffect(() => {
-
+        debugger;
         if (contractChlChainChallengeNFT && contractChlChainChallengeNFT?.methods) {
             (async function () {
 

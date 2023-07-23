@@ -11,16 +11,62 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
-
+import { useNavigate } from 'react-router-dom';
 import MenuItem from '@mui/material/MenuItem';
 import InputLabel from '@mui/material/InputLabel';
 import Select from '@mui/material/Select';
 
-
+import useEth from "../contexts/EthContext/useEth";
+import { useState, useEffect } from "react";
 import { ArrowDownward, ArrowUpward } from '@mui/icons-material';
 
 function FeaturedInfo() {
 
+  const { state: { accounts, contractGoalTogeTherHandling } } = useEth();
+
+  const navigate = useNavigate();
+  useEffect(() => {
+
+    debugger;
+    if (contractGoalTogeTherHandling && contractGoalTogeTherHandling?.methods) {
+      (async function () {
+
+        setChallengesData([]);
+        let oldEvents = await contractGoalTogeTherHandling.getPastEvents('challengeCreated', {
+          fromBlock: 0,
+          toBlock: 'latest'
+        });
+        debugger;
+        oldEvents.forEach(event => {
+          debugger;
+          console.log(event.returnValues);
+          ChallengesData.push(
+
+            /*      {
+                     'ChlIdCounter': event.returnValues._newChlProfile.ChlIdCounter,
+                     'role': event.returnValues._newChlProfile.role,
+                     'gender': event.returnValues._newChlProfile.gender,
+                     'age': event.returnValues._newChlProfile.age,
+                     'isChlIdGranted': event.returnValues._newChlProfile.isChlIdGranted,
+                     'balance': '0 CHL',
+                     'location': 'Paris,France'
+
+                 } */
+            event.returnValues._challenge,
+          );
+
+        });
+        setChallengesData(ChallengesData);
+
+      })();
+    }
+
+  }, [contractGoalTogeTherHandling, accounts]);
+
+
+
+
+  const [ChallengesData, setChallengesData] = useState([]);
   const [open, setOpen] = React.useState(false);
   const [openD, setOpenD] = React.useState(false);
 
@@ -42,15 +88,44 @@ function FeaturedInfo() {
   };
 
 
-  const onCreateChallenge = () => {
+  const newChallenge = async (_challengeObject) => {
+    debugger;
+    try {
 
+      await contractGoalTogeTherHandling.methods.createChallenge('Web3 coding Challenge', 2).send({ from: accounts[0] });
+      navigate('/');
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  const getChallenges = () => {
+    debugger;
+    let challenges = [...ChallengesData];
+    debugger;
+    return challenges.map((c, i) => {
+      return (
+
+        <div key={i} className="featuredItem">
+          <ChallengeCard type='D' challenge={c} />
+        </div>
+      );
+    });
+  };
+
+
+
+
+
+  const onCreateChallenge = (event) => {
+    newChallenge(event);
   };
 
   const onJoinChallenge = (event) => {
     debugger;
   };
 
-  
+
 
   return (
     <div className='newChallDialog'>
@@ -111,8 +186,8 @@ function FeaturedInfo() {
 
 
 
-     {/* DIALOG to create a challenge */}
-{/*      <Dialog open={openD} onClose={handleCloseD} className='newChallDialog'>
+      {/* DIALOG to create a challenge */}
+      {/*      <Dialog open={openD} onClose={handleCloseD} className='newChallDialog'>
         <DialogTitle>New Challenge</DialogTitle>
         <DialogContent>
           <DialogContentText>
@@ -149,7 +224,8 @@ function FeaturedInfo() {
 
       <div className='featuredtitle'> <div className='act'><h3 className="featuredTitle">Challenges</h3> </div>  <div className='tit'><AddCircle onClick={handleClickOpen} /></div>  </div>
       <div className="featured">
-        <div className="featuredItem">
+        {getChallenges()}
+        {/*     <div className="featuredItem">
           <ChallengeCard type='D' />
         </div>
 
@@ -161,7 +237,7 @@ function FeaturedInfo() {
         </div>
         <div className="featuredItem">
           <ChallengeCard type='D' />
-        </div>
+        </div> */}
       </div>
 
 
@@ -204,7 +280,7 @@ function FeaturedInfo() {
         <span className="featuredSub">Compared to last month</span>
       </div> */}
 
-</div>
+    </div>
   );
 }
 

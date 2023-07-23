@@ -7,14 +7,14 @@ function EthProvider({ children }) {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   const init = useCallback(
-    async (artifactSBT, artifactCHL, artifactChlDex, artifactChlChainChallengeNFT,artifactMarketPlace) => {
-      if (artifactSBT) {
+    async (artifactGoalTogeTherHandling) => {
+      if (artifactGoalTogeTherHandling) {
         const web3 = new Web3(Web3.givenProvider || "ws://localhost:8545");
         web3.eth.handleRevert = true;
         const accounts = await web3.eth.requestAccounts();
         const networkID = await web3.eth.net.getId();
 
-        const { abi } = artifactSBT;
+/*         const { abi } = artifactSBT;
         let addressSBT, contractSBT, owner, sounder, Challengeed;
         try {
           addressSBT = artifactSBT.networks[networkID].address;
@@ -44,34 +44,47 @@ function EthProvider({ children }) {
           contractChlDex = new web3.eth.Contract(abiChlDex, addressChlDex);
         } catch (err) {
           console.error(err);
-        }
+        } */
 
-        //ChlChainChallengeNFT
-        const abiChlChainChallengeNFT = artifactChlChainChallengeNFT.abi;
-        let addressChlChainChallengeNFT, contractChlChainChallengeNFT;
+        // //ChlChainChallengeNFT
+        // const abiChlChainChallengeNFT = artifactChlChainChallengeNFT.abi;
+        // let addressChlChainChallengeNFT, contractChlChainChallengeNFT;
+        // try {
+        //   addressChlChainChallengeNFT = artifactChlChainChallengeNFT.networks[networkID].address;
+        //   contractChlChainChallengeNFT = new web3.eth.Contract(abiChlChainChallengeNFT, addressChlChainChallengeNFT);
+        // } catch (err) {
+        //   console.error(err);
+        // }
+
+        //GoalTogeTherHandling -> artifactGoalTogeTherHandling
+        debugger;
+        const abiGoalTogeTherHandling = artifactGoalTogeTherHandling.abi;
+        let addressGoalTogeTherHandling, contractGoalTogeTherHandling;
         try {
-          addressChlChainChallengeNFT = artifactChlChainChallengeNFT.networks[networkID].address;
-          contractChlChainChallengeNFT = new web3.eth.Contract(abiChlChainChallengeNFT, addressChlChainChallengeNFT);
+          addressGoalTogeTherHandling = artifactGoalTogeTherHandling.networks[networkID].address;
+          contractGoalTogeTherHandling = new web3.eth.Contract(abiGoalTogeTherHandling, addressGoalTogeTherHandling);
         } catch (err) {
           console.error(err);
         }
 
 
-        //ChlMarketPlace
-        const abiMarketPlace = artifactMarketPlace.abi;
-        let addressMarketPlace, contractMarketPlace;
-        try {
-          addressMarketPlace = artifactMarketPlace.networks[networkID].address;
-          contractMarketPlace = new web3.eth.Contract(abiMarketPlace, addressMarketPlace);
-        } catch (err) {
-          console.error(err);
-        }
+
+
+        // //ChlMarketPlace
+        // const abiMarketPlace = artifactMarketPlace.abi;
+        // let addressMarketPlace, contractMarketPlace;
+        // try {
+        //   addressMarketPlace = artifactMarketPlace.networks[networkID].address;
+        //   contractMarketPlace = new web3.eth.Contract(abiMarketPlace, addressMarketPlace);
+        // } catch (err) {
+        //   console.error(err);
+        // }
 
         dispatch({
           type: actions.init,
           data: {
-            artifactSBT, artifactCHL, artifactChlDex, artifactChlChainChallengeNFT,artifactMarketPlace,
-            web3, accounts, networkID, contractSBT, contractCHL, contractChlDex, contractChlChainChallengeNFT,contractMarketPlace, owner, sounder, Challengeed
+             artifactGoalTogeTherHandling,
+            web3, accounts, networkID,  contractGoalTogeTherHandling 
           }
         });
       }
@@ -82,12 +95,13 @@ function EthProvider({ children }) {
   useEffect(() => {
     const tryInit = async () => {
       try {
-        const artifactSBT = require("../../contracts/ChlChainSBT.json");
+      /*   const artifactSBT = require("../../contracts/ChlChainSBT.json");
         const artifactCHL = require("../../contracts/Chl.json");
         const artifactChlDex = require("../../contracts/ChlDex.json");
         const artifactChlChainChallengeNFT = require("../../contracts/ChlChainChallengeNFT.json");
-        const artifactMarketPlace =  require("../../contracts/ChlChallengesMarketPlace.json");
-        init(artifactSBT, artifactCHL, artifactChlDex, artifactChlChainChallengeNFT,artifactMarketPlace);
+        const artifactMarketPlace =  require("../../contracts/ChlChallengesMarketPlace.json"); */
+        const artifactGoalTogeTherHandling = require("../../contracts/GoalTogeTherHandling.json");
+        init(artifactGoalTogeTherHandling);
       } catch (err) {
         console.error(err);
       }
@@ -102,14 +116,14 @@ function EthProvider({ children }) {
   useEffect(() => {
     const events = ["chainChanged", "accountsChanged"];
     const handleChange = () => {
-      init(state.artifactSBT, state.artifactCHL, state.artifactChlDex, state.artifactChlChainChallengeNFT,state.artifactMarketPlace);
+      init(state.artifactGoalTogeTherHandling);
     };
 
     events.forEach(e => window.ethereum.on(e, handleChange));
     return () => {
       events.forEach(e => window.ethereum.removeListener(e, handleChange));
     };
-  }, [init, state.artifactSBT, state.artifactCHL, state.artifactChlDex, state.artifactChlChainChallengeNFT,state.artifactMarketPlace]);
+  }, [init,state.artifactGoalTogeTherHandling]);
 
 
   // useEffect(() => {

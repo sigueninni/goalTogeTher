@@ -26,6 +26,9 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 
+import useEth from "../contexts/EthContext/useEth";
+import { useState, useEffect } from "react";
+
 //import { EAS, SchemaEncoder } from "@ethereum-attestation-service/eas-sdk";
 
 
@@ -43,11 +46,47 @@ const ExpandMore = styled((props) => {
   }),
 }));
 
-export default function RecipeReviewCard({ type }) {
+export default function RecipeReviewCard({type  , challenge} ) {
+
+
+  const { state: { accounts,contractSBT,contractGoalTogeTherHandling,} } = useEth();
+
+
+  useEffect(() => {
+
+    
+    if (contractGoalTogeTherHandling && contractGoalTogeTherHandling?.methods) {
+
+  /*       (async function () {
+
+            try {
+               const balance = await contractCHL.methods.balanceOf(accounts[0]).call({ from: accounts[0]} );
+             //  const wei = parseInt(balance);
+             //  const ether = web3.utils.fromWei(balance, "ether");
+               setBalance(balance);
+            } catch (err) {
+                console.log(err);
+            }
+
+
+    })(); */
+
+    }
+
+},[contractGoalTogeTherHandling,accounts]);
+
+
+
+
+
+
+
+/* createChallenge(
+  string memory _title,
+  uint256 _amountDeposit */
 
 
   const [expanded, setExpanded] = React.useState(false);
-
   const [openP, setOpenP] = React.useState(false);
   const [openD, setOpenD] = React.useState(false);
 
@@ -55,6 +94,7 @@ export default function RecipeReviewCard({ type }) {
 
   const joinChallenge = (event) => {
     debugger;
+   
   };
 
 
@@ -109,7 +149,9 @@ export default function RecipeReviewCard({ type }) {
   };
 
 
-
+const getTitle = ()=>{
+if(challenge && challenge.title ) { return challenge.title } else  return 'Cding';
+};
 
   const handleClickOpenP = () => {
     setOpenP(true);
@@ -189,8 +231,6 @@ export default function RecipeReviewCard({ type }) {
             fullWidth
             defaultValue="Commitment description"
           />
-
-
         </DialogContent>
         <DialogActions>
           <Button onClick={handleCloseD}>Cancel</Button>
@@ -201,9 +241,14 @@ export default function RecipeReviewCard({ type }) {
 
 
 
+
+
+
+
+
       <Card sx={{ maxWidth: 345 }}>
         <CardHeader
-          title="Coding Challenge"
+          title={getTitle()}
           subheader="#Welness #Hard"
         />
         <CardContent>
